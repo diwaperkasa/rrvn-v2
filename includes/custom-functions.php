@@ -22,6 +22,8 @@ add_filter('acf/settings/save_json', 'my_acf_json_save_point');
 function theme_enqueue_styles()
 {
     // wp_enqueue_style('bootstrap', get_stylesheet_directory_uri() . '/assets/vendor/bootstrap/bootstrap.min.css');
+    wp_enqueue_style('font-awesome', 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css');
+    
 }
 
 add_action('wp_enqueue_scripts', 'theme_enqueue_styles');
@@ -29,7 +31,7 @@ add_action('wp_enqueue_scripts', 'theme_enqueue_styles');
 //Add Script
 function theme_enqueue_script()
 {
-    // wp_enqueue_script('jquery-rrsg', get_stylesheet_directory_uri() . '/assets/vendor/jquery/jquery-3.2.1.min.js', [], false, true);
+    // wp_enqueue_script('ant-design', 'https://cdnjs.cloudflare.com/ajax/libs/antd/5.23.3/antd.min.js', [], false, true);
 }
 
 // DFP Tags
