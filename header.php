@@ -19,6 +19,7 @@
     <link rel="stylesheet" href="<?= get_stylesheet_directory_uri() . '/assets/font/eb-garamond-2-webfont/style.css' ?>"/>
     <link rel="stylesheet" href="<?= get_stylesheet_directory_uri() . '/assets/font/roboto-webfont/style.css' ?>"/>
     <link rel="stylesheet" href="<?= get_stylesheet_directory_uri() . '/assets/font/sweet-sans-pro-webfont/style.css' ?>"/>
+    <link rel="stylesheet" href="<?= get_stylesheet_directory_uri() . '/assets/font/georgia-2-webfont/style.css' ?>"/>
 
     <title>Robbrepport Vietnam</title>
 
@@ -29,7 +30,7 @@
             -moz-tab-size: 4;
             -o-tab-size: 4;
             tab-size: 4;
-            font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
+            font-family: "Roboto Regular", ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
             font-feature-settings: normal;
             font-variation-settings: normal;
         }
@@ -60,8 +61,37 @@
             }
         }
 
-        .offcanvas-menu-container {
-            font-family: "Sweet Sans Pro Regular";
+        .sweet-sans-font {
+            font-family: "Sweet Sans Pro Regular" !important;
+        }
+
+        .roboto-font {
+            font-family: "Roboto Regular" !important;
+        }
+
+        .eb-garamond-font {
+            font-family: "EB Garamond" !important;
+        }
+
+        .georgia-font {
+            font-family: "Georgia Regular" !important;
+        }
+
+        .article-banner-title {
+            margin-top: -4rem;
+        }
+
+        .border-line:before {
+            border-top: .1px solid #000;
+            content: "";
+            margin: 0 auto;
+            position: absolute;
+            top: 50%;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            width: 100%;
+            z-index: -1;
         }
 
         .offcanvas-menu {
@@ -85,10 +115,20 @@
                 margin-left: 0;
             }
         }
+
+        .footer {
+            font-size: 12px;
+            background-color: #eae8e3;
+            line-height: 0;
+        }
+
+        .footer-menu {
+            font-size: 12px;
+        }
     </style>
 </head>
 <body <?php body_class(); ?>>
-    <div class="offcanvas offcanvas-menu-container offcanvas-top w-100 vh-100 bg-black" tabindex="-1" id="offcanvasTop" aria-labelledby="offcanvasTopLabel">
+    <div class="offcanvas sweet-sans-font offcanvas-top w-100 vh-100 bg-black" tabindex="-1" id="offcanvasTop" aria-labelledby="offcanvasTopLabel">
         <div class="container mt-4">
             <div class="offcanvas-header">                
                 <div class="d-flex justify-content-between w-100 align-items-center">
@@ -192,7 +232,7 @@
         </div>
     </div>
     <header class="sticky-top">
-        <nav class="navbar navbar-expand-lg navbar-light bg-white">
+        <nav class="navbar navbar-expand-lg navbar-light bg-white sweet-sans-font">
             <div class="container">
                 <span type="button" class="text-danger" data-bs-toggle="offcanvas" data-bs-target="#offcanvasTop" aria-controls="offcanvasTop"><i class="fa-solid fa-bars"></i></span>
                 <button class="navbar-toggler d-none" type="button" data-bs-toggle="collapse"
@@ -201,41 +241,41 @@
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0 fw-bold">
                         <li class="nav-item">
-                            <a class="nav-link text-uppercase mx-2" aria-current="page" href="#">Aviation</a>
+                            <a class="nav-link text-uppercase mx-1 text-black" aria-current="page" href="#">Aviation</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-uppercase mx-2" href="#">Marine</a>
+                            <a class="nav-link text-uppercase mx-1 text-black" href="#">Marine</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-uppercase mx-2" href="#">Cars</a>
+                            <a class="nav-link text-uppercase mx-1 text-black" href="#">Cars</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-uppercase mx-2" href="#">Watches</a>
+                            <a class="nav-link text-uppercase mx-1 text-black" href="#">Watches</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-uppercase mx-2" href="#">Style</a>
+                            <a class="nav-link text-uppercase mx-1 text-black" href="#">Style</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-uppercase mx-2" href="#">Travel</a>
+                            <a class="nav-link text-uppercase mx-1 text-black" href="#">Travel</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-uppercase mx-2" href="#">Food & Drink</a>
+                            <a class="nav-link text-uppercase mx-1 text-black" href="#">Food & Drink</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-uppercase mx-2" href="#">Money</a>
+                            <a class="nav-link text-uppercase mx-1 text-black" href="#">Money</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-uppercase mx-2" href="#">Robb Society</a>
+                            <a class="nav-link text-uppercase mx-1 text-black" href="#">Robb Society</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-uppercase mx-2" href="#">Long Form</a>
+                            <a class="nav-link text-uppercase mx-1 text-black" href="#">Long Form</a>
                         </li>
                     </ul>
-                    <ul class="navbar-nav">
+                    <ul class="navbar-nav fw-bold">
                         <li class="nav-item border-start">
-                            <a class="nav-link text-uppercase mx-2 me-4" href="#">Subscribe</a>
+                            <a class="nav-link text-uppercase mx-1 text-black me-4" href="#">Subscribe</a>
                         </li>
                         <li class="nav-item">
                             <form class="position-relative ms-2 nav-form-search" action="">
