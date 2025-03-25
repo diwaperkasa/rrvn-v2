@@ -309,7 +309,7 @@
                 <div class="d-block d-xl-none">
                     <img width="200" class="img-fluid" src="https://robbreport.com.vn/lib/logo/logo.svg" alt="">
                 </div>
-                <ul class="navbar-nav fw-bold">
+                <ul class="navbar-nav fw-bold m-0">
                     <li class="nav-item">
                         <div class="position-relative ms-2 text-danger">
                             <span type="button" class="fa fa-search"></span>
