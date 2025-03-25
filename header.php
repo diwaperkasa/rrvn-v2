@@ -261,8 +261,8 @@
         </div>
     </header>
     <div class="sticky-top">
-        <nav class="navbar navbar-expand-lg navbar-light bg-white sweet-sans-font">
-            <div class="container">
+        <div class="container">
+            <nav class="navbar navbar-expand-lg navbar-light bg-white sweet-sans-font">
                 <span type="button" class="text-danger" data-bs-toggle="offcanvas" data-bs-target="#offcanvasTop" aria-controls="offcanvasTop"><i class="fa-solid fa-bars"></i></span>
                 <button class="navbar-toggler d-none" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
@@ -306,6 +306,9 @@
                         </li>
                     </ul>
                 </div>
+                <div class="d-block d-xl-none">
+                    <img width="200" class="img-fluid" src="https://robbreport.com.vn/lib/logo/logo.svg" alt="">
+                </div>
                 <ul class="navbar-nav fw-bold">
                     <li class="nav-item">
                         <div class="position-relative ms-2 text-danger">
@@ -313,6 +316,6 @@
                         </div>
                     </li>
                 </ul>
-            </div>
-        </nav>
+            </nav>
+        </div>
     </div>
