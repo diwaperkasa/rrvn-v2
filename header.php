@@ -231,7 +231,36 @@
             </div>
         </div>
     </div>
-    <header class="sticky-top">
+    <header class="container d-none d-md-block">
+        <div style="grid-template-columns: 30% auto 30%;" class="grid">
+            <div class="g-col-4">
+                <ul class="list-group d-flex flex-row lh-1 mx-0 my-5 align-self-center">
+                    <li style="width: 34px; height: 34px;" class="list-group-item p-2 bg-transparent me-1 border rounded-circle text-center"><i class="fa-brands fa-facebook-f"></i></li>
+                    <li style="width: 34px; height: 34px;" class="list-group-item p-0 bg-transparent mx-1 border rounded-circle"><i class="fa-brands fa-instagram p-2"></i></li>
+                    <li style="width: 34px; height: 34px;" class="list-group-item p-0 bg-transparent mx-1 border rounded-circle"><i class="fa-brands fa-youtube p-2"></i></li>
+                    <li class="list-group-item p-0 border-0 bg-transparent mx-1">
+                        <img src="https://storage.googleapis.com/td-robb-media/2024/7/4ff651ea-b98d-42a2-8caf-a2364949dad9.jpg" alt="" width="200">
+                    </li>
+                </ul>
+            </div>
+            <div class="g-col-4 text-center">
+                <img src="https://robbreport.com.vn/lib/logo/logo.svg" alt="" width="360">
+            </div>
+            <div class="g-col-4 text-end">
+                <ul class="list-group d-flex flex-row lh-1 mx-0 my-5 justify-content-end align-items-center">
+                    <li class="list-group-item p-0 border-0 bg-transparent me-2 ms-5">
+                        <img src="https://storage.googleapis.com/td-robb-media/2023/11/396b1072-1459-41af-98f6-cf14f73c528a.png" alt="" width="100">
+                    </li>
+                    <li class="list-group-item p-0 ms-2 border-0 bg-transparent">
+                        <a href="" class="text-decoration-none text-dark">
+                            <span class="text-uppercase fw-bold">Subscribe</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </header>
+    <div class="sticky-top">
         <nav class="navbar navbar-expand-lg navbar-light bg-white sweet-sans-font">
             <div class="container">
                 <span type="button" class="text-danger" data-bs-toggle="offcanvas" data-bs-target="#offcanvasTop" aria-controls="offcanvasTop"><i class="fa-solid fa-bars"></i></span>
@@ -273,18 +302,18 @@
                             <a class="nav-link text-uppercase mx-1 text-black" href="#">Long Form</a>
                         </li>
                     </ul>
-                    <ul class="navbar-nav fw-bold">
-                        <li class="nav-item border-start">
-                            <a class="nav-link text-uppercase mx-1 text-black me-4" href="#">Subscribe</a>
-                        </li>
-                        <li class="nav-item">
-                            <form class="position-relative ms-2 nav-form-search" action="">
-                                <input class="position-absolute border-0 form-control shadow-none" type="search">
-                                <span type="button" class="fa fa-search position-absolute search-button"></span>
-                            </form>
-                        </li>
-                    </ul>
                 </div>
+                <ul class="navbar-nav fw-bold">
+                    <li class="nav-item border-start">
+                        <a class="nav-link text-uppercase mx-1 text-black me-4" href="#">Subscribe</a>
+                    </li>
+                    <li class="nav-item">
+                        <form class="position-relative ms-2 nav-form-search" action="">
+                            <input class="position-absolute border-0 form-control shadow-none" type="search">
+                            <span type="button" class="fa fa-search position-absolute search-button"></span>
+                        </form>
+                    </li>
+                </ul>
             </div>
         </nav>
-    </header>
+    </div>
