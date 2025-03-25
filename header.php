@@ -272,46 +272,45 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0 fw-bold">
                         <li class="nav-item">
-                            <a class="nav-link text-uppercase mx-1 text-black" aria-current="page" href="#">Aviation</a>
+                            <a class="nav-link text-uppercase text-black text-decoration-none" aria-current="page" href="#">Aviation</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-uppercase mx-1 text-black" href="#">Marine</a>
+                            <a class="nav-link text-uppercase text-black text-decoration-none" href="#">Marine</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-uppercase mx-1 text-black" href="#">Cars</a>
+                            <a class="nav-link text-uppercase text-black text-decoration-none" href="#">Cars</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-uppercase mx-1 text-black" href="#">Watches</a>
+                            <a class="nav-link text-uppercase text-black text-decoration-none" href="#">Watches</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-uppercase mx-1 text-black" href="#">Style</a>
+                            <a class="nav-link text-uppercase text-black text-decoration-none" href="#">Style</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-uppercase mx-1 text-black" href="#">Travel</a>
+                            <a class="nav-link text-uppercase text-black text-decoration-none" href="#">Travel</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-uppercase mx-1 text-black" href="#">Food & Drink</a>
+                            <a class="nav-link text-uppercase text-black text-decoration-none" href="#">Food & Drink</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-uppercase mx-1 text-black" href="#">Money</a>
+                            <a class="nav-link text-uppercase text-black text-decoration-none" href="#">Money</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-uppercase mx-1 text-black" href="#">Robb Society</a>
+                            <a class="nav-link text-uppercase text-black text-decoration-none" href="#">Robb Society</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-uppercase mx-1 text-black" href="#">Long Form</a>
+                            <a class="nav-link text-uppercase text-black text-decoration-none" href="#">Long Form</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-uppercase text-black text-decoration-none me-4" href="#">Subscribe</a>
                         </li>
                     </ul>
                 </div>
                 <ul class="navbar-nav fw-bold">
-                    <li class="nav-item border-start">
-                        <a class="nav-link text-uppercase mx-1 text-black me-4" href="#">Subscribe</a>
-                    </li>
                     <li class="nav-item">
-                        <form class="position-relative ms-2 nav-form-search" action="">
-                            <input class="position-absolute border-0 form-control shadow-none" type="search">
-                            <span type="button" class="fa fa-search position-absolute search-button"></span>
-                        </form>
+                        <div class="position-relative ms-2 text-danger">
+                            <span type="button" class="fa fa-search"></span>
+                        </div>
                     </li>
                 </ul>
             </div>
