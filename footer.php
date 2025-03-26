@@ -1,12 +1,10 @@
     <footer class="footer">
         <section id="footer" class="p-5">
             <div class="text-center">
-                <div class="my-5">
-                    <p>PHIÊN BẢN THỬ NGHIỆM</p>
-                    <p>CÔNG TY CỔ PHẦN INDOCHINE MEDIA VENTURES VIỆT NAM</p>
-                    <p>GCNĐT số: 411032000105</p>
+                <div class="mt-3 mb-2 mb-sm-5">
+                    <p>PHIÊN BẢN THỬ NGHIỆM CÔNG TY</br>CỔ PHẦN INDOCHINE MEDIA VENTURES VIỆT NAM</br>GCNĐT số: 411032000105</p>
                 </div>
-                <div class="mt-5">
+                <div">
                     <p>Địa chỉ liên hệ: Tầng 7, Số 7, Đường D2, Khu phức hợp sông Sài Gòn, 92 Nguyễn Hữu Cảnh, Q. Bình Thạnh, Thành phố Hồ Chí Minh</p>
                     <p>Email: info@indochinemedia.com</p>
                     <img src="https://robbreport.com.vn/_next/image?url=%2Flib%2Flogo%2FlogoSaleNoti.png&w=256&q=75" alt="" width="100">
@@ -14,25 +12,39 @@
             </div>
         </section>
     </footer>
-    <section class="bg-black text-white p-4 px-5 footer-menu">
-        <div class="d-flex">
-            <img src="https://robbreport.com.vn/_next/image?url=%2Flib%2Flogo%2FLogo-White%402x.png&w=640&q=75" alt="" width="200">
-            <div class="d-flex flex-column align-self-center px-3">
-                <ul class="list-group d-flex flex-row lh-1">
-                    <li class="list-group-item ps-0 border-0 bg-transparent text-white">About Us</li>
-                    <li class="list-group-item ps-0 border-0 bg-transparent text-white">Contact Us</li>
-                    <li class="list-group-item ps-0 border-0 bg-transparent text-white">Advertise</li>
-                    <li class="list-group-item ps-0 border-0 bg-transparent text-white">Distribution</li>
-                </ul>
-                <p class="ms-4 fst-italic">Published by Robb Report Vietnam under license from Robb Report Media, LLC, a subsidiary of Penske Media Corporation.</p>
-            </div>
-            <div class="d-flex flex-row align-self-center ms-auto ps-3">
-                <span class="fs-6">FOLLOW US</span>
-                <ul class="list-group d-flex flex-row lh-1">
-                    <li class="list-group-item ps-0 border-0 bg-transparent text-white"><i class="fa-brands fa-facebook-f"></i></li>
-                    <li class="list-group-item ps-0 border-0 bg-transparent text-white"><i class="fa-brands fa-instagram"></i></li>
-                    <li class="list-group-item ps-0 border-0 bg-transparent text-white"><i class="fa-brands fa-youtube"></i></li>
-                </ul>
+    <section class="bg-black">
+        <div class="container text-white p-4 footer-menu">
+            <div class="row">
+                <div class="col-md-2">
+                    <div class="text-center text-md-start">
+                        <img class="img-fluid" src="https://robbreport.com.vn/_next/image?url=%2Flib%2Flogo%2FLogo-White%402x.png&w=640&q=75" alt="" width="200">
+                    </div>
+                </div>
+                <div class="col-md-7">
+                    <div class="my-3 my-sm-0">
+                        <div class="d-flex flex-column align-self-center">
+                            <ul class="list-group d-flex flex-row lh-1 m-0 justify-content-between justify-content-sm-start">
+                                <li class="list-group-item ps-0 border-0 bg-transparent text-white">About Us</li>
+                                <li class="list-group-item ps-0 border-0 bg-transparent text-white">Contact Us</li>
+                                <li class="list-group-item ps-0 border-0 bg-transparent text-white">Advertise</li>
+                                <li class="list-group-item ps-0 border-0 bg-transparent text-white">Distribution</li>
+                            </ul>
+                            <p class="fst-italic">Published by Robb Report Vietnam under license from Robb Report Media, LLC, a subsidiary of Penske Media Corporation.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="text-center text-md-start">
+                        <div class="d-flex align-self-center justify-content-between">
+                            <span class="fs-6">FOLLOW US</span>
+                            <ul class="list-group d-flex flex-row lh-1">
+                                <li class="list-group-item ps-0 border-0 bg-transparent text-white"><i class="fa-brands fa-facebook-f"></i></li>
+                                <li class="list-group-item ps-0 border-0 bg-transparent text-white"><i class="fa-brands fa-instagram"></i></li>
+                                <li class="list-group-item ps-0 border-0 bg-transparent text-white"><i class="fa-brands fa-youtube"></i></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>

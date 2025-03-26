@@ -119,7 +119,7 @@
         .footer {
             font-size: 12px;
             background-color: #eae8e3;
-            line-height: 0;
+            line-height: 1;
         }
 
         .footer-menu {
