@@ -247,7 +247,7 @@
                     <div class="position-absolute top-50 start-50 translate-middle">
                         <form action="/search">
                             <div class="input-group w-100 border-bottom">
-                                <span class="input-group-text bg-transparent border-0 text-white fs-1 p-0 mb-2" id="search-label"><i class="fa-solid fa-magnifying-glass"></i></span>
+                                <span class="input-group-text bg-transparent border-0 text-white fs-2 p-0 mb-3" id="search-label"><i class="fa-solid fa-magnifying-glass"></i></span>
                                 <input type="search" name="s" class="text-white fs-1 form-control border-0 rounded-0 bg-transparent shadow-none" placeholder="Search" aria-describedby="search-label" />
                             </div>
                         </form>
