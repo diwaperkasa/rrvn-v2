@@ -2022,11 +2022,6 @@ img.size-full {
   height: auto;
 }
 
-.post-content .gallery {
-  margin-right: -3rem !important;
-  margin-left: -3rem !important;
-}
-
 .post-content a {
   border-bottom: 1px solid #ed1d25;
   color: inherit;
@@ -2037,4 +2032,8 @@ img.size-full {
   letter-spacing: 0.02rem;
   font-size: 18px;
   line-height: 28px;
+}
+.post-content .gallery {
+  margin-right: -3rem !important;
+  margin-left: -3rem !important;
 }
