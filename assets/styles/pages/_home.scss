@@ -1,0 +1,40 @@
+.wp-post-image {
+    width: 100%;
+    height: auto;
+    border-radius: .5rem;
+}
+
+.wp-caption-text {
+    font-size: .875rem;
+    border-bottom: 1px solid #dddee4;
+    color: #424242;
+    margin-bottom: .625rem;
+    margin-top: .375rem;
+    padding-bottom: .625rem;
+    font-family: sans-serif;
+}
+
+img.size-full {
+    width: 100%;
+    height: auto;
+}
+
+.post-content .gallery {
+    margin-right: -3rem !important;
+    margin-left: -3rem !important;
+}
+
+.post-content {
+    a {
+        border-bottom: 1px solid #ed1d25;
+        color: inherit;
+        text-decoration: inherit;
+        font-weight: 500;
+    }
+
+    p {
+        letter-spacing: .02rem;
+        font-size: 18px;
+        line-height: 28px;
+    }
+}
