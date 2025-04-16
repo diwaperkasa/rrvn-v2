@@ -4,7 +4,7 @@
     font-family: 'Roboto Regular';
     font-style: normal;
     font-weight: normal;
-    src: local('Roboto Regular'), url('Roboto-Regular.woff') format('woff');
+    src: local('Roboto Regular'), url('assets/font/roboto-webfont/Roboto-Regular.woff') format('woff');
     }
     
 
@@ -12,7 +12,7 @@
     font-family: 'Roboto Italic';
     font-style: normal;
     font-weight: normal;
-    src: local('Roboto Italic'), url('Roboto-Italic.woff') format('woff');
+    src: local('Roboto Italic'), url('assets/font/roboto-webfont/Roboto-Italic.woff') format('woff');
     }
     
 
@@ -20,7 +20,7 @@
     font-family: 'Roboto Bold';
     font-style: normal;
     font-weight: normal;
-    src: local('Roboto Bold'), url('Roboto-Bold.woff') format('woff');
+    src: local('Roboto Bold'), url('assets/font/roboto-webfont/Roboto-Bold.woff') format('woff');
     }
     
 
@@ -28,7 +28,7 @@
     font-family: 'Roboto Bold Italic';
     font-style: normal;
     font-weight: normal;
-    src: local('Roboto Bold Italic'), url('Roboto-BoldItalic.woff') format('woff');
+    src: local('Roboto Bold Italic'), url('assets/font/roboto-webfont/Roboto-BoldItalic.woff') format('woff');
     }
     
 
@@ -36,7 +36,7 @@
     font-family: 'Roboto Thin';
     font-style: normal;
     font-weight: normal;
-    src: local('Roboto Thin'), url('Roboto-Thin.woff') format('woff');
+    src: local('Roboto Thin'), url('assets/font/roboto-webfont/Roboto-Thin.woff') format('woff');
     }
     
 
@@ -44,7 +44,7 @@
     font-family: 'Roboto Thin Italic';
     font-style: normal;
     font-weight: normal;
-    src: local('Roboto Thin Italic'), url('Roboto-ThinItalic.woff') format('woff');
+    src: local('Roboto Thin Italic'), url('assets/font/roboto-webfont/Roboto-ThinItalic.woff') format('woff');
     }
     
 
@@ -52,7 +52,7 @@
     font-family: 'Roboto Light';
     font-style: normal;
     font-weight: normal;
-    src: local('Roboto Light'), url('Roboto-Light.woff') format('woff');
+    src: local('Roboto Light'), url('assets/font/roboto-webfont/Roboto-Light.woff') format('woff');
     }
     
 
@@ -60,7 +60,7 @@
     font-family: 'Roboto Light Italic';
     font-style: normal;
     font-weight: normal;
-    src: local('Roboto Light Italic'), url('Roboto-LightItalic.woff') format('woff');
+    src: local('Roboto Light Italic'), url('assets/font/roboto-webfont/Roboto-LightItalic.woff') format('woff');
     }
     
 
@@ -68,7 +68,7 @@
     font-family: 'Roboto Medium';
     font-style: normal;
     font-weight: normal;
-    src: local('Roboto Medium'), url('Roboto-Medium.woff') format('woff');
+    src: local('Roboto Medium'), url('assets/font/roboto-webfont/Roboto-Medium.woff') format('woff');
     }
     
 
@@ -76,7 +76,7 @@
     font-family: 'Roboto Medium Italic';
     font-style: normal;
     font-weight: normal;
-    src: local('Roboto Medium Italic'), url('Roboto-MediumItalic.woff') format('woff');
+    src: local('Roboto Medium Italic'), url('assets/font/roboto-webfont/Roboto-MediumItalic.woff') format('woff');
     }
     
 
@@ -84,7 +84,7 @@
     font-family: 'Roboto Black';
     font-style: normal;
     font-weight: normal;
-    src: local('Roboto Black'), url('Roboto-Black.woff') format('woff');
+    src: local('Roboto Black'), url('assets/font/roboto-webfont/Roboto-Black.woff') format('woff');
     }
     
 
@@ -92,5 +92,5 @@
     font-family: 'Roboto Black Italic';
     font-style: normal;
     font-weight: normal;
-    src: local('Roboto Black Italic'), url('Roboto-BlackItalic.woff') format('woff');
+    src: local('Roboto Black Italic'), url('assets/font/roboto-webfont/Roboto-BlackItalic.woff') format('woff');
     }

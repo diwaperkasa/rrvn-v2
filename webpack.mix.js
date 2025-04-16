@@ -37,5 +37,7 @@ mix.
 
 mix
     .js([          
-        'assets/scripts/scripts.js'
+        'node_modules/bootstrap/dist/js/bootstrap.min.js',
+        'node_modules/sharer.js/sharer.min.js',
+        'assets/scripts/scripts.js',
     ], 'js/scripts.min.js');

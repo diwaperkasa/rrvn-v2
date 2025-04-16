@@ -23,12 +23,16 @@
                 <div class="col-md-7">
                     <div class="my-3 my-sm-0">
                         <div class="d-flex flex-column align-self-center">
-                            <ul class="list-group d-flex flex-row lh-1 m-0 justify-content-between justify-content-sm-start">
-                                <li class="list-group-item ps-0 border-0 bg-transparent text-white">About Us</li>
-                                <li class="list-group-item ps-0 border-0 bg-transparent text-white">Contact Us</li>
-                                <li class="list-group-item ps-0 border-0 bg-transparent text-white">Advertise</li>
-                                <li class="list-group-item ps-0 border-0 bg-transparent text-white">Distribution</li>
-                            </ul>
+                            <?php $footerMenus = wp_get_nav_menu_items('footer-menu'); ?>
+                            <?php if ($footerMenus): ?>
+                                <ul class="list-group d-flex flex-row lh-1 m-0 justify-content-between justify-content-sm-start">
+                                    <?php foreach ($footerMenus as $menu): ?>
+                                        <li class="list-group-item ps-0 border-0 bg-transparent text-white">
+                                            <a class="text-decoration-none" aria-current="page" href="<?= $menu->url ?>"><?= $menu->title ?></a>
+                                        </li>
+                                    <?php endforeach; ?>
+                                </ul>
+                            <?php endif; ?>
                             <p class="fst-italic">Published by Robb Report Vietnam under license from Robb Report Media, LLC, a subsidiary of Penske Media Corporation.</p>
                         </div>
                     </div>

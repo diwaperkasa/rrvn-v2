@@ -4,7 +4,7 @@
     font-family: 'Sweet Sans Pro Regular';
     font-style: normal;
     font-weight: normal;
-    src: local('Sweet Sans Pro Regular'), url('SweetSansProRegular.woff') format('woff');
+    src: local('Sweet Sans Pro Regular'), url('assets/font/sweet-sans-pro-webfont/SweetSansProRegular.woff') format('woff');
     }
     
 
@@ -12,7 +12,7 @@
     font-family: 'Sweet Sans Pro Italic';
     font-style: normal;
     font-weight: normal;
-    src: local('Sweet Sans Pro Italic'), url('SweetSansProItalic.woff') format('woff');
+    src: local('Sweet Sans Pro Italic'), url('assets/font/sweet-sans-pro-webfont/SweetSansProItalic.woff') format('woff');
     }
     
 
@@ -20,7 +20,7 @@
     font-family: 'Sweet Sans Pro Hairline';
     font-style: normal;
     font-weight: normal;
-    src: local('Sweet Sans Pro Hairline'), url('SweetSansProHairline.woff') format('woff');
+    src: local('Sweet Sans Pro Hairline'), url('assets/font/sweet-sans-pro-webfont/SweetSansProHairline.woff') format('woff');
     }
     
 
@@ -28,7 +28,7 @@
     font-family: 'Sweet Sans Pro Hairline Italic';
     font-style: normal;
     font-weight: normal;
-    src: local('Sweet Sans Pro Hairline Italic'), url('SweetSansProHairlineItalic.woff') format('woff');
+    src: local('Sweet Sans Pro Hairline Italic'), url('assets/font/sweet-sans-pro-webfont/SweetSansProHairlineItalic.woff') format('woff');
     }
     
 
@@ -36,7 +36,7 @@
     font-family: 'Sweet Sans Pro Extra Thin';
     font-style: normal;
     font-weight: normal;
-    src: local('Sweet Sans Pro Extra Thin'), url('SweetSansProExThin.woff') format('woff');
+    src: local('Sweet Sans Pro Extra Thin'), url('assets/font/sweet-sans-pro-webfont/SweetSansProExThin.woff') format('woff');
     }
     
 
@@ -44,7 +44,7 @@
     font-family: 'Sweet Sans Pro Extra Thin Italic';
     font-style: normal;
     font-weight: normal;
-    src: local('Sweet Sans Pro Extra Thin Italic'), url('SweetSansProExThinItalic.woff') format('woff');
+    src: local('Sweet Sans Pro Extra Thin Italic'), url('assets/font/sweet-sans-pro-webfont/SweetSansProExThinItalic.woff') format('woff');
     }
     
 
@@ -52,7 +52,7 @@
     font-family: 'Sweet Sans Pro Thin';
     font-style: normal;
     font-weight: normal;
-    src: local('Sweet Sans Pro Thin'), url('SweetSansProThin.woff') format('woff');
+    src: local('Sweet Sans Pro Thin'), url('assets/font/sweet-sans-pro-webfont/SweetSansProThin.woff') format('woff');
     }
     
 
@@ -60,7 +60,7 @@
     font-family: 'Sweet Sans Pro Thin Italic';
     font-style: normal;
     font-weight: normal;
-    src: local('Sweet Sans Pro Thin Italic'), url('SweetSansProThinItalic.woff') format('woff');
+    src: local('Sweet Sans Pro Thin Italic'), url('assets/font/sweet-sans-pro-webfont/SweetSansProThinItalic.woff') format('woff');
     }
     
 
@@ -68,7 +68,7 @@
     font-family: 'Sweet Sans Pro Extra Light';
     font-style: normal;
     font-weight: normal;
-    src: local('Sweet Sans Pro Extra Light'), url('SweetSansProExLight.woff') format('woff');
+    src: local('Sweet Sans Pro Extra Light'), url('assets/font/sweet-sans-pro-webfont/SweetSansProExLight.woff') format('woff');
     }
     
 
@@ -76,7 +76,7 @@
     font-family: 'Sweet Sans Pro Extra Light Italic';
     font-style: normal;
     font-weight: normal;
-    src: local('Sweet Sans Pro Extra Light Italic'), url('SweetSansProExLightItalic.woff') format('woff');
+    src: local('Sweet Sans Pro Extra Light Italic'), url('assets/font/sweet-sans-pro-webfont/SweetSansProExLightItalic.woff') format('woff');
     }
     
 
@@ -84,7 +84,7 @@
     font-family: 'Sweet Sans Pro Light';
     font-style: normal;
     font-weight: normal;
-    src: local('Sweet Sans Pro Light'), url('SweetSansProLight.woff') format('woff');
+    src: local('Sweet Sans Pro Light'), url('assets/font/sweet-sans-pro-webfont/SweetSansProLight.woff') format('woff');
     }
     
 
@@ -92,7 +92,7 @@
     font-family: 'Sweet Sans Pro Light Italic';
     font-style: normal;
     font-weight: normal;
-    src: local('Sweet Sans Pro Light Italic'), url('SweetSansProLightItalic.woff') format('woff');
+    src: local('Sweet Sans Pro Light Italic'), url('assets/font/sweet-sans-pro-webfont/SweetSansProLightItalic.woff') format('woff');
     }
     
 
@@ -100,7 +100,7 @@
     font-family: 'Sweet Sans Pro Medium';
     font-style: normal;
     font-weight: normal;
-    src: local('Sweet Sans Pro Medium'), url('SweetSansProMedium.woff') format('woff');
+    src: local('Sweet Sans Pro Medium'), url('assets/font/sweet-sans-pro-webfont/SweetSansProMedium.woff') format('woff');
     }
     
 
@@ -108,7 +108,7 @@
     font-family: 'Sweet Sans Pro Medium Italic';
     font-style: normal;
     font-weight: normal;
-    src: local('Sweet Sans Pro Medium Italic'), url('SweetSansProMediumItalic.woff') format('woff');
+    src: local('Sweet Sans Pro Medium Italic'), url('assets/font/sweet-sans-pro-webfont/SweetSansProMediumItalic.woff') format('woff');
     }
     
 
@@ -116,7 +116,7 @@
     font-family: 'Sweet Sans Pro Bold';
     font-style: normal;
     font-weight: normal;
-    src: local('Sweet Sans Pro Bold'), url('SweetSansProBold.woff') format('woff');
+    src: local('Sweet Sans Pro Bold'), url('assets/font/sweet-sans-pro-webfont/SweetSansProBold.woff') format('woff');
     }
     
 
@@ -124,7 +124,7 @@
     font-family: 'Sweet Sans Pro Bold Italic';
     font-style: normal;
     font-weight: normal;
-    src: local('Sweet Sans Pro Bold Italic'), url('SweetSansProBoldItalic.woff') format('woff');
+    src: local('Sweet Sans Pro Bold Italic'), url('assets/font/sweet-sans-pro-webfont/SweetSansProBoldItalic.woff') format('woff');
     }
     
 
@@ -132,7 +132,7 @@
     font-family: 'Sweet Sans Pro Heavy';
     font-style: normal;
     font-weight: normal;
-    src: local('Sweet Sans Pro Heavy'), url('SweetSansProHeavy.woff') format('woff');
+    src: local('Sweet Sans Pro Heavy'), url('assets/font/sweet-sans-pro-webfont/SweetSansProHeavy.woff') format('woff');
     }
     
 
@@ -140,5 +140,5 @@
     font-family: 'Sweet Sans Pro Heavy Italic';
     font-style: normal;
     font-weight: normal;
-    src: local('Sweet Sans Pro Heavy Italic'), url('SweetSansProHeavyItalic.woff') format('woff');
+    src: local('Sweet Sans Pro Heavy Italic'), url('assets/font/sweet-sans-pro-webfont/SweetSansProHeavyItalic.woff') format('woff');
     }

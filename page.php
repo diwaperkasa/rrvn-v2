@@ -1,3 +1,5 @@
-<?php
+<?php get_header(); ?>
 
-include "index.php";
+<?php the_content(); ?>
+
+<?php get_footer(); ?>

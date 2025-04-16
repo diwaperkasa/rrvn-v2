@@ -24,6 +24,10 @@
     "sass-loader": "^12.6.0"
   },
   "dependencies": {
-    "jquery": "^3.7.0"
+    "bootstrap": "^5.2.3",
+    "flickity": "^3.0.0",
+    "flickity-responsive": "^2.1.5",
+    "jquery": "^3.7.0",
+    "sharer.js": "^0.5.3"
   }
 }
