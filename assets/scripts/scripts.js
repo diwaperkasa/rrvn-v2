@@ -1,6 +1,5 @@
 import $ from 'jquery';
 import Flickity from 'flickity';
-import {FlickityResponsive} from "flickity-responsive";
 
 /**
  * Mobile navigation toggle
@@ -24,5 +23,17 @@ if (mostPopularCarousel) {
         wrapAround: true,
         pageDots: false,
         cellAlign: 'left'
+    });
+}
+
+const postCarousel = document.querySelector('.gallery');
+
+if (postCarousel) {
+    const flickity = new Flickity(postCarousel, {
+        freeScroll: true,
+        wrapAround: true,
+        pageDots: false,
+        cellAlign: 'left',
+        autoPlay: true,
     });
 }

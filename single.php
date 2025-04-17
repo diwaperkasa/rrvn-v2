@@ -49,7 +49,7 @@
                             <?= get_the_post_thumbnail($post, 'full') ?>
                         </div>
 
-                        <div class="post-content px-5">
+                        <div class="post-content">
                             <?php the_content(); ?>
                         </div>
 

@@ -194,6 +194,9 @@
                     aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
+                <div class="d-block d-xl-none">
+                    <img width="200" class="img-fluid" src="https://robbreport.com.vn/lib/logo/logo.svg" alt="">
+                </div>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <?php $primaryMenus = wp_get_nav_menu_items('primary-menu'); ?>
                     <?php if ($primaryMenus): ?>
@@ -205,9 +208,6 @@
                             <?php endforeach; ?>
                         </ul>
                     <?php endif; ?>
-                </div>
-                <div class="d-block d-xl-none">
-                    <img width="200" class="img-fluid" src="https://robbreport.com.vn/lib/logo/logo.svg" alt="">
                 </div>
                 <ul class="navbar-nav fw-bold m-0">
                     <li class="nav-item">

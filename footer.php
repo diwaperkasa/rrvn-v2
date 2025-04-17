@@ -17,7 +17,9 @@
             <div class="row">
                 <div class="col-md-2">
                     <div class="text-center text-md-start">
-                        <img class="img-fluid" src="https://robbreport.com.vn/_next/image?url=%2Flib%2Flogo%2FLogo-White%402x.png&w=640&q=75" alt="" width="200">
+                        <a href="<?= site_url() ?>" class="text-decoration-none">
+                            <img class="img-fluid" src="https://robbreport.com.vn/_next/image?url=%2Flib%2Flogo%2FLogo-White%402x.png&w=640&q=75" alt="" width="200">
+                        </a>
                     </div>
                 </div>
                 <div class="col-md-7">
@@ -25,10 +27,10 @@
                         <div class="d-flex flex-column align-self-center">
                             <?php $footerMenus = wp_get_nav_menu_items('footer-menu'); ?>
                             <?php if ($footerMenus): ?>
-                                <ul class="list-group d-flex flex-row lh-1 m-0 justify-content-between justify-content-sm-start">
+                                <ul class="list-group d-flex flex-row lh-1 m-0 justify-content-between justify-content-sm-start footer-menu">
                                     <?php foreach ($footerMenus as $menu): ?>
-                                        <li class="list-group-item ps-0 border-0 bg-transparent text-white">
-                                            <a class="text-decoration-none" aria-current="page" href="<?= $menu->url ?>"><?= $menu->title ?></a>
+                                        <li class="list-group-item px-0 me-4 border-0 bg-transparent">
+                                            <a class="text-decoration-none text-white text-uppercase" aria-current="page" href="<?= $menu->url ?>"><?= $menu->title ?></a>
                                         </li>
                                     <?php endforeach; ?>
                                 </ul>
@@ -55,10 +57,6 @@
 
     <!-- Optional JavaScript; choose one of the two! -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/js/all.min.js" integrity="sha512-b+nQTCdtTBIRIbraqNEwsjB6UvL3UEMkXnhzd8awtCYh0Kcsjl9uEgwVFVbhoj3uu1DO1ZMacNvLoyJJiNfcvg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
-    <script>
-        
-    </script>
     <?php wp_footer(); ?>
 </body>
 
