@@ -9,7 +9,7 @@ html {
     font-variation-settings: normal;
 }
 
-.img-wrapper {
+.img-wrapper, .wp-post-image {
     object-fit: cover;
     aspect-ratio: 16 / 9;
 }
@@ -225,7 +225,6 @@ img.size-full {
 
 #categoty-article .wp-post-image {
     object-fit: cover;
-    aspect-ratio: 16 / 9;
 }
 
 .footer-menu li a:before, .footer-menu li a:after {
@@ -248,4 +247,8 @@ img.size-full {
 .footer-menu li a:after {
     top: 85%;
     background: white;
+}
+
+.banner-carousel .post {
+    width: 100%;
 }

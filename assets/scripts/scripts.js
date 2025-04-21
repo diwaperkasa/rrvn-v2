@@ -26,14 +26,29 @@ if (mostPopularCarousel) {
     });
 }
 
-const postCarousel = document.querySelector('.gallery');
+const postCarousel = document.querySelectorAll('.gallery');
 
-if (postCarousel) {
-    const flickity = new Flickity(postCarousel, {
+if (postCarousel.length) {
+    postCarousel.forEach(function(gallery) {
+        const flickity = new Flickity(gallery, {
+            freeScroll: true,
+            wrapAround: true,
+            pageDots: false,
+            autoPlay: true,
+        });
+    });
+}
+
+const bannerCarousel = document.querySelector('.banner-carousel');
+
+if (bannerCarousel) {
+    const flickity = new Flickity(bannerCarousel, {
         freeScroll: true,
         wrapAround: true,
         pageDots: false,
-        cellAlign: 'left',
         autoPlay: true,
+        draggable: false,
+        autoPlay: 3000,
+        prevNextButtons: false
     });
 }

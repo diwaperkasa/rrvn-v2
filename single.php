@@ -15,7 +15,7 @@
                                     <?php endif; ?>
                                 </div>
                                 <div class="post-meta-date">
-                                    <span class="sweet-sans-font fs-6"><?= get_the_date('l F d, Y') ?></span>
+                                    <span class="sweet-sans-font fs-6"><?= get_the_date('l F d, Y', $post) ?></span>
                                 </div>
                             </div>
                         </div>

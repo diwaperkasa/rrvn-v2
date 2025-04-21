@@ -22,8 +22,8 @@
         },
         {
             "key": "field_67fc8a6611111",
-            "label": "Articles",
-            "name": "articles",
+            "label": "Carousel Articles",
+            "name": "carousel_articles",
             "aria-label": "",
             "type": "relationship",
             "instructions": "",
@@ -95,7 +95,7 @@
         },
         {
             "key": "field_67fc8ae411113",
-            "label": "How many article category to show?",
+            "label": "How many article to show?",
             "name": "how_many_article_category_to_show",
             "aria-label": "",
             "type": "number",
@@ -117,11 +117,89 @@
             "append": ""
         },
         {
-            "key": "field_67fc8e7411114",
-            "label": "Selected Article Categories",
-            "name": "selected_article_categories",
+            "key": "field_6805a7dd32ff9",
+            "label": "Selected Category",
+            "name": "selected_category",
             "aria-label": "",
-            "type": "taxonomy",
+            "type": "repeater",
+            "instructions": "",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "layout": "block",
+            "pagination": 0,
+            "min": 1,
+            "max": 0,
+            "collapsed": "",
+            "button_label": "Add Row",
+            "rows_per_page": 20,
+            "sub_fields": [
+                {
+                    "key": "field_6805a83232ffa",
+                    "label": "Main Category",
+                    "name": "selected_parent_category",
+                    "aria-label": "",
+                    "type": "taxonomy",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "taxonomy": "category",
+                    "add_term": 0,
+                    "save_terms": 0,
+                    "load_terms": 0,
+                    "return_format": "object",
+                    "field_type": "select",
+                    "allow_null": 0,
+                    "allow_in_bindings": 0,
+                    "bidirectional": 0,
+                    "multiple": 0,
+                    "bidirectional_target": [],
+                    "parent_repeater": "field_6805a7dd32ff9"
+                },
+                {
+                    "key": "field_6805a9c32b32a",
+                    "label": "Child Category",
+                    "name": "selected_child_category",
+                    "aria-label": "",
+                    "type": "taxonomy",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "taxonomy": "category",
+                    "add_term": 0,
+                    "save_terms": 0,
+                    "load_terms": 0,
+                    "return_format": "object",
+                    "field_type": "multi_select",
+                    "allow_null": 0,
+                    "allow_in_bindings": 0,
+                    "bidirectional": 0,
+                    "multiple": 0,
+                    "bidirectional_target": [],
+                    "parent_repeater": "field_6805a7dd32ff9"
+                }
+            ]
+        },
+        {
+            "key": "field_6805ab6d6a3b6",
+            "label": "How many most read article to show?",
+            "name": "how_many_most_read_article_to_show",
+            "aria-label": "",
+            "type": "number",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -130,17 +208,14 @@
                 "class": "",
                 "id": ""
             },
-            "taxonomy": "category",
-            "add_term": 1,
-            "save_terms": 0,
-            "load_terms": 0,
-            "return_format": "id",
-            "field_type": "multi_select",
-            "allow_null": 0,
+            "default_value": 10,
+            "min": "",
+            "max": "",
             "allow_in_bindings": 0,
-            "bidirectional": 0,
-            "multiple": 0,
-            "bidirectional_target": []
+            "placeholder": "",
+            "step": "",
+            "prepend": "",
+            "append": ""
         }
     ],
     "location": [
@@ -161,5 +236,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1744609006
+    "modified": 1745220339
 }

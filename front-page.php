@@ -3,18 +3,32 @@
 <main class="main" role="main">
     <div class="container">
         <section id="banner">
-            <article>
-                <div class="img-hover-zoom">
-                    <img class="img-fluid img-wrapper" src="https://robbreport.com.vn/_next/image?url=https%3A%2F%2Fstorage.googleapis.com%2Ftd-robb-media%2F2025%2F3%2Faec06305-233f-4d31-b28e-fdde6a4e3ae7.jpg&w=3840&q=100" alt="">
-                </div>
-                <div class="mx-5 p-3 position-relative text-center article-banner-title bg-white mb-3 shadow">
-                    <h3 class="fs-6 text-center text-danger text-uppercase sweet-sans-font">Money</h3>
-                    <h2 class="fw-bold eb-garamond-font">Tại sao nhiều nhà hàng cao cấp lại mở thêm quầy bar bình dân?</h2>
-                    <p>Trong bối cảnh ẩm thực ngày nay, những quầy bar bình dân đang giúp mang lại nguồn tài chính ổn định cho mảng fine dining.</p>
-                </div>
-            </article>
+            <?php $articles = get_field('carousel_articles'); ?>
+            <div class="banner-carousel mb-5">
+                <?php foreach ($articles as $article): ?>
+                    <?php $post = get_post($article) ?>
+                    <article <?php post_class(); ?>>
+                        <div class="img-hover-zoom">
+                            <a class="text-decoration-none" href="<?= get_permalink(get_the_ID()) ?>">
+                                <?= get_the_post_thumbnail($post, 'full') ?>
+                            </a>
+                        </div>
+                        <div class="mx-5 p-3 position-relative text-center article-banner-title bg-white mb-3 shadow">
+                            <?php $categories = get_the_category($post->ID) ?>
+                            <?php if ($categories): ?>
+                                <a class="text-decoration-none" href="<?= get_term_link($categories[0]->term_id) ?>"><h3 class="fs-6 text-center text-danger text-uppercase sweet-sans-font"><?= $categories[0]->name ?></h3></a>
+                            <?php endif; ?>
+                            <a class="text-decoration-none" href="<?= get_permalink(get_the_ID()) ?>">
+                                <h2 class="text-dark fw-bold eb-garamond-font"><?php the_title() ?></h2>
+                            </a>
+                            <p>Trong bối cảnh ẩm thực ngày nay, những quầy bar bình dân đang giúp mang lại nguồn tài chính ổn định cho mảng fine dining.</p>
+                        </div>
+                    </article>
+                <?php endforeach; ?>
+                <?php wp_reset_postdata(); ?>
+            </div>
         </section>
-        <section id="pinned-article" class="mb-3">
+        <!-- <section id="pinned-article" class="mb-3">
             <div class="row">
                 <div class="col-md-4">
                     <article>
@@ -50,95 +64,182 @@
                     </article>
                 </div>
             </div>
-        </section>
+        </section> -->
         <section id="latest-article">
-            <div class="text-center sweet-sans-font position-relative mb-5">
-                <h2 class="text-uppercase border-line mb-0">
-                    <span class="position-relative">The Latest</span>
-                </h2>
-                <span>Monday March 24, 2025</span>
-            </div>
-            <div class="row">
-                <div class="col-md-6">
-                    <article>
-                        <div class="img-hover-zoom">
-                            <img class="img-fluid img-wrapper" src="https://robbreport.com.vn/_next/image?url=https%3A%2F%2Fstorage.googleapis.com%2Ftd-robb-media%2F2025%2F3%2F08d5584d-6209-431d-9664-096889ccaa7b.webp&w=1080&q=75" alt="">
-                        </div>
-                        <div class="text-center">
-                            <h4 class="mt-3 fs-6 text-center text-danger text-uppercase sweet-sans-font">Art</h3>
-                            <h3 class="fs-3 fw-bold eb-garamond-font">Cuộc săn lùng chiếc toilet vàng 18-karat</h2>
-                            <span><span class="fst-italic georgia-font">By </span><a style="letter-spacing: 1.35px;" class="sweet-sans-font text-uppercase text-decoration-none text-dark" href="">Francesca Aton</a></span>
-                        </div>
-                    </article>
+            <div class="text-center mb-3 mb-md-5">
+                <div class="sweet-sans-font position-relative">
+                    <h2 class="text-uppercase border-line m-0 p-0">
+                        <span class="position-relative bg-white px-2">The Latest</span>
+                    </h2>
                 </div>
-                <div class="col-md-6">
-                    <article>
-                        <div class="img-hover-zoom">
-                            <img class="img-fluid img-wrapper" src="https://robbreport.com.vn/_next/image?url=https%3A%2F%2Fstorage.googleapis.com%2Ftd-robb-media%2F2025%2F3%2Ffd00c019-e492-4f9d-8177-250836a05f46.jpg&w=1080&q=75" alt="">
-                        </div>
-                        <div class="text-center">
-                            <h4 class="mt-3 fs-6 text-center text-danger text-uppercase sweet-sans-font">Travel</h3>
-                            <h3 class="fs-3 fw-bold eb-garamond-font">Khu nghỉ dưỡng trượt tuyết nào trên thế giới sở hữu nhà hàng  nhiều sao Michelin nhất?</h2>
-                            <span><span class="fst-italic georgia-font">By </span><a style="letter-spacing: 1.35px;" class="sweet-sans-font text-uppercase text-decoration-none text-dark" href="">Anh Phan</a></span>
-                        </div>
-                    </article>
-                </div>  
+                <span><?= date('l F d, Y') ?></span>
+            </div>
+            <?php
+                $recentPosts = wp_get_recent_posts([
+                    'numberposts' => get_field('how_many_latest_article_to_show'), // Number of recent posts thumbnails to display
+                    'post_status' => 'publish' // Show only the published posts
+                ]);
+            ?>
+            <div class="row">
+                <?php foreach ($recentPosts as $post): ?>
+                    <div class="col-md-6">
+                        <article <?php post_class() ?>>
+                            <div class="img-hover-zoom">
+                                <a class="text-decoration-none" href="<?= get_permalink($post['ID']) ?>">
+                                    <?= get_the_post_thumbnail($post['ID'], 'full') ?>
+                                </a>
+                            </div>
+                            <div class="text-center py-3 py-md-5">
+                                <?php $categories = get_the_category($post['ID']) ?>
+                                <?php if ($categories): ?>
+                                    <a class="text-decoration-none" href="<?= get_term_link($categories[0]->term_id) ?>"><h4 class="fs-6 text-center text-danger text-uppercase sweet-sans-font"><?= $categories[0]->name ?></h4></a>
+                                <?php endif; ?>
+                                <a class="text-decoration-none" href="<?= get_permalink($post['ID']) ?>">
+                                    <h3 class="text-dark fw-bold eb-garamond-font"><?= $post['post_title'] ?></h3>
+                                </a>
+                                <?php $writer = wp_get_post_terms($post['ID'], 'writer', ['field' => 'all']); ?>
+                                <?php if ($writer): ?>
+                                    <span><span class="fst-italic georgia-font">By </span><a style="letter-spacing: 1.35px;" class="sweet-sans-font text-uppercase text-decoration-none text-dark" href="<?= get_term_link($writer[0]->term_id) ?>"><?= $writer[0]->name ?></a></span>
+                                <?php endif; ?>
+                            </div>
+                        </article>
+                    </div>
+                <?php endforeach; ?>
+                <?php wp_reset_postdata(); ?>
             </div>
         </section>
-        <section id="cars-article">
-            <div class="text-center sweet-sans-font position-relative mb-3">
-                <h2 class="text-uppercase border-line mb-0">
-                    <span class="position-relative">Cars</span>
-                </h2>
-            </div>
-            <div class="row">
-                <div class="col-md-9">
-                    <article class="mb-3">
-                        <div class="img-hover-zoom">
-                            <img class="img-fluid img-wrapper" src="https://robbreport.com.vn/_next/image?url=https%3A%2F%2Fstorage.googleapis.com%2Ftd-robb-media%2F2025%2F3%2Fa3d6de6d-19ca-4241-bf9d-5f4b7a53104e.jpg&w=3840&q=100" alt="">
-                        </div>
-                        <div class="text-center">
-                            <h4 class="mt-3 fs-5 text-center text-danger text-uppercase sweet-sans-font">Cars</h3>
-                            <h3 class="fs-2 fw-bold eb-garamond-font">Maserati MC20 lập kỷ lục xe tự lái nhanh nhất thế giới</h2>
-                            <span><span class="fst-italic georgia-font">By </span><a style="letter-spacing: 1.35px;" class="sweet-sans-font text-uppercase text-decoration-none text-dark" href="">RRVN</a></span>
-                        </div>
-                    </article>
-                </div>
-                <div class="col-md-3">
+        <?php if (have_rows('selected_category')): ?>
+            <?php $articleCategoryLength = get_field('how_many_article_category_to_show') ?>
+            <?php while(the_repeater_field('selected_category')): ?>
+                <?php $mainCategory = get_sub_field('selected_parent_category') ?>
+                <section id="<?= $mainCategory->slug ?>-category">
+                    <div class="text-center sweet-sans-font position-relative mb-3">
+                        <h2 class="text-uppercase border-line mb-0">
+                            <span class="position-relative bg-white px-2"><?= $mainCategory->name ?></span>
+                        </h2>
+                    </div>
+                    <?php
+                        $recentCategoryPosts = wp_get_recent_posts([
+                            'numberposts' => $articleCategoryLength, // Number of recent posts thumbnails to display
+                            'post_status' => 'publish',
+                            'orderby' => 'post_date',
+                            'order' => 'DESC',
+                            'post_type' => 'post',
+                            'category' => $mainCategory->term_id
+                        ]);
+                        $cover = array_shift($recentCategoryPosts);
+                    ?>
                     <div class="row">
-                        <div class="col-md-12">
-                            <article class="mb-3">
+                        <div class="col-md-9">
+                            <article <?php post_class() ?>>
                                 <div class="img-hover-zoom">
-                                    <img class="img-fluid img-wrapper" src="https://robbreport.com.vn/_next/image?url=https%3A%2F%2Fstorage.googleapis.com%2Ftd-robb-media%2F2025%2F3%2Fdb8704c7-52da-46fe-aa34-2ec20089bfc6.jpg&w=1080&q=100" alt="">
+                                    <a class="text-decoration-none" href="<?= get_permalink($cover['ID']) ?>">
+                                        <?= get_the_post_thumbnail($cover['ID'], 'full') ?>
+                                    </a>
                                 </div>
-                                <div class="text-center">
-                                    <h4 class="mt-3 fs-6 text-center text-danger text-uppercase sweet-sans-font">Cars</h3>
-                                    <h3 class="fs-4 fw-bold eb-garamond-font">Siêu xe không mui, không kính chắn gió của Mercedes-Benz</h2>
-                                    <span><span class="fst-italic georgia-font">By </span><a style="letter-spacing: 1.35px;" class="sweet-sans-font text-uppercase text-decoration-none text-dark" href="">Minh Vũ</a></span>
+                                <div class="text-center py-3 py-md-5">
+                                    <?php $categories = get_the_category($cover['ID']) ?>
+                                    <?php if ($categories): ?>
+                                        <a class="text-decoration-none" href="<?= get_term_link($categories[0]->term_id) ?>"><h4 class="fs-6 text-center text-danger text-uppercase sweet-sans-font"><?= $categories[0]->name ?></h4></a>
+                                    <?php endif; ?>
+                                    <a class="text-decoration-none" href="<?= get_permalink($cover['ID']) ?>">
+                                        <h3 class="text-dark fw-bold eb-garamond-font"><?= $cover['post_title'] ?></h3>
+                                    </a>
+                                    <?php $writer = wp_get_post_terms($cover['ID'], 'writer', ['field' => 'all']); ?>
+                                    <?php if ($writer): ?>
+                                        <span><span class="fst-italic georgia-font">By </span><a style="letter-spacing: 1.35px;" class="sweet-sans-font text-uppercase text-decoration-none text-dark" href="<?= get_term_link($writer[0]->term_id) ?>"><?= $writer[0]->name ?></a></span>
+                                    <?php endif; ?>
                                 </div>
                             </article>
                         </div>
-                        <div class="col-md-12">
-                            <article class="mb-3">
-                                <div class="img-hover-zoom">
-                                    <img class="img-fluid img-wrapper" src="https://robbreport.com.vn/_next/image?url=https%3A%2F%2Fstorage.googleapis.com%2Ftd-robb-media%2F2025%2F2%2F11bc3c5f-2590-411c-bea4-88c098ae7b98.jpg&w=1080&q=100" alt="">
-                                </div>
-                                <div class="text-center">
-                                    <h4 class="mt-3 fs-6 text-center text-danger text-uppercase sweet-sans-font">Cars</h3>
-                                    <h3 class="fs-4 fw-bold eb-garamond-font">CEO Aston Martin: "Quên tuỳ biến đi! Hãy tập trung vào những tuỳ chọn thiết yếu."</h2>
-                                    <span><span class="fst-italic georgia-font">By </span><a style="letter-spacing: 1.35px;" class="sweet-sans-font text-uppercase text-decoration-none text-dark" href="">RICHARD AUCOCK</a></span>
-                                </div>
-                            </article>
+                        <div class="col-md-3">
+                            <div class="row">
+                                <?php foreach ($recentCategoryPosts as $index => $post): ?>
+                                    <div class="col-md-12">
+                                        <article class="<?= post_class() ?>">
+                                            <div class="img-hover-zoom">
+                                                <a class="text-decoration-none" href="<?= get_permalink($post['ID']) ?>">
+                                                    <?= get_the_post_thumbnail($post['ID'], 'full') ?>
+                                                </a>
+                                            </div>
+                                            <div class="text-center py-3">
+                                                <?php $categories = get_the_category($post['ID']) ?>
+                                                <?php if ($categories): ?>
+                                                <a class="text-decoration-none" href="<?= get_term_link($categories[0]->term_id) ?>"><h4 class="fs-6 text-center text-danger text-uppercase sweet-sans-font"><?= $categories[0]->name ?></h4></a>
+                                                <?php endif; ?>
+                                                <a class="text-decoration-none" href="<?= get_permalink($post['ID']) ?>">
+                                                    <h3 class="text-dark fw-bold eb-garamond-font"><?= $post['post_title'] ?></h3>
+                                                </a>
+                                                <?php $writer = wp_get_post_terms($post['ID'], 'writer', ['field' => 'all']); ?>
+                                                <?php if ($writer): ?>
+                                                    <span><span class="fst-italic georgia-font">By </span><a style="letter-spacing: 1.35px;" class="sweet-sans-font text-uppercase text-decoration-none text-dark" href="<?= get_term_link($writer[0]->term_id) ?>"><?= $writer[0]->name ?></a></span>
+                                                <?php endif; ?>
+                                            </div>
+                                        </article>
+                                    </div>
+                                <?php endforeach; ?>
+                                <?php wp_reset_postdata(); ?>
+                            </div>
                         </div>
                     </div>
-                </div>  
-            </div>
-            <div class="text-center my-3">
-                <a href="" class="sweet-sans-font text-uppercase bg-dark px-5 py-3 text-white text-decoration-none h5">
-                    Read Cars Stories
-                </a>
-            </div>
-        </section>
+                    <div class="text-center mb-5">
+                        <a href="<?= get_term_link($mainCategory->term_id) ?>" class="sweet-sans-font text-uppercase bg-dark px-5 py-3 text-white text-decoration-none h5">
+                            Read <?= $mainCategory->name ?> Stories
+                        </a>
+                    </div>
+                </section>
+                <?php $childCategories = get_sub_field('selected_child_category'); ?>
+                <section id="<?= $mainCategory->slug ?>-child-category" class="child-category">
+                    <div class="row">
+                        <?php foreach ($childCategories as $childCategory): ?>
+                            <div class="col-md-6">
+                                <?php
+                                    $childCategoriesPosts = wp_get_recent_posts([
+                                        'numberposts' => $articleCategoryLength, // Number of recent posts thumbnails to display
+                                        'post_status' => 'publish',
+                                        'orderby' => 'post_date',
+                                        'order' => 'DESC',
+                                        'post_type' => 'post',
+                                        'category' => $childCategory->term_id
+                                    ]);
+                                ?>
+                                <div class="text-center">
+                                    <h4 class="mt-3 fs-3 text-center text-uppercase sweet-sans-font"><?= $childCategory->name ?></h3>
+                                </div>
+                                <?php foreach ($childCategoriesPosts as $post): ?>
+                                    <article class="<?= post_class() ?>">
+                                        <div class="img-hover-zoom">
+                                            <a class="text-decoration-none" href="<?= get_permalink($post['ID']) ?>">
+                                                <?= get_the_post_thumbnail($post['ID'], 'full') ?>
+                                            </a>
+                                        </div>
+                                        <div class="text-center py-3 py-md-5">
+                                            <?php $categories = get_the_category($post['ID']) ?>
+                                            <?php if ($categories): ?>
+                                                <a class="text-decoration-none" href="<?= get_term_link($categories[0]->term_id) ?>"><h4 class="fs-6 text-center text-danger text-uppercase sweet-sans-font"><?= $categories[0]->name ?></h4></a>
+                                            <?php endif; ?>
+                                            <a class="text-decoration-none" href="<?= get_permalink($post['ID']) ?>">
+                                                <h3 class="text-dark fw-bold eb-garamond-font"><?= $post['post_title'] ?></h3>
+                                            </a>
+                                            <?php $writer = wp_get_post_terms($post['ID'], 'writer', ['field' => 'all']); ?>
+                                            <?php if ($writer): ?>
+                                                <span><span class="fst-italic georgia-font">By </span><a style="letter-spacing: 1.35px;" class="sweet-sans-font text-uppercase text-decoration-none text-dark" href="<?= get_term_link($writer[0]->term_id) ?>"><?= $writer[0]->name ?></a></span>
+                                            <?php endif; ?>
+                                        </div>
+                                    </article>
+                                <?php endforeach; ?>
+                                <?php wp_reset_postdata(); ?>
+                                <div class="text-center mb-5">
+                                    <a href="<?= get_term_link($childCategory->term_id) ?>" class="sweet-sans-font text-uppercase bg-dark px-5 py-3 text-white text-decoration-none h5">
+                                        Read <?= $childCategory->name ?> Stories
+                                    </a>
+                                </div>
+                            </div>
+                        <?php endforeach; ?>
+                    </div>
+                </section>
+            <?php endwhile; ?>
+        <?php endif; ?>
         <section>
             <div class="row">
                 <div class="col-md-6">
