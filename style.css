@@ -11119,6 +11119,10 @@ html {
   font-family: "EB Garamond" !important;
 }
 
+.eb-garamond-semibold-font {
+  font-family: "EB Garamond Semibold" !important;
+}
+
 .georgia-font {
   font-family: "Georgia Regular" !important;
 }
@@ -11223,12 +11227,16 @@ img.size-full {
   margin-left: 0rem !important;
 }
 
-.post-content iframe {
+.post-content iframe, .post-content video {
   width: 100%;
   height: auto;
   aspect-ratio: 16/9;
   margin-right: 0rem !important;
   margin-left: 0rem !important;
+}
+
+.wp-video {
+  width: 100% !important;
 }
 
 .post-content, .post-content p, .post-content h1, .post-content .h1, .post-content h2, .post-content .h2, .post-content h3, .post-content .h3, .post-content h4, .post-content .h4, .post-content h5, .post-content .h5 {
@@ -11328,8 +11336,32 @@ img.size-full {
   overflow: hidden;
 }
 .img-hover-zoom img {
-  transition: transform 0.5s ease;
+  transition: transform 1s ease;
 }
 .img-hover-zoom img:hover {
   transform: scale(1.2);
+}
+
+.screen-reader-text {
+  display: none;
+}
+
+.pagination {
+  justify-content: center;
+}
+
+.pagination .current {
+  color: white !important;
+  background-color: #dc3545;
+  border-color: #dc3545;
+}
+
+.pagination .page-numbers {
+  padding: 0.5rem;
+  color: #dc3545;
+  border: none;
+  font-family: "Tenor Sans", sans-serif;
+  font-weight: bolder;
+  font-style: italic;
+  text-decoration: none;
 }

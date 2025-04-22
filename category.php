@@ -19,7 +19,7 @@
                                         </div>
                                     <?php endif; ?>
                                     <a href="<?= get_permalink(get_the_ID()) ?>" class="text-decoration-none">
-                                        <h2 class="categoty-article-title text-dark"><?php the_title(); ?></h2>
+                                        <h2 class="categoty-article-title text-dark eb-garamond-semibold-font"><?php the_title(); ?></h2>
                                     </a>
                                     <div class="categoty-article-shortdesc">
                                         
@@ -48,7 +48,7 @@
                                                 </div>
                                             <?php endif; ?>
                                             <a href="<?= get_permalink(get_the_ID()) ?>" class="text-decoration-none">
-                                                <h3 class="categoty-article-title text-dark h2"><?php the_title(); ?></h3>
+                                                <h3 class="categoty-article-title text-dark h2 eb-garamond-semibold-font"><?php the_title(); ?></h3>
                                             </a>
                                             <div class="categoty-article-shortdesc">
                                                 

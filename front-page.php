@@ -19,7 +19,7 @@
                                 <a class="text-decoration-none" href="<?= get_term_link($categories[0]->term_id) ?>"><h3 class="fs-6 text-center text-danger text-uppercase sweet-sans-font"><?= $categories[0]->name ?></h3></a>
                             <?php endif; ?>
                             <a class="text-decoration-none" href="<?= get_permalink(get_the_ID()) ?>">
-                                <h2 class="text-dark fw-bold eb-garamond-font"><?php the_title() ?></h2>
+                                <h2 class="text-dark fw-bold eb-garamond-semibold-font"><?php the_title() ?></h2>
                             </a>
                             <p>Trong bối cảnh ẩm thực ngày nay, những quầy bar bình dân đang giúp mang lại nguồn tài chính ổn định cho mảng fine dining.</p>
                         </div>
@@ -37,7 +37,7 @@
                         </div>
                         <div class="text-center">
                             <h3 class="mt-3 fs-6 text-center text-danger text-uppercase sweet-sans-font">Gourmet Collection</h3>
-                            <h2 class="fs-3 fw-bold eb-garamond-font">[Cà phê sáng] Nhà sáng lập T.U.N.G dining và Å by TUNG bật mí sự thật trong kinh doanh ẩm thực cao cấp</h2>
+                            <h2 class="fs-3 fw-bold eb-garamond-semibold-font">[Cà phê sáng] Nhà sáng lập T.U.N.G dining và Å by TUNG bật mí sự thật trong kinh doanh ẩm thực cao cấp</h2>
                         </div>
                     </article>
                 </div>
@@ -48,7 +48,7 @@
                         </div>
                         <div class="text-center">
                             <h3 class="mt-3 fs-6 text-center text-danger text-uppercase sweet-sans-font">Money</h3>
-                            <h2 class="fs-3 fw-bold eb-garamond-font">Báo cáo Thịnh vượng Knight Frank 2025: cơ hội trong biến động</h2>
+                            <h2 class="fs-3 fw-bold eb-garamond-semibold-font">Báo cáo Thịnh vượng Knight Frank 2025: cơ hội trong biến động</h2>
                         </div>
                     </article>
                 </div>
@@ -59,7 +59,7 @@
                         </div>
                         <div class="text-center">
                             <h3 class="mt-3 fs-6 text-center text-danger text-uppercase sweet-sans-font">News</h3>
-                            <h2 class="fs-3 fw-bold eb-garamond-font">Boongke “Tận thế” xa xỉ trị giá 300 triệu USD dành cho giới siêu giàu</h2>
+                            <h2 class="fs-3 fw-bold eb-garamond-semibold-font">Boongke “Tận thế” xa xỉ trị giá 300 triệu USD dành cho giới siêu giàu</h2>
                         </div>
                     </article>
                 </div>
@@ -77,7 +77,10 @@
             <?php
                 $recentPosts = wp_get_recent_posts([
                     'numberposts' => get_field('how_many_latest_article_to_show'), // Number of recent posts thumbnails to display
-                    'post_status' => 'publish' // Show only the published posts
+                    'post_status' => 'publish', // Show only the published posts
+                    'post_type' => 'post',
+                    'orderby' => 'post_date',
+                    'order' => 'DESC',
                 ]);
             ?>
             <div class="row">
@@ -89,13 +92,13 @@
                                     <?= get_the_post_thumbnail($post['ID'], 'full') ?>
                                 </a>
                             </div>
-                            <div class="text-center py-3 py-md-5">
+                            <div class="text-center py-3 py-md-4">
                                 <?php $categories = get_the_category($post['ID']) ?>
                                 <?php if ($categories): ?>
                                     <a class="text-decoration-none" href="<?= get_term_link($categories[0]->term_id) ?>"><h4 class="fs-6 text-center text-danger text-uppercase sweet-sans-font"><?= $categories[0]->name ?></h4></a>
                                 <?php endif; ?>
                                 <a class="text-decoration-none" href="<?= get_permalink($post['ID']) ?>">
-                                    <h3 class="text-dark fw-bold eb-garamond-font"><?= $post['post_title'] ?></h3>
+                                    <h3 class="text-dark fw-bold eb-garamond-semibold-font"><?= $post['post_title'] ?></h3>
                                 </a>
                                 <?php $writer = wp_get_post_terms($post['ID'], 'writer', ['field' => 'all']); ?>
                                 <?php if ($writer): ?>
@@ -137,13 +140,13 @@
                                         <?= get_the_post_thumbnail($cover['ID'], 'full') ?>
                                     </a>
                                 </div>
-                                <div class="text-center py-3 py-md-5">
+                                <div class="text-center py-3 py-md-4">
                                     <?php $categories = get_the_category($cover['ID']) ?>
                                     <?php if ($categories): ?>
                                         <a class="text-decoration-none" href="<?= get_term_link($categories[0]->term_id) ?>"><h4 class="fs-6 text-center text-danger text-uppercase sweet-sans-font"><?= $categories[0]->name ?></h4></a>
                                     <?php endif; ?>
                                     <a class="text-decoration-none" href="<?= get_permalink($cover['ID']) ?>">
-                                        <h3 class="text-dark fw-bold eb-garamond-font"><?= $cover['post_title'] ?></h3>
+                                        <h3 class="text-dark fw-bold eb-garamond-semibold-font"><?= $cover['post_title'] ?></h3>
                                     </a>
                                     <?php $writer = wp_get_post_terms($cover['ID'], 'writer', ['field' => 'all']); ?>
                                     <?php if ($writer): ?>
@@ -168,7 +171,7 @@
                                                 <a class="text-decoration-none" href="<?= get_term_link($categories[0]->term_id) ?>"><h4 class="fs-6 text-center text-danger text-uppercase sweet-sans-font"><?= $categories[0]->name ?></h4></a>
                                                 <?php endif; ?>
                                                 <a class="text-decoration-none" href="<?= get_permalink($post['ID']) ?>">
-                                                    <h3 class="text-dark fw-bold eb-garamond-font"><?= $post['post_title'] ?></h3>
+                                                    <h3 class="text-dark fw-bold eb-garamond-semibold-font"><?= $post['post_title'] ?></h3>
                                                 </a>
                                                 <?php $writer = wp_get_post_terms($post['ID'], 'writer', ['field' => 'all']); ?>
                                                 <?php if ($writer): ?>
@@ -223,7 +226,7 @@
                                             <a class="text-decoration-none" href="<?= get_term_link($categories[0]->term_id) ?>"><h4 class="fs-6 text-center text-danger text-uppercase sweet-sans-font"><?= $categories[0]->name ?></h4></a>
                                         <?php endif; ?>
                                         <a class="text-decoration-none" href="<?= get_permalink($cover['ID']) ?>">
-                                            <h3 class="text-dark fw-bold eb-garamond-font"><?= $cover['post_title'] ?></h3>
+                                            <h3 class="text-dark fw-bold eb-garamond-semibold-font"><?= $cover['post_title'] ?></h3>
                                         </a>
                                         <?php $writer = wp_get_post_terms($cover['ID'], 'writer', ['field' => 'all']); ?>
                                         <?php if ($writer): ?>
@@ -243,10 +246,6 @@
                                             </div>
                                             <div class="col-md-7">
                                                 <div class="text-center text-md-start pt-3 pt-md-0">
-                                                    <?php $categories = get_the_category($post['ID']) ?>
-                                                    <?php if ($categories): ?>
-                                                        <a class="text-decoration-none" href="<?= get_term_link($categories[0]->term_id) ?>"><h4 class="fs-6 text-danger text-uppercase sweet-sans-font"><?= $categories[0]->name ?></h4></a>
-                                                    <?php endif; ?>
                                                     <a class="text-decoration-none" href="<?= get_permalink($post['ID']) ?>">
                                                         <h3 class="text-dark fw-bold eb-garamond-font"><?= $post['post_title'] ?></h3>
                                                     </a>
