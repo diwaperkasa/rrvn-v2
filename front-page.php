@@ -182,9 +182,11 @@
                             </div>
                         </div>
                     </div>
-                    <div class="text-center mb-5">
-                        <a href="<?= get_term_link($mainCategory->term_id) ?>" class="sweet-sans-font text-uppercase bg-dark px-5 py-3 text-white text-decoration-none h5">
-                            Read <?= $mainCategory->name ?> Stories
+                    <div class="my-3 text-center">
+                        <a style="width: fit-content" href="<?= get_term_link($mainCategory->term_id) ?>" class="mx-auto d-block sweet-sans-font text-uppercase text-decoration-none h5">
+                            <div class="bg-dark px-5 py-3 text-white">
+                                Read <?= $mainCategory->name ?> Stories
+                            </div>
                         </a>
                     </div>
                 </section>
@@ -202,36 +204,67 @@
                                         'post_type' => 'post',
                                         'category' => $childCategory->term_id
                                     ]);
+                                    $cover = array_shift($childCategoriesPosts);
                                 ?>
-                                <div class="text-center">
-                                    <h4 class="mt-3 fs-3 text-center text-uppercase sweet-sans-font"><?= $childCategory->name ?></h3>
+                                <div class="text-center position-relative">
+                                    <h4 class="fs-3 text-center text-uppercase sweet-sans-font border-line">
+                                        <span class="position-relative bg-white px-2"><?= $childCategory->name ?></span>
+                                    </h3>
                                 </div>
+                                <article <?php post_class("border-bottom") ?>>
+                                    <div class="img-hover-zoom">
+                                        <a class="text-decoration-none" href="<?= get_permalink($cover['ID']) ?>">
+                                            <?= get_the_post_thumbnail($cover['ID'], 'full') ?>
+                                        </a>
+                                    </div>
+                                    <div class="text-center py-3">
+                                        <?php $categories = get_the_category($cover['ID']) ?>
+                                        <?php if ($categories): ?>
+                                            <a class="text-decoration-none" href="<?= get_term_link($categories[0]->term_id) ?>"><h4 class="fs-6 text-center text-danger text-uppercase sweet-sans-font"><?= $categories[0]->name ?></h4></a>
+                                        <?php endif; ?>
+                                        <a class="text-decoration-none" href="<?= get_permalink($cover['ID']) ?>">
+                                            <h3 class="text-dark fw-bold eb-garamond-font"><?= $cover['post_title'] ?></h3>
+                                        </a>
+                                        <?php $writer = wp_get_post_terms($cover['ID'], 'writer', ['field' => 'all']); ?>
+                                        <?php if ($writer): ?>
+                                            <span><span class="fst-italic georgia-font">By </span><a style="letter-spacing: 1.35px;" class="sweet-sans-font text-uppercase text-decoration-none text-dark" href="<?= get_term_link($writer[0]->term_id) ?>"><?= $writer[0]->name ?></a></span>
+                                        <?php endif; ?>
+                                    </div>
+                                </article>
                                 <?php foreach ($childCategoriesPosts as $post): ?>
-                                    <article class="<?= post_class() ?>">
-                                        <div class="img-hover-zoom">
-                                            <a class="text-decoration-none" href="<?= get_permalink($post['ID']) ?>">
-                                                <?= get_the_post_thumbnail($post['ID'], 'full') ?>
-                                            </a>
-                                        </div>
-                                        <div class="text-center py-3 py-md-5">
-                                            <?php $categories = get_the_category($post['ID']) ?>
-                                            <?php if ($categories): ?>
-                                                <a class="text-decoration-none" href="<?= get_term_link($categories[0]->term_id) ?>"><h4 class="fs-6 text-center text-danger text-uppercase sweet-sans-font"><?= $categories[0]->name ?></h4></a>
-                                            <?php endif; ?>
-                                            <a class="text-decoration-none" href="<?= get_permalink($post['ID']) ?>">
-                                                <h3 class="text-dark fw-bold eb-garamond-font"><?= $post['post_title'] ?></h3>
-                                            </a>
-                                            <?php $writer = wp_get_post_terms($post['ID'], 'writer', ['field' => 'all']); ?>
-                                            <?php if ($writer): ?>
-                                                <span><span class="fst-italic georgia-font">By </span><a style="letter-spacing: 1.35px;" class="sweet-sans-font text-uppercase text-decoration-none text-dark" href="<?= get_term_link($writer[0]->term_id) ?>"><?= $writer[0]->name ?></a></span>
-                                            <?php endif; ?>
+                                    <article <?= post_class("border-bottom py-3") ?>>
+                                        <div class="row">
+                                            <div class="col-md-5">
+                                                <div class="img-hover-zoom">
+                                                    <a class="text-decoration-none" href="<?= get_permalink($post['ID']) ?>">
+                                                        <?= get_the_post_thumbnail($post['ID'], 'full') ?>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-7">
+                                                <div class="text-center text-md-start pt-3 pt-md-0">
+                                                    <?php $categories = get_the_category($post['ID']) ?>
+                                                    <?php if ($categories): ?>
+                                                        <a class="text-decoration-none" href="<?= get_term_link($categories[0]->term_id) ?>"><h4 class="fs-6 text-danger text-uppercase sweet-sans-font"><?= $categories[0]->name ?></h4></a>
+                                                    <?php endif; ?>
+                                                    <a class="text-decoration-none" href="<?= get_permalink($post['ID']) ?>">
+                                                        <h3 class="text-dark fw-bold eb-garamond-font"><?= $post['post_title'] ?></h3>
+                                                    </a>
+                                                    <?php $writer = wp_get_post_terms($post['ID'], 'writer', ['field' => 'all']); ?>
+                                                    <?php if ($writer): ?>
+                                                        <span><span class="fst-italic georgia-font">By </span><a style="letter-spacing: 1.35px;" class="sweet-sans-font text-uppercase text-decoration-none text-dark" href="<?= get_term_link($writer[0]->term_id) ?>"><?= $writer[0]->name ?></a></span>
+                                                    <?php endif; ?>
+                                                </div>
+                                            </div>
                                         </div>
                                     </article>
                                 <?php endforeach; ?>
                                 <?php wp_reset_postdata(); ?>
-                                <div class="text-center mb-5">
-                                    <a href="<?= get_term_link($childCategory->term_id) ?>" class="sweet-sans-font text-uppercase bg-dark px-5 py-3 text-white text-decoration-none h5">
-                                        Read <?= $childCategory->name ?> Stories
+                                <div class="text-center my-3">
+                                    <a style="width: fit-content" href="<?= get_term_link($childCategory->term_id) ?>" class="mx-auto d-block sweet-sans-font text-uppercase text-decoration-none h5">
+                                        <div class="bg-dark px-5 py-3 text-white">
+                                            Read <?= $childCategory->name ?> Stories
+                                        </div>
                                     </a>
                                 </div>
                             </div>
@@ -240,112 +273,6 @@
                 </section>
             <?php endwhile; ?>
         <?php endif; ?>
-        <section>
-            <div class="row">
-                <div class="col-md-6">
-                    <div class="text-center">
-                        <h4 class="mt-3 fs-3 text-center text-uppercase sweet-sans-font">Watches</h3>
-                    </div>
-                    <article class="mb-3 pb-3 border-bottom">
-                        <div class="img-hover-zoom">
-                            <img class="img-fluid img-wrapper" src="https://robbreport.com.vn/_next/image?url=https%3A%2F%2Fstorage.googleapis.com%2Ftd-robb-media%2F2025%2F2%2Fb24aadec-2882-4a7f-b1e9-6a27a12c63b1.webp&w=1200&q=100" alt="">
-                        </div>
-                        <div class="text-center">
-                            <h4 class="mt-3 fs-6 text-center text-danger text-uppercase sweet-sans-font">News</h3>
-                            <h3 class="fs-3 fw-bold eb-garamond-font">Khi Tiffany & Co. chú trọng phát triển mảng chế tác đồng hồ</h2>
-                            <p>CEO Anthony Ledru chia sẻ về kế hoạch phát triển mảng đồng hồ của hãng trang sức Tiffany & Co.</p>
-                            <span><span class="fst-italic georgia-font">By </span><a style="letter-spacing: 1.35px;" class="sweet-sans-font text-uppercase text-decoration-none text-dark" href="">PAIGE REDDINGER</a></span>
-                        </div>
-                    </article>
-                    <article class="border-bottom mb-3">
-                        <div class="row">
-                            <div class="col-md-4">
-                                <div class="img-hover-zoom mb-3">
-                                    <img class="img-fluid img-wrapper" src="https://robbreport.com.vn/_next/image?url=https%3A%2F%2Fstorage.googleapis.com%2Ftd-robb-media%2F2025%2F1%2Fac105323-f31d-4c0c-bcd1-589dd04d8638.png&w=640&q=75" alt="">
-                                </div>
-                            </div>
-                            <div class="col-md-8">
-                                <div class="text-center text-sm-start">
-                                    <h3 class="fs-3 fw-bold eb-garamond-font">Dân Mỹ đổ xô săn "vé vớt" nhập tịch Tây Ban Nha</h2>
-                                    <span><span class="fst-italic georgia-font">By </span><a style="letter-spacing: 1.35px;" class="sweet-sans-font text-uppercase text-decoration-none text-dark" href="">Abby Montanez</a></span>
-                                </div>
-                            </div>
-                        </div>
-                    </article>
-                    <article class="border-bottom mb-3">
-                        <div class="row">
-                            <div class="col-md-4">
-                                <div class="img-hover-zoom mb-3">
-                                    <img class="img-fluid img-wrapper" src="https://robbreport.com.vn/_next/image?url=https%3A%2F%2Fstorage.googleapis.com%2Ftd-robb-media%2F2024%2F12%2F019f4c72-96c3-4f97-be13-f94b6c472967.png&w=640&q=75" alt="">
-                                </div>
-                            </div>
-                            <div class="col-md-8">
-                                <div class="text-center text-sm-start">
-                                    <h3 class="fs-3 fw-bold eb-garamond-font">Nobu Danang – biểu tượng mới của thành phố đáng sống</h2>
-                                    <span><span class="fst-italic georgia-font">By </span><a style="letter-spacing: 1.35px;" class="sweet-sans-font text-uppercase text-decoration-none text-dark" href="">RRVN</a></span>
-                                </div>
-                            </div>
-                        </div>
-                    </article>
-                    <div class="text-center my-3 py-3">
-                        <a href="" class="sweet-sans-font text-uppercase bg-dark px-5 py-3 text-white text-decoration-none h5">
-                            Read Watches Stories
-                        </a>
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="text-center">
-                        <h4 class="mt-3 fs-3 text-center text-uppercase sweet-sans-font">Travel</h3>
-                    </div>
-                    <article class="mb-3 pb-3 border-bottom">
-                        <div class="img-hover-zoom">
-                            <img class="img-fluid img-wrapper" src="https://robbreport.com.vn/_next/image?url=https%3A%2F%2Fstorage.googleapis.com%2Ftd-robb-media%2F2025%2F2%2F1ec91eaf-a9f8-440f-a3cf-a675a63ed89b.jpg&w=1200&q=100" alt="">
-                        </div>
-                        <div class="text-center">
-                            <h4 class="mt-3 fs-6 text-center text-danger text-uppercase sweet-sans-font">Travel</h3>
-                            <h3 class="fs-3 fw-bold eb-garamond-font">Xuân họa cảnh sắc Garrya Mù Cang Chải</h2>
-                            <p>Garrya Mù Cang Chải, khu nghỉ dưỡng đẳng cấp quốc tế đầu tiên tại tỉnh Yên Bái, sẽ là một lựa chọn lý tưởng để chuyến du xuân đầu năm</p>
-                            <span><span class="fst-italic georgia-font">By </span><a style="letter-spacing: 1.35px;" class="sweet-sans-font text-uppercase text-decoration-none text-dark" href="">RRVN</a></span>
-                        </div>
-                    </article>
-                    <article class="border-bottom mb-3">
-                        <div class="row">
-                            <div class="col-md-4">
-                                <div class="img-hover-zoom mb-3">
-                                    <img class="img-fluid img-wrapper" src="https://robbreport.com.vn/_next/image?url=https%3A%2F%2Fstorage.googleapis.com%2Ftd-robb-media%2F2025%2F3%2Fe0598d6b-5136-4c99-965a-b0da813e2d15.webp&w=640&q=75" alt="">
-                                </div>
-                            </div>
-                            <div class="col-md-8">
-                                <div class="text-center text-sm-start">
-                                    <h3 class="fs-3 fw-bold eb-garamond-font">Du lịch xanh: Hành động thiết thực hay chiêu trò quảng cáo?</h2>
-                                    <span><span class="fst-italic georgia-font">By </span><a style="letter-spacing: 1.35px;" class="sweet-sans-font text-uppercase text-decoration-none text-dark" href="">ANDREW SESSA</a></span>
-                                </div>
-                            </div>
-                        </div>
-                    </article>
-                    <article class="border-bottom mb-3">
-                        <div class="row">
-                            <div class="col-md-4">
-                                <div class="img-hover-zoom mb-3">
-                                    <img class="img-fluid img-wrapper" src="https://robbreport.com.vn/_next/image?url=https%3A%2F%2Fstorage.googleapis.com%2Ftd-robb-media%2F2025%2F3%2Fb938a206-dfd7-4abe-bbea-9cbe5a7626d5.jpg&w=640&q=75" alt="">
-                                </div>
-                            </div>
-                            <div class="col-md-8">
-                                <div class="text-center text-sm-start">
-                                    <h3 class="fs-3 fw-bold eb-garamond-font">Andermatt: Cơ hội sở hữu bất động sản cao cấp tại Thụy Sĩ dành cho người nước ngoài</h2>
-                                    <span><span class="fst-italic georgia-font">By </span><a style="letter-spacing: 1.35px;" class="sweet-sans-font text-uppercase text-decoration-none text-dark" href="">GABRIELLA LE BRETON</a></span>
-                                </div>
-                            </div>
-                        </div>
-                    </article>
-                    <div class="text-center my-3 py-3">
-                        <a href="" class="sweet-sans-font text-uppercase bg-dark px-5 py-3 text-white text-decoration-none h5">
-                            Read Travel Stories
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </section>
     </div>
 </main>
 

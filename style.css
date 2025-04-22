@@ -11323,3 +11323,13 @@ img.size-full {
 .banner-carousel .post {
   width: 100%;
 }
+
+.img-hover-zoom {
+  overflow: hidden;
+}
+.img-hover-zoom img {
+  transition: transform 0.5s ease;
+}
+.img-hover-zoom img:hover {
+  transform: scale(1.2);
+}

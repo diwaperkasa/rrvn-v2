@@ -252,3 +252,15 @@ img.size-full {
 .banner-carousel .post {
     width: 100%;
 }
+
+.img-hover-zoom {
+    overflow: hidden;
+    
+    img {
+        transition: transform .5s ease;
+    }
+
+    img:hover {
+        transform: scale(1.2);
+    }
+}

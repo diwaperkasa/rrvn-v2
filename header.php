@@ -195,7 +195,9 @@
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="d-block d-xl-none">
-                    <img width="200" class="img-fluid" src="https://robbreport.com.vn/lib/logo/logo.svg" alt="">
+                    <a href="<?= site_url() ?>" class="text-decoration-none">
+                        <img width="200" class="img-fluid" src="https://robbreport.com.vn/lib/logo/logo.svg" alt="">
+                    </a>
                 </div>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <?php $primaryMenus = wp_get_nav_menu_items('primary-menu'); ?>

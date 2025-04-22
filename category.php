@@ -11,10 +11,10 @@
                                 <a href="<?= get_permalink($post) ?>" class="text-decoration-none">
                                     <?= get_the_post_thumbnail(get_the_ID(), 'full') ?>
                                 </a>
-                                <div class="text-center">
+                                <div class="text-center py-3">
                                     <?php $categories = get_the_category($post->ID) ?>
                                     <?php if ($categories): ?>
-                                        <div class="py-2">
+                                        <div>
                                             <a href="<?= get_term_link($categories[0]->term_id) ?>" class="text-decoration-none text-danger text-uppercase sweet-sans-font fs-6"><?= $categories[0]->name ?></a>
                                         </div>
                                     <?php endif; ?>
@@ -40,10 +40,10 @@
                                         </a>
                                     </div>
                                     <div class="col-md-6">
-                                        <div class="text-center text-md-start">
+                                        <div class="text-center text-md-start py-3 py-md-0">
                                             <?php $categories = get_the_category(get_the_ID()) ?>
                                             <?php if ($categories): ?>
-                                                <div class="py-2">
+                                                <div>
                                                     <a href="<?= get_term_link($categories[0]->term_id) ?>" class="text-decoration-none text-danger text-uppercase sweet-sans-font fs-6"><?= $categories[0]->name ?></a>
                                                 </div>
                                             <?php endif; ?>
