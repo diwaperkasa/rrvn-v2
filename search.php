@@ -10,7 +10,7 @@
             </form>
             <?php if (have_posts()): ?>
                 <header class="page-header">
-                    <h1 class="page-title h3"><?php printf( __( 'Search results for: %s', 'shape' ), '<span>' . get_search_query() . '</span>' ); ?></h1>
+                    <h1 class="page-title eb-garamond-semibold-font"><?php printf( __( 'Search results for: %s', 'shape' ), '<span>' . get_search_query() . '</span>' ); ?></h1>
                 </header>
                 <div class="row">
                     <?php while (have_posts()) : the_post(); ?>
