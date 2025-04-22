@@ -15,7 +15,7 @@
                 <div class="row">
                     <?php while (have_posts()) : the_post(); ?>
                         <div class="col-md-6">
-                            <article <?php post_class('py-5 border-bottom') ?>>
+                            <article <?php post_class('py-3 py-md-5 border-bottom') ?>>
                                 <div class="img-hover-zoom">
                                     <a class="text-decoration-none" href="<?= get_permalink(get_the_ID()) ?>">
                                         <?= get_the_post_thumbnail(get_the_ID(), 'full') ?>

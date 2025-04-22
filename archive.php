@@ -2,7 +2,7 @@
 
 <main class="main" role="main">
     <div class="container">
-        <section id="taxonomy-page">
+        <section id="archive-page">
             <?php if (have_posts()): ?>
                 <header class="page-header text-center">
                     <h1 class="page-title eb-garamond-semibold-font">Archive Posts</h1>
