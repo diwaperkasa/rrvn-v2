@@ -1,5 +1,9 @@
 <!doctype html>
-<!--[if IE 8]><html <?php language_attributes(); ?> class="ie8"><![endif]-->
+<!--[if IE 8]><html <?php
+
+use PHP_CodeSniffer\Reports\Json;
+
+ language_attributes(); ?> class="ie8"><![endif]-->
 <!--[if lte IE 9]><html <?php language_attributes(); ?> class="ie9"><![endif]-->
 <html <?php language_attributes(); ?>>
 
@@ -40,93 +44,31 @@
                 </div>
             </div>
             <div class="offcanvas-body">
-                <div class="d-flex align-items-start flex-sm-row flex-column flex-wrap justify-content-start justify-content-sm-center">
-                    <div class="offcanvas-menu">
-                        <ul class="list-group">
-                            <li class="list-group-item ps-0 border-0 border-bottom border-white bg-transparent text-white fs-4">Cars</li>
-                            <ul class="list-group m-0 py-2 d-none d-md-block">
-                                <li class="list-group-item p-0 border-0 bg-transparent text-white fs-5">News</li>
-                            </ul>
-                        </ul>
+                <?php $mobileMenus = wp_get_nav_menu_items('mobile-menu'); ?>
+                <?php if ($mobileMenus): ?>
+                    <div class="d-flex align-items-start flex-sm-row flex-column flex-wrap justify-content-start justify-content-sm-center">
+                        <?php foreach ($mobileMenus as $menu): ?>
+                            <?php if ($menu->menu_item_parent == 0): ?>
+                                <div class="offcanvas-menu">
+                                    <ul class="list-group px-md-3">
+                                        <li class="list-group-item ps-0 border-0 border-bottom border-white bg-transparent">
+                                            <a style="--bs-link-color: white ; --bs-link-hover-color: #e02020" class="text-decoration-none fs-4" aria-current="page" href="<?= $menu->url ?>"><?= $menu->title ?></a>
+                                        </li>
+                                        <ul class="list-group m-0 py-2 d-none d-md-block">
+                                            <?php foreach ($mobileMenus as $subMenu): ?>
+                                                <?php if ($subMenu->menu_item_parent == $menu->ID): ?>
+                                                    <li class="list-group-item p-0 border-0 bg-transparent">
+                                                        <a style="--bs-link-color: white ; --bs-link-hover-color: #e02020" class="text-decoration-none fs-5" aria-current="page" href="<?= $subMenu->url ?>"><?= $subMenu->title ?></a>
+                                                    </li>
+                                                <?php endif; ?>
+                                            <?php endforeach; ?>
+                                        </ul>
+                                    </ul>
+                                </div>
+                            <?php endif; ?>
+                        <?php endforeach; ?>
                     </div>
-                    <div class="offcanvas-menu">
-                        <ul class="list-group">
-                            <li class="list-group-item ps-0 border-0 border-bottom border-white bg-transparent text-white fs-4">Marine</li>
-                            <ul class="list-group m-0 py-2 d-none d-md-block">
-                                <li class="list-group-item p-0 border-0 bg-transparent text-white fs-5">News</li>
-                            </ul>
-                        </ul>
-                    </div>
-                    <div class="offcanvas-menu">
-                        <ul class="list-group">
-                            <li class="list-group-item ps-0 border-0 border-bottom border-white bg-transparent text-white fs-4">Aviation</li>
-                            <ul class="list-group m-0 py-2 d-none d-md-block">
-                                <li class="list-group-item p-0 border-0 bg-transparent text-white fs-5">News</li>
-                            </ul>
-                        </ul>
-                    </div>
-                    <div class="offcanvas-menu">
-                        <ul class="list-group">
-                            <li class="list-group-item ps-0 border-0 border-bottom border-white bg-transparent text-white fs-4">Watches</li>
-                            <ul class="list-group m-0 py-2 d-none d-md-block">
-                                <li class="list-group-item p-0 border-0 bg-transparent text-white fs-5">News</li>
-                            </ul>
-                        </ul>
-                    </div>
-                    <div class="offcanvas-menu">
-                        <ul class="list-group">
-                            <li class="list-group-item ps-0 border-0 border-bottom border-white bg-transparent text-white fs-4">Styles</li>
-                            <ul class="list-group m-0 py-2 d-none d-md-block">
-                                <li class="list-group-item p-0 border-0 bg-transparent text-white fs-5">News</li>
-                                <li class="list-group-item p-0 border-0 bg-transparent text-white fs-5">Grooming</li>
-                                <li class="list-group-item p-0 border-0 bg-transparent text-white fs-5">Fashion</li>
-                                <li class="list-group-item p-0 border-0 bg-transparent text-white fs-5">Jewellery</li>
-                                <li class="list-group-item p-0 border-0 bg-transparent text-white fs-5">Beauty</li>
-                                <li class="list-group-item p-0 border-0 bg-transparent text-white fs-5">Accessories</li>
-                            </ul>
-                        </ul>
-                    </div>
-                    <div class="offcanvas-menu">
-                        <ul class="list-group">
-                            <li class="list-group-item ps-0 border-0 border-bottom border-white bg-transparent text-white fs-4">Home</li>
-                            <ul class="list-group m-0 py-2 d-none d-md-block">
-                                <li class="list-group-item p-0 border-0 bg-transparent text-white fs-5">News</li>
-                            </ul>
-                        </ul>
-                    </div>
-                    <div class="offcanvas-menu">
-                        <ul class="list-group">
-                            <li class="list-group-item ps-0 border-0 border-bottom border-white bg-transparent text-white fs-4">Food & Drink</li>
-                            <ul class="list-group m-0 py-2 d-none d-md-block">
-                                <li class="list-group-item p-0 border-0 bg-transparent text-white fs-5">News</li>
-                            </ul>
-                        </ul>
-                    </div>
-                    <div class="offcanvas-menu">
-                        <ul class="list-group">
-                            <li class="list-group-item ps-0 border-0 border-bottom border-white bg-transparent text-white fs-4">Travel</li>
-                            <ul class="list-group m-0 py-2 d-none d-md-block">
-                                <li class="list-group-item p-0 border-0 bg-transparent text-white fs-5">News</li>
-                            </ul>
-                        </ul>
-                    </div>
-                    <div class="offcanvas-menu">
-                        <ul class="list-group">
-                            <li class="list-group-item ps-0 border-0 border-bottom border-white bg-transparent text-white fs-4">Money</li>
-                            <ul class="list-group m-0 py-2 d-none d-md-block">
-                                <li class="list-group-item p-0 border-0 bg-transparent text-white fs-5">News</li>
-                            </ul>
-                        </ul>
-                    </div>
-                    <div class="offcanvas-menu">
-                        <ul class="list-group">
-                            <li class="list-group-item ps-0 border-0 border-bottom border-white bg-transparent text-white fs-4">Robb Sociery</li>
-                            <ul class="list-group m-0 py-2 d-none d-md-block">
-                                <li class="list-group-item p-0 border-0 bg-transparent text-white fs-5">News</li>
-                            </ul>
-                        </ul>
-                    </div>
-                </div>
+                <?php endif; ?>
             </div>
         </div>
     </div>
@@ -204,9 +146,11 @@
                     <?php if ($primaryMenus): ?>
                         <ul class="navbar-nav flex-wrap me-auto mb-2 mb-lg-0 fw-bold">
                             <?php foreach ($primaryMenus as $menu): ?>
-                                <li class="nav-item">
-                                    <a class="nav-link text-uppercase text-black text-decoration-none" aria-current="page" href="<?= $menu->url ?>"><?= $menu->title ?></a>
-                                </li>
+                                <?php if ($menu->menu_item_parent == 0): ?>
+                                    <li class="nav-item">
+                                        <a class="nav-link text-uppercase text-black text-decoration-none" aria-current="page" href="<?= $menu->url ?>"><?= $menu->title ?></a>
+                                    </li>
+                                <?php endif; ?>
                             <?php endforeach; ?>
                         </ul>
                     <?php endif; ?>

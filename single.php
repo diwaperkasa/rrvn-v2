@@ -5,7 +5,7 @@
         <div class="row">
             <div class="col-md-9">
                 <?php while ( have_posts() ) : the_post(); ?>
-                    <article <?php post_class(); ?>>
+                    <article <?php post_class("border-bottom mb-4"); ?>>
                         <div class="post-breadcrumb">
                             <div class="post-meta d-flex justify-content-between align-items-center">
                                 <div class="post-meta-category my-2">
@@ -59,6 +59,28 @@
                         </footer>
 
                     </article>
+                    <section class="mb-4 px-5 pb-2 border-bottom">
+                        <h2 class="sweet-sans-font h5 mb-4">RELATED STORIES</h2>
+                        <div class="related-post">
+                            <ul class="list-unstyled">
+                                <li class="mb-2 d-flex align-items-center" style="letter-spacing: .03125rem;">
+                                    <svg class="me-1" width="18" height="18" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 6 12" fill="none" class=""><path fill="#e12027" d="M5.88,5.58.3,0C.22,0,.11,0,.05.17A.93.93,0,0,0,0,.74L1.88,6,0,11.26a.93.93,0,0,0,0,.57c0,.11.1.17.16.17A.11.11,0,0,0,.3,12L5.88,6.42A.68.68,0,0,0,6,6,.68.68,0,0,0,5.88,5.58Z"></path></svg>
+                                    <a style="--bs-link-color: 255, 255, 255; --bs-link-hover-color: #e12027" href="" class="text-decoration-none">Bernard Arnault muốn tiếp tục điều hành LVMH đến năm 85 tuổi</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </section>
+                    <section id="subscribe-footer" class="mb-4">
+                        <div class="text-center mb-3">
+                            <span class="fs-5">READ MORE ON:</span>
+                        </div>
+                        <div class="d-block text-center d-md-flex justify-content-center align-items-center">
+                            <div class="text-center mb-4 mb-md-0 desc">
+                                <span class="eb-garamond-font fs-5">Like this article? Get the Robb Report newsletter for similar stories delivered straight to your inbox.</span>
+                            </div>
+                            <a href="" target="_blank" class="ms-0 ms-md-4 border border-danger text-danger fs-4 px-4 py-2 align-items-center text-uppercase text-decoration-none">Sign up</a>
+                        </div>
+                    </section>
                 <?php endwhile; ?>
             </div>
             <div class="col-md-3">

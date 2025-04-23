@@ -296,3 +296,9 @@ img.size-full {
     font-style: italic;
     text-decoration: none;
 }
+
+#subscribe-footer .desc {
+    @media screen and ( min-width: 576px ) {
+        width: 50%;
+    }
+}
