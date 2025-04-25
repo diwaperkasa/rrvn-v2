@@ -11222,7 +11222,7 @@ img.size-full {
   font-weight: 500;
 }
 
-.post-content > .gallery, .post-content > div > .gallery, .post-content > .wp-caption, .post-content > p:has(img) {
+.post-content > .gallery, .post-content > div > .gallery, .post-content > .wp-caption, .post-content > p:has(img), .post-content > figure:has(img) {
   margin-right: 0rem !important;
   margin-left: 0rem !important;
 }
@@ -11370,4 +11370,9 @@ img.size-full {
   #subscribe-footer .desc {
     width: 50%;
   }
+}
+
+.post-content img {
+  width: 100%;
+  height: auto;
 }
