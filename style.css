@@ -11191,7 +11191,7 @@ html {
   width: 100% !important;
 }
 
-.post-content .wp-caption-text, .post-content figure .figcaption {
+.post-content .wp-caption-text, .post-content figure figcaption {
   font-size: 0.875rem;
   border-bottom: 1px solid #dddee4;
   color: #424242;
