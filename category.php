@@ -52,29 +52,28 @@
                 <div class="mb-5">
                     <section id="most-read-article">
                         <h4 class="most-read-article border-bottom d-inline-block">MOST-READ STORIES</h4>
-                        <?php
-                            new WP_Query(array(
-                                'posts_per_page' => 5,
-                                'meta_key' => 'wpb_post_views_count',
-                                'orderby' => 'meta_value_num',
-                                'order' => 'DESC'
-                            ));
-                        ?>
+                        <?php $mostRead = wpp_get_ids([
+                            'limit' => 10,
+                            'taxonomy' => 'category',
+                            'term_id' => get_queried_object()->term_id
+                        ]);?>
                         <div class="most-read-carousel py-3">
-                            <?php while ( have_posts() ) : the_post();?>
+                            <?php foreach ($mostRead as $postId): $mostReadPost = get_post($postId); ?>
                                 <div class="most-read-cell px-0 px-md-3">
-                                    <a href="<?= get_permalink(get_the_ID()) ?>" class="text-decoration-none">
+                                    <a href="<?= get_permalink($mostReadPost->ID) ?>" class="text-decoration-none">
                                         <article <?php post_class(); ?>>
                                             <figure class="gallery-item wp-caption ">
-                                                <?= get_the_post_thumbnail(get_the_ID(), 'full') ?>
+                                                <?= get_the_post_thumbnail($mostReadPost->ID, 'full') ?>
                                                 <figcaption class="wp-caption-text">
-                                                    <?php the_title() ?>
+                                                    <a href="<?= get_permalink($mostReadPost->ID) ?>" class="text-decoration-none">
+                                                        <h3 class="categoty-article-title text-dark eb-garamond-semibold-font h5"><?= $mostReadPost->post_title; ?></h3>
+                                                    </a>
                                                 </figcaption>
                                             </figure>
                                         </article>
                                     </a>
                                 </div>
-                            <?php endwhile; ?>
+                            <?php endforeach; ?>
                             <?php wp_reset_postdata(); ?>
                         </div>
                     </section>
@@ -82,27 +81,27 @@
             </div>
             <div class="col-md-3">
                 <section id="most-popular-article">
-                    <?php
-                        $mostPopular = new WP_Query(array(
-                            'posts_per_page' => 5,
-                            'meta_key' => 'wpb_post_views_count',
-                            'orderby' => 'meta_value_num',
-                            'order' => 'DESC'
-                        ));
-                    ?>
+                    <?php $mostPopular = wpp_get_ids([
+                        'limit' => 10,
+                        'taxonomy' => 'category',
+                        'term_id' => get_queried_object()->term_id
+                    ]);?>
                     <h4 class="sweet-sans-font mb-3 border-bottom">Most Popular</h4>
                     <div class="row">
-                        <?php while ($mostPopular->have_posts()) : $mostPopular->the_post(); ?>
+                        <?php foreach ($mostPopular as $postId): $mostPopularPost = get_post($postId); ?>
                             <div class="col-md-12">
                                 <div class="mb-3">
-                                    <a href="<?= get_permalink(get_the_ID()) ?>" class="text-decoration-none">
+                                    <a href="<?= get_permalink($mostPopularPost->ID) ?>" class="text-decoration-none">
                                         <article <?php post_class(); ?>>
-                                            <?= get_the_post_thumbnail(get_the_ID(), 'full') ?>
+                                            <?= get_the_post_thumbnail($mostPopularPost->ID, 'full') ?>
                                         </article>
+                                        <a href="<?= get_permalink($mostPopularPost->ID) ?>" class="text-decoration-none">
+                                            <h3 class="categoty-article-title text-dark eb-garamond-semibold-font h5"><?= $mostPopularPost->post_title; ?></h3>
+                                        </a>
                                     </a>
                                 </div>
                             </div>
-                        <?php endwhile; ?>
+                        <?php endforeach; ?>
                         <?php wp_reset_postdata(); ?>
                     </div>
                 </section>
