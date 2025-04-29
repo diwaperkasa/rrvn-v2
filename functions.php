@@ -1,13 +1,6 @@
 <?php
 
 /**
- * Custom functions / External files
- */
-
-require_once 'includes/custom-functions.php';
-
-
-/**
  * Add support for useful stuff
  */
 
@@ -324,3 +317,9 @@ function front_page_on_pages_menu() {
 }
 
 add_action( 'admin_menu' , 'front_page_on_pages_menu' );
+
+/**
+ * Custom functions / External files
+ */
+
+require_once 'includes/custom-functions.php';

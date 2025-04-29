@@ -52,3 +52,37 @@ if (bannerCarousel) {
         prevNextButtons: false
     });
 }
+
+if (typeof(load_more_category_post) !== 'undefined') {
+    $('.load-more-category-post').on('click', function(e) {
+        const innerHTML = $(e.currentTarget).html();
+        let canLoadMore = true;
+        load_more_category_post.query.page++;
+
+        $.ajax({
+            url: load_more_category_post.url,
+            method: 'GET',
+            data: load_more_category_post.query,
+            beforeSend: function() {
+                $(e.currentTarget).prop('disabled', true);
+                $(e.currentTarget).html('<div class="loader"></div>');
+            },
+            success: function(response) {
+                response.forEach(function(post) {
+                    $('#categoty-article').append(post.html);
+                });
+
+                if (response.length < load_more_category_post.query.per_page) {
+                    canLoadMore = false;
+                }
+            },
+            complete: function() {
+                if (canLoadMore) {
+                    $(e.currentTarget).prop('disabled', false);
+                }
+
+                $(e.currentTarget).html(innerHTML);
+            }
+        })
+    });
+}

@@ -20,8 +20,6 @@ use PHP_CodeSniffer\Reports\Json;
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <?php wp_head(); ?>
 
-    <title>Robbrepport Vietnam</title>
-
     <?php if (get_field('enable_ads', 'option')): ?>
         <script async='async' src='https://www.googletagservices.com/tag/js/gpt.js'></script>
         <script>
