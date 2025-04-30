@@ -1,11 +1,11 @@
 <article <?php post_class(); ?>>
     <div class="row">
-        <div class="col-md-6">
+        <div class="col-md-5">
             <a href="<?= get_permalink(get_the_ID()) ?>" class="text-decoration-none">
                 <?= get_the_post_thumbnail(get_the_ID(), 'full') ?>
             </a>
         </div>
-        <div class="col-md-6">
+        <div class="col-md-7">
             <div class="text-center text-md-start py-3 py-md-0">
                 <?php $categories = get_the_category(get_the_ID()) ?>
                 <?php if ($categories): ?>

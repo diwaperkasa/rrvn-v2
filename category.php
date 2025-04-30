@@ -55,7 +55,8 @@
                         <?php $mostRead = wpp_get_ids([
                             'limit' => 10,
                             'taxonomy' => 'category',
-                            'term_id' => get_queried_object()->term_id
+                            // 'term_id' => get_queried_object()->term_id,
+                            'range' => 'all'
                         ]);?>
                         <div class="most-read-carousel py-3">
                             <?php foreach ($mostRead as $postId): $mostReadPost = get_post($postId); ?>
@@ -84,7 +85,8 @@
                     <?php $mostPopular = wpp_get_ids([
                         'limit' => 10,
                         'taxonomy' => 'category',
-                        'term_id' => get_queried_object()->term_id
+                        // 'term_id' => get_queried_object()->term_id,
+                        'range' => 'all'
                     ]);?>
                     <h4 class="sweet-sans-font mb-3 border-bottom">Most Popular</h4>
                     <div class="row">
@@ -93,11 +95,15 @@
                                 <div class="mb-3">
                                     <a href="<?= get_permalink($mostPopularPost->ID) ?>" class="text-decoration-none">
                                         <article <?php post_class(); ?>>
-                                            <?= get_the_post_thumbnail($mostPopularPost->ID, 'full') ?>
+                                            <div class="py-3 text-center">
+                                                <?= get_the_post_thumbnail($mostPopularPost->ID, 'full', ['class' => 'rounded-circle']) ?>
+                                            </div>
                                         </article>
-                                        <a href="<?= get_permalink($mostPopularPost->ID) ?>" class="text-decoration-none">
-                                            <h3 class="categoty-article-title text-dark eb-garamond-semibold-font h5"><?= $mostPopularPost->post_title; ?></h3>
-                                        </a>
+                                        <div class="text-center">
+                                            <a href="<?= get_permalink($mostPopularPost->ID) ?>" class="text-decoration-none">
+                                                <h3 class="categoty-article-title text-dark eb-garamond-semibold-font h5"><?= $mostPopularPost->post_title; ?></h3>
+                                            </a>
+                                        </div>
                                     </a>
                                 </div>
                             </div>

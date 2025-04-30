@@ -11377,6 +11377,11 @@ img.size-full {
   height: auto;
 }
 
+#most-popular-article .wp-post-image {
+  aspect-ratio: 1 / 1;
+  max-width: 200px;
+}
+
 /* HTML: <div class="loader"></div> */
 .loader {
   width: 30px;
