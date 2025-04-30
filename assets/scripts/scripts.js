@@ -47,7 +47,7 @@ if (bannerCarousel) {
         wrapAround: true,
         pageDots: false,
         autoPlay: true,
-        draggable: false,
+        // draggable: false,
         autoPlay: 3000,
         prevNextButtons: false
     });
