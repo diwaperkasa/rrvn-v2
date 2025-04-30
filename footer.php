@@ -30,7 +30,7 @@
                                 <ul class="list-group d-flex flex-row lh-1 m-0 justify-content-between justify-content-sm-start footer-menu">
                                     <?php foreach ($footerMenus as $menu): ?>
                                         <li class="list-group-item px-0 me-4 border-0 bg-transparent">
-                                            <a class="text-decoration-none text-white text-uppercase" aria-current="page" href="<?= $menu->url ?>"><?= $menu->title ?></a>
+                                            <a class="text-decoration-none text-white text-uppercase text-nowrap" aria-current="page" href="<?= $menu->url ?>"><?= $menu->title ?></a>
                                         </li>
                                     <?php endforeach; ?>
                                 </ul>
