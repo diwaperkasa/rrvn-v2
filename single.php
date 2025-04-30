@@ -54,26 +54,45 @@
                         </div>
 
                         <footer class="post__footer">
-                            <!-- <p class="post__date"><time><?php echo human_time_diff(strtotime($post->post_date)) . ' ' . __('ago'); ?></time></p> -->
-                            <!-- <p class="post__comments"><?php comments_popup_link(__('No comments yet'), __('1 comment'), __('% comments')); ?></p> -->
                         </footer>
-
                     </article>
                     <section class="mb-4 px-5 pb-2 border-bottom">
                         <h2 class="sweet-sans-font h5 mb-4">RELATED STORIES</h2>
+                        <?php
+                            $relatedArgs = array(
+                                'post_type' => 'post',
+                                'posts_per_page' => 10,
+                                'post_status' => 'publish',
+                                'post__not_in' => array(get_the_ID()),
+                                'orderby' => 'rand',
+                            );
+
+                            $realatedPost = new WP_Query($relatedArgs);
+                        ?>
                         <div class="related-post">
                             <ul class="list-unstyled">
-                                <li class="mb-2 d-flex align-items-center" style="letter-spacing: .03125rem;">
-                                    <svg class="me-1" width="18" height="18" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 6 12" fill="none" class=""><path fill="#e12027" d="M5.88,5.58.3,0C.22,0,.11,0,.05.17A.93.93,0,0,0,0,.74L1.88,6,0,11.26a.93.93,0,0,0,0,.57c0,.11.1.17.16.17A.11.11,0,0,0,.3,12L5.88,6.42A.68.68,0,0,0,6,6,.68.68,0,0,0,5.88,5.58Z"></path></svg>
-                                    <a style="--bs-link-color: 255, 255, 255; --bs-link-hover-color: #e12027" href="" class="text-decoration-none">Bernard Arnault muốn tiếp tục điều hành LVMH đến năm 85 tuổi</a>
-                                </li>
+                                <?php while( $realatedPost->have_posts() ): $realatedPost->the_post(); ?>
+                                    <li class="mb-2 d-flex align-items-center" style="letter-spacing: .03125rem;">
+                                        <svg class="me-1" width="18" height="18" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 6 12" fill="none" class=""><path fill="#e12027" d="M5.88,5.58.3,0C.22,0,.11,0,.05.17A.93.93,0,0,0,0,.74L1.88,6,0,11.26a.93.93,0,0,0,0,.57c0,.11.1.17.16.17A.11.11,0,0,0,.3,12L5.88,6.42A.68.68,0,0,0,6,6,.68.68,0,0,0,5.88,5.58Z"></path></svg>
+                                        <a style="--bs-link-color: 255, 255, 255; --bs-link-hover-color: #e12027" href="<?= get_permalink(get_the_ID()) ?>" class="text-decoration-none"><?php the_title(); ?></a>
+                                    </li>
+                                <?php endwhile; ?>
+                                <?php wp_reset_postdata(); ?>
                             </ul>
                         </div>
                     </section>
                     <section id="subscribe-footer" class="mb-4">
-                        <div class="text-center mb-3">
-                            <span class="fs-5">READ MORE ON:</span>
-                        </div>
+                        <?php $tags = wp_get_post_terms($post->ID, 'post_tag', ['field' => 'all']); ?>
+                        <?php if ($tags): ?>
+                            <div class="mb-3 d-flex justify-content-center">
+                                <span class="fs-5 fw-normal mb-0 text-nowrap">READ MORE ON:</span>
+                                <ul class="list-unstyled d-flex flex-wrap fs-5 mb-0">
+                                    <?php foreach ($tags as $tag): ?>
+                                        <li class="mx-2"><a style="--bs-border-color: #e02020" class="text-decoration-none text-dark text-uppercase border-bottom fw-bold" href="<?= get_term_link($tag->term_id) ?>"><?= $tag->name ?></a></li>
+                                    <?php endforeach; ?>
+                                </ul>
+                            </div>
+                        <?php endif; ?>
                         <div class="d-block text-center d-md-flex justify-content-center align-items-center">
                             <div class="text-center mb-4 mb-md-0 desc">
                                 <span class="eb-garamond-font fs-5">Like this article? Get the Robb Report newsletter for similar stories delivered straight to your inbox.</span>
