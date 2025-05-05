@@ -83,7 +83,7 @@
             <div class="col-md-3">
                 <section id="most-popular-article">
                     <?php $mostPopular = wpp_get_ids([
-                        'limit' => 10,
+                        'limit' => 5,
                         'taxonomy' => 'category',
                         // 'term_id' => get_queried_object()->term_id,
                         'range' => 'all'

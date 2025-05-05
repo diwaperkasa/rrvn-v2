@@ -33,9 +33,9 @@ use PHP_CodeSniffer\Reports\Json;
         <div class="container">
             <div class="offcanvas-header">                
                 <div class="d-flex justify-content-between w-100 align-items-center">
-                    <a href="/"><img class="bg-transparent" alt="Robbreport Viet Nam" width="360" height="auto" src="https://robbreport.com.vn/lib/logo/logo-white.svg"></a>
-                    <div class="p-2">
-                        <button data-bs-dismiss="offcanvas" aria-label="Close" class="btn">
+                    <a href="/"><img class="bg-transparent" alt="Robbreport Viet Nam" width="250" height="auto" src="https://robbreport.com.vn/lib/logo/logo-white.svg"></a>
+                    <div>
+                        <button data-bs-dismiss="offcanvas" aria-label="Close" class="btn btn-close-offcanvas">
                             <i width="32" height="32"  class="fa-solid fa-xmark m-2 text-white fs-2 rounded-circle bg-danger p-2"></i>
                         </button>
                     </div>
@@ -74,20 +74,20 @@ use PHP_CodeSniffer\Reports\Json;
         <div class="container">
             <div class="offcanvas-header">                
                 <div class="d-flex justify-content-between w-100 align-items-center">
-                    <a href="/"><img class="bg-transparent" alt="Robbreport Viet Nam" width="360" height="auto" src="https://robbreport.com.vn/lib/logo/logo-white.svg"></a>
-                    <div class="p-2">
-                        <button data-bs-dismiss="offcanvas" aria-label="Close" class="btn">
+                    <a href="/"><img class="bg-transparent" alt="Robbreport Viet Nam" width="250" height="auto" src="https://robbreport.com.vn/lib/logo/logo-white.svg"></a>
+                    <div>
+                        <button data-bs-dismiss="offcanvas" aria-label="Close" class="btn btn-close-offcanvas">
                             <i width="32" height="32"  class="fa-solid fa-xmark m-2 text-white fs-2 rounded-circle bg-danger p-2"></i>
                         </button>
                     </div>
                 </div>
             </div>
             <div class="offcanvas-body">
-                <div class="position-absolute top-50 start-50 translate-middle">
+                <div class="d-flex align-items-center justify-content-center">
                     <form action="<?= site_url() ?>">
                         <div class="input-group w-100 border-bottom">
                             <span class="input-group-text bg-transparent border-0 text-white fs-3 py-auto" id="search-label"><i class="fa-solid fa-magnifying-glass"></i></span>
-                            <input type="search" name="s" class="text-white fs-1 form-control border-0 rounded-0 bg-transparent shadow-none h-100 py-auto" placeholder="Search" aria-describedby="search-label" />
+                            <input type="search" name="s" class="text-white fs-1 form-control border-0 rounded-0 bg-transparent shadow-none h-100 py-auto wp-search-form" placeholder="Search" aria-describedby="search-label" />
                         </div>
                     </form>
                 </div>
@@ -134,7 +134,7 @@ use PHP_CodeSniffer\Reports\Json;
                     aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                <div class="d-block d-xl-none">
+                <div class="d-block d-lg-none">
                     <a href="<?= site_url() ?>" class="text-decoration-none">
                         <img width="200" class="img-fluid" src="https://robbreport.com.vn/lib/logo/logo.svg" alt="">
                     </a>

@@ -326,6 +326,26 @@ img.size-full {
     text-wrap: pretty;
 }
 
+.btn-close-offcanvas svg {
+    width: 32px;
+    height: 32px;
+}
+
+#most-popular-article {
+    position: sticky;
+    top: 4rem;
+}
+
+#most-read-article .border-bottom {
+    padding-bottom: 0.5rem;
+    --bs-border-color: #000;
+    --bs-border-width: 5px;
+}
+
+.wp-search-form::placeholder {
+    color: #FFF;
+}
+
 /* HTML: <div class="loader"></div> */
 .loader {
     width: 30px;

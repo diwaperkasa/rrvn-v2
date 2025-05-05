@@ -81,12 +81,12 @@
                             </ul>
                         </div>
                     </section>
-                    <section id="subscribe-footer" class="mb-4">
+                    <section id="subscribe-footer" class="mb-5">
                         <?php $tags = wp_get_post_terms($post->ID, 'post_tag', ['field' => 'all']); ?>
                         <?php if ($tags): ?>
-                            <div class="mb-3 d-flex justify-content-center">
+                            <div class="mb-3 d-block d-md-flex text-center justify-content-center">
                                 <span class="fs-5 fw-normal mb-0 text-nowrap">READ MORE ON:</span>
-                                <ul class="list-unstyled d-flex flex-wrap fs-5 mb-0">
+                                <ul class="list-unstyled justify-content-center justify-content-md-start d-flex flex-wrap fs-5 mb-0">
                                     <?php foreach ($tags as $tag): ?>
                                         <li class="mx-2"><a style="--bs-border-color: #e02020" class="text-decoration-none text-dark text-uppercase border-bottom fw-bold" href="<?= get_term_link($tag->term_id) ?>"><?= $tag->name ?></a></li>
                                     <?php endforeach; ?>
@@ -94,7 +94,7 @@
                             </div>
                         <?php endif; ?>
                         <div class="d-block text-center d-md-flex justify-content-center align-items-center">
-                            <div class="text-center mb-4 mb-md-0 desc">
+                            <div class="text-center mx-auto mx-md-0 mb-4 mb-md-0 desc">
                                 <span class="eb-garamond-font fs-5">Like this article? Get the Robb Report newsletter for similar stories delivered straight to your inbox.</span>
                             </div>
                             <a href="" target="_blank" class="ms-0 ms-md-4 border border-danger text-danger fs-4 px-4 py-2 align-items-center text-uppercase text-decoration-none">Sign up</a>
@@ -105,12 +105,12 @@
             <div class="col-md-3">
                 <section id="most-popular-article">
                     <?php $mostPopular = wpp_get_ids([
-                        'limit' => 10,
+                        'limit' => 5,
                         'taxonomy' => 'category',
                         // 'term_id' => get_queried_object()->term_id,
                         'range' => 'all'
                     ]);?>
-                    <h4 class="sweet-sans-font mb-3 border-bottom">Most Popular</h4>
+                    <h4 class="sweet-sans-font mb-3 border-bottom text-center text-md-start fw-bold">Most Popular</h4>
                     <div class="row">
                         <?php foreach ($mostPopular as $postId): $mostPopularPost = get_post($postId); ?>
                             <div class="col-md-12">
