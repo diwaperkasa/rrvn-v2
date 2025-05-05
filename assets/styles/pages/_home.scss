@@ -80,6 +80,10 @@ html {
     width: 100%;
 }
 
+.offcanvas {
+    backdrop-filter: blur(5px);
+}
+
 .offcanvas-menu .list-group-item.border-bottom {
     border-bottom: none !important;
     margin-right: auto;
