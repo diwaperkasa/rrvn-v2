@@ -83,13 +83,16 @@ use PHP_CodeSniffer\Reports\Json;
                 </div>
             </div>
             <div class="offcanvas-body">
-                <div class="d-flex align-items-center justify-content-center">
+                <div class="d-flex align-items-center justify-content-center mb-4">
                     <form action="<?= site_url() ?>">
                         <div class="input-group w-100 border-bottom">
                             <span class="input-group-text bg-transparent border-0 text-white fs-3 py-auto" id="search-label"><i class="fa-solid fa-magnifying-glass"></i></span>
                             <input type="search" name="s" class="text-white fs-1 form-control border-0 rounded-0 bg-transparent shadow-none h-100 py-auto wp-search-form" placeholder="Search" aria-describedby="search-label" />
                         </div>
                     </form>
+                </div>
+                <div class="text-start px-0 px-md-5 mx-0 mx-md-5">
+                    <ul id="wp-search-result" class="list-unstyled"></ul>
                 </div>
             </div>
         </div>
@@ -128,7 +131,7 @@ use PHP_CodeSniffer\Reports\Json;
     <div class="sticky-top">
         <div class="container">
             <nav class="navbar navbar-expand-lg navbar-light bg-white sweet-sans-font">
-                <span type="button" class="text-danger p-2" data-bs-toggle="offcanvas" data-bs-target="#offcanvasTop" aria-controls="offcanvasTop"><i class="fa-solid fa-bars"></i></span>
+                <span type="button" class="text-danger p-2" data-bs-toggle="offcanvas" data-bs-target="#offcanvasTop" aria-controls="offcanvasTop"><i class="fa-solid fa-bars fs-5"></i></span>
                 <button class="navbar-toggler d-none" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
                     aria-label="Toggle navigation">
@@ -156,7 +159,7 @@ use PHP_CodeSniffer\Reports\Json;
                 <ul class="navbar-nav fw-bold m-0">
                     <li class="nav-item">
                         <div class="position-relative ms-2 text-danger">
-                            <span type="button" class="fa fa-search p-2" data-bs-toggle="offcanvas" data-bs-target="#offcanvasSearch" aria-controls="offcanvasSearch"></span>
+                            <span type="button" class="fa fa-search p-2 fs-5" data-bs-toggle="offcanvas" data-bs-target="#offcanvasSearch" aria-controls="offcanvasSearch"></span>
                         </div>
                     </li>
                 </ul>

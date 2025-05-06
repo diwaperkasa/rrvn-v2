@@ -31,6 +31,7 @@ function theme_enqueue_script()
 {
     // wp_enqueue_script('ant-design', 'https://cdnjs.cloudflare.com/ajax/libs/antd/5.23.3/antd.min.js', [], false, true);
     if (is_category()) {
+        // load more button on category page
         $args = array(
             'nonce' => wp_create_nonce('load-more-category-post-nonce'),
             'url'   => site_url('wp-json/wp/v2/posts'),
@@ -47,6 +48,21 @@ function theme_enqueue_script()
 
         wp_localize_script('scripts', 'load_more_category_post', $args);
     }
+
+    // search bar
+    $args = array(
+        'nonce' => wp_create_nonce('search-post-nonce'),
+        'url'   => site_url('wp-json/wp/v2/posts'),
+        'query' => [
+            'order' => 'desc',
+            'orderby' => 'date',
+            'status' => 'publish',
+            'page' => 1,
+            'per_page' => 10,
+        ],
+    );
+
+    wp_localize_script('scripts', 'search_post', $args);
 }
 
 add_action('wp_enqueue_scripts', 'theme_enqueue_script');

@@ -86,3 +86,46 @@ if (typeof(load_more_category_post) !== 'undefined') {
         })
     });
 }
+
+if (typeof(search_post) !== 'undefined') {
+    let xhr = null;
+
+    $('.wp-search-form').on('keyup', function(e) {
+        if ($(e.currentTarget).val() === "") {
+            return;
+        }
+
+        if (xhr && xhr.readyState < 4) {
+            xhr.abort();
+        }
+
+        search_post.query.search = $(e.currentTarget).val();
+
+        xhr = $.ajax({
+            url: search_post.url,
+            method: 'GET',
+            data: search_post.query,
+            beforeSend: function() {
+                const ul = document.getElementById("wp-search-result");
+                ul.innerHTML = null;
+            },
+            success: function(response) {
+                const ul = document.getElementById("wp-search-result");
+
+                response.forEach(function(post) {
+                    const li = document.createElement("li");
+                    const link = document.createElement("a");
+                    // link tag
+                    link.appendChild(document.createTextNode(post.title.rendered));
+                    link.href = post.link;
+                    link.classList.add(...['text-white', 'text-decoration-none']);
+                    // li tag
+                    li.appendChild(link);
+                    li.classList.add(...['mb-3', 'fs-4', 'border-bottom']);
+                    // append to ul tag
+                    ul.appendChild(li);
+                });
+            },
+        });
+    });
+}
