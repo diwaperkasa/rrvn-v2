@@ -29,7 +29,7 @@ use PHP_CodeSniffer\Reports\Json;
     <?php endif; ?>
 </head>
 <body <?php body_class(); ?>>
-    <div style="--bs-bg-opacity: .5;" class="offcanvas sweet-sans-font offcanvas-top min-w-100 min-vh-100 bg-black" tabindex="-1" id="offcanvasTop" aria-labelledby="offcanvasTopLabel">
+    <div style="--bs-bg-opacity: .5;" class="offcanvas sweet-sans-font offcanvas-top min-w-100 min-vh-100 bg-black overflow-hidden" tabindex="-1" id="offcanvasTop" aria-labelledby="offcanvasTopLabel">
         <div class="container">
             <div class="offcanvas-header">                
                 <div class="d-flex justify-content-between w-100 align-items-center">
@@ -70,7 +70,7 @@ use PHP_CodeSniffer\Reports\Json;
             </div>
         </div>
     </div>
-    <div style="--bs-bg-opacity: .5;" class="offcanvas sweet-sans-font offcanvas-top min-w-100 min-vh-100 bg-black" tabindex="-1" id="offcanvasSearch" aria-labelledby="offcanvasSearchLabel">
+    <div style="--bs-bg-opacity: .5;" class="offcanvas sweet-sans-font offcanvas-top min-w-100 min-vh-100 bg-black overflow-hidden" tabindex="-1" id="offcanvasSearch" aria-labelledby="offcanvasSearchLabel">
         <div class="container">
             <div class="offcanvas-header">                
                 <div class="d-flex justify-content-between w-100 align-items-center">
