@@ -11216,8 +11216,14 @@ img.size-full {
 }
 
 .post-content > * {
-  margin-right: 3rem;
-  margin-left: 3rem;
+  margin-right: 0rem;
+  margin-left: 0rem;
+}
+@media screen and (min-width: 768px) {
+  .post-content > * {
+    margin-right: 3rem;
+    margin-left: 3rem;
+  }
 }
 
 .post-content a {
