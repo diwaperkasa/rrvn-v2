@@ -117,7 +117,7 @@ if (typeof(search_post) !== 'undefined') {
                     const li = document.createElement("li");
                     const link = document.createElement("a");
                     // link tag
-                    link.appendChild(document.createTextNode(post.title.rendered));
+                    link.innerHTML = post.title.rendered;
                     link.href = post.link;
                     link.classList.add(...['text-white', 'text-decoration-none']);
                     // li tag
