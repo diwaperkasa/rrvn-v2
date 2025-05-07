@@ -34,7 +34,7 @@ CookieConsent.run({
                     description: "This website uses cookies to enhance your experience. By using our website, you consent to the use of cookies. You can read more in our privacy policy.",
                     acceptAllBtn: "Accept all",
                     acceptNecessaryBtn: "Reject all",
-                    showPreferencesBtn: "Manage preferences",
+                    // showPreferencesBtn: "Manage preferences",
                     // footer: "<a href=\"#link\">Privacy Policy</a>\n<a href=\"#link\">Terms and conditions</a>"
                 },
                 preferencesModal: {
