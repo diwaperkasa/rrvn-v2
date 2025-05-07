@@ -15,14 +15,14 @@
     <section class="bg-black">
         <div class="container text-white p-4 footer-menu">
             <div class="row">
-                <div class="col-md-2">
-                    <div class="text-center text-md-start">
+                <div class="col-xl-2">
+                    <div class="text-center text-xl-start">
                         <a href="<?= site_url() ?>" class="text-decoration-none">
                             <img class="img-fluid" src="https://robbreport.com.vn/_next/image?url=%2Flib%2Flogo%2FLogo-White%402x.png&w=640&q=75" alt="" width="200">
                         </a>
                     </div>
                 </div>
-                <div class="col-md-7">
+                <div class="col-xl-7">
                     <div class="my-3 my-sm-0">
                         <div class="d-flex flex-column align-self-center">
                             <?php $footerMenus = wp_get_nav_menu_items('footer-menu'); ?>
@@ -39,7 +39,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-md-3">
+                <div class="col-xl-3">
                     <div class="text-center text-md-start">
                         <div class="d-flex align-self-center justify-content-between">
                             <span class="fs-6">FOLLOW US</span>

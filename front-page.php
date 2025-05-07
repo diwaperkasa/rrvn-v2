@@ -247,7 +247,7 @@
                                             <div class="col-xl-7">
                                                 <div class="text-center text-md-start pt-3 pt-md-0">
                                                     <a class="text-decoration-none" href="<?= get_permalink($post['ID']) ?>">
-                                                        <h3 class="text-dark fw-bold eb-garamond-font"><?= $post['post_title'] ?></h3>
+                                                        <h3 class="text-dark fw-bold eb-garamond-semibold-font"><?= $post['post_title'] ?></h3>
                                                     </a>
                                                     <?php $writer = wp_get_post_terms($post['ID'], 'writer', ['field' => 'all']); ?>
                                                     <?php if ($writer): ?>
