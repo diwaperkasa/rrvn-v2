@@ -1,5 +1,6 @@
 import $ from 'jquery';
 import Flickity from 'flickity';
+import './cookieconsent-config.js';
 
 /**
  * Mobile navigation toggle
