@@ -133,7 +133,7 @@
                         $cover = array_shift($recentCategoryPosts);
                     ?>
                     <div class="row">
-                        <div class="col-md-9">
+                        <div class="col-md-8 col-xl-9">
                             <article <?php post_class() ?>>
                                 <div class="img-hover-zoom">
                                     <a class="text-decoration-none" href="<?= get_permalink($cover['ID']) ?>">
@@ -155,7 +155,7 @@
                                 </div>
                             </article>
                         </div>
-                        <div class="col-md-3">
+                        <div class="col-md-4 col-xl-3">
                             <div class="row">
                                 <?php foreach ($recentCategoryPosts as $index => $post): ?>
                                     <div class="col-md-12">
@@ -237,14 +237,14 @@
                                 <?php foreach ($childCategoriesPosts as $post): ?>
                                     <article <?= post_class("border-bottom py-3") ?>>
                                         <div class="row">
-                                            <div class="col-md-5">
+                                            <div class="col-xl-5">
                                                 <div class="img-hover-zoom">
                                                     <a class="text-decoration-none" href="<?= get_permalink($post['ID']) ?>">
                                                         <?= get_the_post_thumbnail($post['ID'], 'full') ?>
                                                     </a>
                                                 </div>
                                             </div>
-                                            <div class="col-md-7">
+                                            <div class="col-xl-7">
                                                 <div class="text-center text-md-start pt-3 pt-md-0">
                                                     <a class="text-decoration-none" href="<?= get_permalink($post['ID']) ?>">
                                                         <h3 class="text-dark fw-bold eb-garamond-font"><?= $post['post_title'] ?></h3>
