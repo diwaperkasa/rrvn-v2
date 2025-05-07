@@ -20,7 +20,7 @@ const mostPopularCarousel = document.querySelector('.most-read-carousel');
 
 if (mostPopularCarousel) {
     const flickity = new Flickity(mostPopularCarousel, {
-        freeScroll: true,
+        freeScroll: false,
         wrapAround: true,
         pageDots: false,
         cellAlign: 'left'
@@ -32,7 +32,7 @@ const postCarousel = document.querySelectorAll('.gallery');
 if (postCarousel.length) {
     postCarousel.forEach(function(gallery) {
         const flickity = new Flickity(gallery, {
-            freeScroll: true,
+            freeScroll: false,
             wrapAround: true,
             pageDots: false,
             autoPlay: true,
@@ -44,7 +44,7 @@ const bannerCarousel = document.querySelector('.banner-carousel');
 
 if (bannerCarousel) {
     const flickity = new Flickity(bannerCarousel, {
-        freeScroll: true,
+        freeScroll: false,
         wrapAround: true,
         pageDots: false,
         autoPlay: true,
