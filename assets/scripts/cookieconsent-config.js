@@ -3,8 +3,6 @@ import CookieConsent from './cookieconsent.umd.js';
 // Enable dark mode
 document.documentElement.classList.add('cc--darkmode');
 
-console.log('cookie')
-
 CookieConsent.run({
     guiOptions: {
         consentModal: {
