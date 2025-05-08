@@ -342,7 +342,11 @@ img.size-full {
 
 #most-popular-article {
     position: sticky;
-    top: 4rem;
+    top: 5rem;
+
+    @media screen and ( min-width: 992px ) {
+        top: 4rem;
+    }
 }
 
 #most-read-article .border-bottom {
