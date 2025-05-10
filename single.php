@@ -97,7 +97,7 @@
                             <div class="text-center mx-auto mx-md-0 mb-4 mb-md-0 desc">
                                 <span class="eb-garamond-font fs-5">Like this article? Get the Robb Report newsletter for similar stories delivered straight to your inbox.</span>
                             </div>
-                            <a href="" target="_blank" class="ms-0 ms-md-4 border border-danger text-danger fs-4 px-4 py-2 align-items-center text-uppercase text-decoration-none">Sign up</a>
+                            <a href="<?= get_theme_mod('subscribe_url', 'javascript:void(0);') ?>" target="_blank" class="ms-0 ms-md-4 border border-danger text-danger fs-4 px-4 py-2 align-items-center text-uppercase text-decoration-none">Sign up</a>
                         </div>
                     </section>
                 <?php endwhile; ?>
