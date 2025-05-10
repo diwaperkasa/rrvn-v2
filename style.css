@@ -11091,6 +11091,10 @@ html {
   aspect-ratio: 16/9;
 }
 
+.navbar {
+  transition: all 1s ease-out;
+}
+
 .nav-form-search input {
   width: 0px;
   transition: all 0.5s;

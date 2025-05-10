@@ -128,16 +128,16 @@ use PHP_CodeSniffer\Reports\Json;
             </div>
         </div>
     </header>
-    <div class="sticky-top">
+    <div id="desktop-menu-container" class="sticky-top">
         <div class="container">
-            <nav class="navbar navbar-expand-lg navbar-light bg-white sweet-sans-font">
+            <nav id="desktop-menu-nav" class="navbar navbar-expand-lg navbar-light bg-white sweet-sans-font">
                 <span type="button" class="text-danger p-2" data-bs-toggle="offcanvas" data-bs-target="#offcanvasTop" aria-controls="offcanvasTop"><i class="fa-solid fa-bars fs-5"></i></span>
                 <button class="navbar-toggler d-none" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
                     aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                <div class="d-block d-lg-none">
+                <div id="desktop-menu-rr-logo" class="d-block d-lg-none">
                     <a href="<?= site_url() ?>" class="text-decoration-none">
                         <img width="200" class="img-fluid" src="https://robbreport.com.vn/lib/logo/logo.svg" alt="">
                     </a>

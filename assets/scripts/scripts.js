@@ -16,6 +16,43 @@ const toggleMenu = (event) => {
 
 $('.js-menu-toggle').on('click', toggleMenu);
 
+function getAbsolutePosition(element) {
+    const rect = element.getBoundingClientRect();
+    
+    return {
+        top: rect.top,
+        left: rect.left,
+        bottom: rect.bottom,
+        right: rect.right,
+    };
+}
+
+const desktopMenuContainer = document.getElementById('desktop-menu-container');
+const desktopMenuNav = document.getElementById('desktop-menu-nav');
+const rrLogo = document.getElementById('desktop-menu-rr-logo');
+
+window.addEventListener('scroll', () => {
+    const desktopNavMenuPosition = getAbsolutePosition(desktopMenuContainer);
+
+    if (desktopNavMenuPosition.top > 0) {
+        if (desktopMenuNav.classList.contains('border-bottom')) {
+            desktopMenuNav.classList.remove('border-bottom', 'border-2', 'border-dark')
+        }
+
+        if (!rrLogo.classList.contains('d-lg-none')) {
+            rrLogo.classList.add('d-lg-none');
+        }
+    } else {
+        if (!desktopMenuNav.classList.contains('border-bottom')) {
+            desktopMenuNav.classList.add('border-bottom', 'border-2', 'border-dark')
+        }
+
+        if (rrLogo.classList.contains('d-lg-none')) {
+            rrLogo.classList.remove('d-lg-none');
+        }
+    }
+});
+
 const mostPopularCarousel = document.querySelector('.most-read-carousel');
 
 if (mostPopularCarousel) {
