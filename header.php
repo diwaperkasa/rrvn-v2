@@ -101,26 +101,42 @@ use PHP_CodeSniffer\Reports\Json;
         <div style="grid-template-columns: 30% auto 30%;" class="d-grid">
             <div class="g-col-4">
                 <ul class="list-group d-flex flex-row lh-1 mx-0 my-5 align-self-center">
-                    <li style="width: 34px; height: 34px;" class="list-group-item p-2 bg-transparent me-1 border rounded-circle text-center"><i class="fa-brands fa-facebook-f"></i></li>
-                    <li style="width: 34px; height: 34px;" class="list-group-item p-0 bg-transparent mx-1 border rounded-circle"><i class="fa-brands fa-instagram p-2"></i></li>
-                    <li style="width: 34px; height: 34px;" class="list-group-item p-0 bg-transparent mx-1 border rounded-circle"><i class="fa-brands fa-youtube p-2"></i></li>
+                    <li style="width: 34px; height: 34px;" class="list-group-item p-2 bg-transparent me-1 border rounded-circle text-center">
+                        <a target="_blank" class="text-decoration-none header-media-social d-flex text-dark" href="<?= get_theme_mod('facebook_url', 'javascript:void(0);') ?>">
+                            <i class="fa-brands fa-facebook-f"></i>
+                        </a>
+                    </li>
+                    <li style="width: 34px; height: 34px;" class="list-group-item p-0 bg-transparent mx-1 border rounded-circle">
+                        <a target="_blank" class="text-decoration-none header-media-social d-flex text-dark" href="<?= get_theme_mod('instagram_url', 'javascript:void(0);') ?>">
+                            <i class="fa-brands fa-instagram p-2"></i>
+                        </a>
+                    </li>
+                    <li style="width: 34px; height: 34px;" class="list-group-item p-0 bg-transparent mx-1 border rounded-circle">
+                        <a target="_blank" class="text-decoration-none header-media-social d-flex text-dark" href="<?= get_theme_mod('youtube_url', 'javascript:void(0);') ?>">
+                            <i class="fa-brands fa-youtube p-2"></i>
+                        </a>
+                    </li>
                     <li class="list-group-item p-0 border-0 bg-transparent mx-1">
-                        <img src="https://storage.googleapis.com/td-robb-media/2024/7/4ff651ea-b98d-42a2-8caf-a2364949dad9.jpg" alt="" width="200">
+                        <a target="_blank" class="text-decoration-none" href="<?= get_theme_mod('wedding_dreams_url', 'javascript:void(0);') ?>">
+                            <img src="<?= esc_url( get_theme_mod( 'wedding_dreams_image' ) ); ?>" alt="" width="200">
+                        </a>
                     </li>
                 </ul>
             </div>
             <div class="g-col-4 text-center">
                 <a href="<?= site_url() ?>" class="text-decoration-none">
-                    <img src="https://robbreport.com.vn/lib/logo/logo.svg" alt="" width="360">
+                    <img src="<?= esc_url( get_theme_mod( 'rrvn_logo' ) ); ?>" alt="" width="360">
                 </a>
             </div>
             <div class="g-col-4 text-end">
                 <ul class="list-group d-flex flex-row lh-1 mx-0 my-5 justify-content-end align-items-center">
                     <li class="list-group-item p-0 border-0 bg-transparent me-2 ms-5">
-                        <img src="https://storage.googleapis.com/td-robb-media/2023/11/396b1072-1459-41af-98f6-cf14f73c528a.png" alt="" width="100">
+                        <a class="text-decoration-none" href="<?= get_theme_mod('gourmet_collection_url', 'javascript:void(0);') ?>">
+                            <img src="<?= esc_url( get_theme_mod( 'gourmet_collection_image' ) ); ?>" alt="" width="100">
+                        </a>
                     </li>
                     <li class="list-group-item p-0 ms-2 border-0 bg-transparent">
-                        <a href="" class="text-decoration-none text-dark">
+                        <a target="_blank" class="text-decoration-none text-dark" href="<?= get_theme_mod('subscribe_url', 'javascript:void(0);') ?>">
                             <span class="text-uppercase fw-bold">Subscribe</span>
                         </a>
                     </li>
@@ -128,9 +144,9 @@ use PHP_CodeSniffer\Reports\Json;
             </div>
         </div>
     </header>
-    <div id="desktop-menu-container" class="sticky-top">
+    <div id="desktop-menu-container" class="sticky-top bg-white">
         <div class="container">
-            <nav id="desktop-menu-nav" class="navbar navbar-expand-lg navbar-light bg-white sweet-sans-font">
+            <nav id="desktop-menu-nav" class="navbar navbar-expand-lg navbar-light sweet-sans-font">
                 <span type="button" class="text-danger p-2" data-bs-toggle="offcanvas" data-bs-target="#offcanvasTop" aria-controls="offcanvasTop"><i class="fa-solid fa-bars fs-5"></i></span>
                 <button class="navbar-toggler d-none" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
@@ -139,7 +155,7 @@ use PHP_CodeSniffer\Reports\Json;
                 </button>
                 <div id="desktop-menu-rr-logo" class="d-block d-lg-none">
                     <a href="<?= site_url() ?>" class="text-decoration-none">
-                        <img width="200" class="img-fluid" src="https://robbreport.com.vn/lib/logo/logo.svg" alt="">
+                        <img width="200" class="img-fluid" src="<?= esc_url( get_theme_mod( 'rrvn_logo' ) ); ?>" alt="">
                     </a>
                 </div>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">

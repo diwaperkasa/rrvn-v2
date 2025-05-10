@@ -359,6 +359,15 @@ img.size-full {
     --bs-border-width: 5px;
 }
 
+.header-media-social svg {
+    width: 16px;
+    height: 16px;
+}
+
+.invert-1 {
+    filter: invert(1);
+}
+
 .wp-search-form::placeholder {
     color: #FFF;
 }

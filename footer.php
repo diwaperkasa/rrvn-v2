@@ -13,18 +13,18 @@
         </section>
     </footer>
     <section class="bg-black">
-        <div class="container text-white p-4 footer-menu">
+        <div class="container text-white p-4">
             <div class="row">
                 <div class="col-xl-2">
                     <div class="text-center text-xl-start">
                         <a href="<?= site_url() ?>" class="text-decoration-none">
-                            <img class="img-fluid" src="https://robbreport.com.vn/_next/image?url=%2Flib%2Flogo%2FLogo-White%402x.png&w=640&q=75" alt="" width="200">
+                            <img class="img-fluid invert-1" src="<?= esc_url( get_theme_mod( 'rrvn_logo' ) ); ?>" alt="" width="200">
                         </a>
                     </div>
                 </div>
                 <div class="col-xl-7">
                     <div class="my-3 my-sm-0">
-                        <div class="d-flex flex-column align-self-center">
+                        <div class="footer-menu d-flex flex-column align-self-center">
                             <?php $footerMenus = wp_get_nav_menu_items('footer-menu'); ?>
                             <?php if ($footerMenus): ?>
                                 <ul class="list-group d-flex flex-row lh-1 m-0 justify-content-between justify-content-sm-start footer-menu">
@@ -41,12 +41,24 @@
                 </div>
                 <div class="col-xl-3">
                     <div class="text-center text-md-start">
-                        <div class="d-flex align-self-center justify-content-between">
+                        <div class="d-flex align-self-center justify-content-between align-items-center">
                             <span class="fs-6">FOLLOW US</span>
                             <ul class="list-group d-flex flex-row lh-1">
-                                <li class="list-group-item ps-0 border-0 bg-transparent text-white"><i class="fa-brands fa-facebook-f"></i></li>
-                                <li class="list-group-item ps-0 border-0 bg-transparent text-white"><i class="fa-brands fa-instagram"></i></li>
-                                <li class="list-group-item ps-0 border-0 bg-transparent text-white"><i class="fa-brands fa-youtube"></i></li>
+                                <li class="list-group-item ps-0 border-0 bg-transparent">
+                                    <a target="_blank" class="text-decoration-none text-white" href="<?= get_theme_mod('facebook_url', 'javascript:void(0);') ?>">
+                                        <i class="fa-brands fa-facebook-f"></i>
+                                    </a>
+                                </li>
+                                <li class="list-group-item ps-0 border-0 bg-transparent text-white">
+                                    <a target="_blank" class="text-decoration-none text-white" href="<?= get_theme_mod('instagram_url', 'javascript:void(0);') ?>">
+                                        <i class="fa-brands fa-instagram"></i>
+                                    </a>
+                                </li>
+                                <li class="list-group-item ps-0 border-0 bg-transparent text-white">
+                                    <a target="_blank" class="text-decoration-none text-white" href="<?= get_theme_mod('youtube_url', 'javascript:void(0);') ?>">
+                                        <i class="fa-brands fa-youtube"></i>
+                                    </a>
+                                </li>
                             </ul>
                         </div>
                     </div>

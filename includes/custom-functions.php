@@ -151,3 +151,121 @@ add_action('after_setup_theme', 'theme_setup');
 if (function_exists('acf_add_options_page')) {
 	acf_add_options_page();
 }
+
+function rrvn_customize_register( $wp_customize ) {
+
+    // Add a Section
+    $wp_customize->add_section( 'rrvn_media_social', array(
+        'title'    => __( 'RobbReport Settings'),
+        'priority' => 30,
+    ));
+
+    // Add a Setting
+    $wp_customize->add_setting( 'rrvn_logo', array(
+        'default'           => '',
+        'sanitize_callback' => 'esc_url_raw',
+    ));
+
+    $wp_customize->add_setting( 'facebook_url', array(
+        'default'           => '',
+        'sanitize_callback' => 'sanitize_text_field',
+    ));
+
+    $wp_customize->add_setting( 'instagram_url', array(
+        'default'           => '',
+        'sanitize_callback' => 'sanitize_text_field',
+    ));
+
+    $wp_customize->add_setting( 'youtube_url', array(
+        'default'           => '',
+        'sanitize_callback' => 'sanitize_text_field',
+    ));
+
+    $wp_customize->add_setting( 'wedding_dreams_image', array(
+        'default'           => '',
+        'sanitize_callback' => 'esc_url_raw',
+    ));
+
+    $wp_customize->add_setting( 'wedding_dreams_url', array(
+        'default'           => '',
+        'sanitize_callback' => 'sanitize_text_field',
+    ));
+
+    $wp_customize->add_setting( 'gourmet_collection_image', array(
+        'default'           => '',
+        'sanitize_callback' => 'esc_url_raw',
+    ));
+
+    $wp_customize->add_setting( 'gourmet_collection_url', array(
+        'default'           => '',
+        'sanitize_callback' => 'sanitize_text_field',
+    ));
+
+    $wp_customize->add_setting( 'subscribe_url', array(
+        'default'           => '',
+        'sanitize_callback' => 'sanitize_text_field',
+    ));
+
+    // Add a Control (Text Field)
+    $wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'rrvn_logo_control', array(
+        'label'    => __( 'RobbReport Logo'),
+        'section'  => 'rrvn_media_social',
+        'settings' => 'rrvn_logo',
+    )));
+
+    $wp_customize->add_control( 'facebook_control', array(
+        'label'    => __( 'Facebook URL'),
+        'section'  => 'rrvn_media_social',
+        'settings' => 'facebook_url',
+        'type'     => 'text',
+    ));
+
+    $wp_customize->add_control( 'instagram_control', array(
+        'label'    => __( 'Instagram URL'),
+        'section'  => 'rrvn_media_social',
+        'settings' => 'instagram_url',
+        'type'     => 'text',
+    ));
+
+    $wp_customize->add_control( 'youtube_control', array(
+        'label'    => __( 'Instagram URL'),
+        'section'  => 'rrvn_media_social',
+        'settings' => 'youtube_url',
+        'type'     => 'text',
+    ));
+
+    $wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'wedding_dreams_image_control', array(
+        'label'    => __( 'Wedding Dreams Image'),
+        'section'  => 'rrvn_media_social',
+        'settings' => 'wedding_dreams_image',
+    )));
+
+    $wp_customize->add_control( 'wedding_dreams_control', array(
+        'label'    => __( 'Wedding Dreams Link'),
+        'section'  => 'rrvn_media_social',
+        'settings' => 'wedding_dreams_url',
+        'type'     => 'text',
+    ));
+
+    $wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'gourmet_collection_image_control', array(
+        'label'    => __( 'Gourmet Collection Image'),
+        'section'  => 'rrvn_media_social',
+        'settings' => 'gourmet_collection_image',
+    )));
+
+    $wp_customize->add_control( 'gourmet_collection_control', array(
+        'label'    => __( 'Gourmet Collection Link'),
+        'section'  => 'rrvn_media_social',
+        'settings' => 'gourmet_collection_url',
+        'type'     => 'text',
+    ));
+
+    $wp_customize->add_control( 'subscribe_control', array(
+        'label'    => __( 'Subscribe Link'),
+        'section'  => 'rrvn_media_social',
+        'settings' => 'subscribe_url',
+        'type'     => 'text',
+    ));
+}
+
+add_action( 'customize_register', 'rrvn_customize_register' );
