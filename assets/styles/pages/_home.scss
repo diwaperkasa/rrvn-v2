@@ -113,6 +113,7 @@ html {
 }
 
 .wp-post-image {
+    max-width: 100%;
     width: 100%;
     height: auto;
 }
@@ -136,6 +137,7 @@ html {
 }
 
 img.size-full {
+    max-width: 100%;
     width: 100%;
     height: auto;
 }
@@ -169,6 +171,7 @@ img.size-full {
 }
 
 .post-content iframe, .post-content video {
+    max-width: 100%;
     width: 100%;
     height: auto;
     aspect-ratio: 16 / 9;
@@ -313,6 +316,7 @@ img.size-full {
 }
 
 .post-content img {
+    max-width: 100%;
     width: 100%;
     height: auto;
 }
