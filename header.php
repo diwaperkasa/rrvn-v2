@@ -155,10 +155,10 @@ use PHP_CodeSniffer\Reports\Json;
                 </button>
                 <div id="desktop-menu-rr-logo" class="d-block d-lg-none">
                     <a href="<?= site_url() ?>" class="text-decoration-none">
-                        <img width="200" class="img-fluid" src="<?= esc_url( get_theme_mod( 'rrvn_logo' ) ); ?>" alt="">
+                        <img width="120" class="img-fluid" src="<?= esc_url( get_theme_mod( 'rrvn_logo' ) ); ?>" alt="">
                     </a>
                 </div>
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <div class="collapse navbar-collapse primary-menu" id="navbarSupportedContent">
                     <?php $primaryMenus = wp_get_nav_menu_items('primary-menu'); ?>
                     <?php if ($primaryMenus): ?>
                         <ul class="navbar-nav flex-wrap me-auto mb-2 mb-lg-0 fw-bold">

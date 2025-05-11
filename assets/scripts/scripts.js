@@ -37,7 +37,7 @@ window.addEventListener('scroll', () => {
 
     if (desktopNavMenuPosition.top > 0) {
         if (desktopMenuNav.classList.contains('border-bottom')) {
-            desktopMenuNav.classList.remove('border-bottom', 'border-2', 'border-dark')
+            desktopMenuNav.classList.remove('border-bottom', 'border-1', 'border-dark')
         }
 
         if (!rrLogo.classList.contains('d-lg-none')) {
@@ -49,7 +49,7 @@ window.addEventListener('scroll', () => {
         }
     } else {
         if (!desktopMenuNav.classList.contains('border-bottom')) {
-            desktopMenuNav.classList.add('border-bottom', 'border-2', 'border-dark')
+            desktopMenuNav.classList.add('border-bottom', 'border-1', 'border-dark')
         }
 
         if (rrLogo.classList.contains('d-lg-none')) {

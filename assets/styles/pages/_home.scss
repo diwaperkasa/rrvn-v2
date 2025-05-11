@@ -14,10 +14,6 @@ html {
     aspect-ratio: 16 / 9;
 }
 
-.navbar {
-    transition: all 1s ease-out;
-}
-
 .nav-form-search {
     input {
         width: 0px;
@@ -370,6 +366,14 @@ img.size-full {
 
 .wp-search-form::placeholder {
     color: #FFF;
+}
+
+.primary-menu .navbar-nav .nav-item {
+    letter-spacing: 2px;
+    
+    .nav-link {
+        font-size: 12px;
+    }
 }
 
 /* HTML: <div class="loader"></div> */
