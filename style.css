@@ -11221,13 +11221,13 @@ img.size-full {
 }
 
 .post-content > * {
-  margin-right: 0rem;
-  margin-left: 0rem;
+  padding: 0rem;
+  padding-left: 0rem;
 }
 @media screen and (min-width: 768px) {
   .post-content > * {
-    margin-right: 3rem;
-    margin-left: 3rem;
+    padding-right: 3rem;
+    padding-left: 3rem;
   }
 }
 
@@ -11239,16 +11239,16 @@ img.size-full {
 }
 
 .post-content > .gallery, .post-content > div > .gallery, .post-content > .wp-caption, .post-content > p:has(img), .post-content > figure:has(img) {
-  margin-right: 0rem !important;
-  margin-left: 0rem !important;
+  padding-right: 0rem !important;
+  padding-left: 0rem !important;
 }
 
 .post-content iframe, .post-content video {
   width: 100%;
   height: auto;
   aspect-ratio: 16/9;
-  margin-right: 0rem !important;
-  margin-left: 0rem !important;
+  padding-right: 0rem !important;
+  padding-left: 0rem !important;
 }
 
 .wp-video {
