@@ -2,6 +2,9 @@
 
 <main class="main" role="main">
     <div class="container">
+        <div class="leaderboard top-leaderboard">
+            <?php get_ads('top-leaderboard') ?>
+        </div>
         <div class="row">
             <div class="col-md-9">
                 <?php while ( have_posts() ) : the_post(); ?>
@@ -47,6 +50,10 @@
                         
                         <div class="post-cover mb-4">
                             <?= get_the_post_thumbnail($post, 'full') ?>
+                        </div>
+
+                        <div class="leaderboard middle-leaderboard">
+                            <?php get_ads('middle-leaderboard') ?>
                         </div>
 
                         <div class="post-content">
@@ -103,6 +110,9 @@
                 <?php endwhile; ?>
             </div>
             <div class="col-md-3">
+                <div class="leaderboard vertical-leaderboard">
+                    <?php get_ads('vertical-leaderboard') ?>
+                </div>
                 <section id="most-popular-article">
                     <?php $mostPopular = wpp_get_ids([
                         'limit' => 5,

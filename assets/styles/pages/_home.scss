@@ -388,6 +388,10 @@ img.size-full {
     }
 }
 
+.wpadcenter-ad-container .ad-placement img {
+    object-fit: contain;
+}
+
 /* HTML: <div class="loader"></div> */
 .loader {
     width: 30px;

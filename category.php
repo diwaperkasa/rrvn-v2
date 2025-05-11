@@ -2,6 +2,9 @@
 
 <main class="main" role="main">
     <div class="container">
+        <div class="leaderboard top-leaderboard">
+            <?php get_ads('top-leaderboard') ?>
+        </div>
         <div class="row">
             <div class="col-md-9">
                 <div class="text-center sweet-sans-font position-relative my-5">
@@ -40,6 +43,9 @@
                                 </div>
                             </article>
                             <div class="my-5 border"></div>
+                            <div class="leaderboard middle-leaderboard">
+                                <?php get_ads('middle-leaderboard') ?>
+                            </div>
                         <?php else: ?>
                             <?= get_template_part('parts/category-post') ?>
                         <?php endif; ?>
@@ -81,6 +87,9 @@
                 </div>
             </div>
             <div class="col-md-3">
+                <div class="leaderboard vertical-leaderboard">
+                    <?php get_ads('vertical-leaderboard') ?>
+                </div>
                 <section id="most-popular-article">
                     <?php $mostPopular = wpp_get_ids([
                         'limit' => 5,

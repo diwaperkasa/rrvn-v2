@@ -65,6 +65,9 @@
                 </div>
             </div>
         </section> -->
+        <div class="leaderboard top-leaderboard">
+            <?php get_ads('top-leaderboard') ?>
+        </div>
         <section id="latest-article">
             <div class="text-center mb-3 mb-md-5">
                 <div class="sweet-sans-font position-relative">
@@ -111,6 +114,9 @@
                 <?php wp_reset_postdata(); ?>
             </div>
         </section>
+        <div class="leaderboard middle-leaderboard">
+            <?php get_ads('middle-leaderboard') ?>
+        </div>
         <?php if (have_rows('selected_category')): ?>
             <?php $articleCategoryLength = get_field('how_many_article_category_to_show') ?>
             <?php while(the_repeater_field('selected_category')): ?>

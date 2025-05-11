@@ -1,3 +1,6 @@
+    <div class="leaderboard bottom-leaderboard">
+        <?php get_ads('bottom-leaderboard') ?>
+    </div>
     <footer class="footer">
         <section id="footer" class="p-5">
             <div class="text-center">

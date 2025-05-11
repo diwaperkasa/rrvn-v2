@@ -97,50 +97,55 @@ use PHP_CodeSniffer\Reports\Json;
             </div>
         </div>
     </div>
-    <header class="container d-none d-lg-block">
-        <div style="grid-template-columns: 30% auto 30%;" class="d-grid">
-            <div class="g-col-4">
-                <ul class="list-group d-flex flex-row lh-1 mx-0 my-5 align-self-center">
-                    <li style="width: 34px; height: 34px;" class="list-group-item p-2 bg-transparent me-1 border rounded-circle text-center">
-                        <a target="_blank" class="text-decoration-none header-media-social d-flex text-dark" href="<?= get_theme_mod('facebook_url', 'javascript:void(0);') ?>">
-                            <i class="fa-brands fa-facebook-f"></i>
-                        </a>
-                    </li>
-                    <li style="width: 34px; height: 34px;" class="list-group-item p-0 bg-transparent mx-1 border rounded-circle">
-                        <a target="_blank" class="text-decoration-none header-media-social d-flex text-dark" href="<?= get_theme_mod('instagram_url', 'javascript:void(0);') ?>">
-                            <i class="fa-brands fa-instagram p-2"></i>
-                        </a>
-                    </li>
-                    <li style="width: 34px; height: 34px;" class="list-group-item p-0 bg-transparent mx-1 border rounded-circle">
-                        <a target="_blank" class="text-decoration-none header-media-social d-flex text-dark" href="<?= get_theme_mod('youtube_url', 'javascript:void(0);') ?>">
-                            <i class="fa-brands fa-youtube p-2"></i>
-                        </a>
-                    </li>
-                    <li class="list-group-item p-0 border-0 bg-transparent mx-1">
-                        <a target="_blank" class="text-decoration-none" href="<?= get_theme_mod('wedding_dreams_url', 'javascript:void(0);') ?>">
-                            <img src="<?= esc_url( get_theme_mod( 'wedding_dreams_image' ) ); ?>" alt="" width="200">
-                        </a>
-                    </li>
-                </ul>
-            </div>
-            <div class="g-col-4 text-center">
-                <a href="<?= site_url() ?>" class="text-decoration-none">
-                    <img src="<?= esc_url( get_theme_mod( 'rrvn_logo' ) ); ?>" alt="" width="360">
-                </a>
-            </div>
-            <div class="g-col-4 text-end">
-                <ul class="list-group d-flex flex-row lh-1 mx-0 my-5 justify-content-end align-items-center">
-                    <li class="list-group-item p-0 border-0 bg-transparent me-2 ms-5">
-                        <a class="text-decoration-none" href="<?= get_theme_mod('gourmet_collection_url', 'javascript:void(0);') ?>">
-                            <img src="<?= esc_url( get_theme_mod( 'gourmet_collection_image' ) ); ?>" alt="" width="100">
-                        </a>
-                    </li>
-                    <li class="list-group-item p-0 ms-2 border-0 bg-transparent">
-                        <a target="_blank" class="text-decoration-none text-dark" href="<?= get_theme_mod('subscribe_url', 'javascript:void(0);') ?>">
-                            <span class="text-uppercase fw-bold">Subscribe</span>
-                        </a>
-                    </li>
-                </ul>
+    <header class="container">
+        <div class="leaderboard header-leaderboard">
+            <?php get_ads('header-leaderboard') ?>
+        </div>
+        <div class="d-none d-lg-block">
+            <div style="grid-template-columns: 30% auto 30%;" class="d-grid">
+                <div class="g-col-4">
+                    <ul class="list-group d-flex flex-row lh-1 mx-0 my-5 align-self-center">
+                        <li style="width: 34px; height: 34px;" class="list-group-item p-2 bg-transparent me-1 border rounded-circle text-center">
+                            <a target="_blank" class="text-decoration-none header-media-social d-flex text-dark" href="<?= get_theme_mod('facebook_url', 'javascript:void(0);') ?>">
+                                <i class="fa-brands fa-facebook-f"></i>
+                            </a>
+                        </li>
+                        <li style="width: 34px; height: 34px;" class="list-group-item p-0 bg-transparent mx-1 border rounded-circle">
+                            <a target="_blank" class="text-decoration-none header-media-social d-flex text-dark" href="<?= get_theme_mod('instagram_url', 'javascript:void(0);') ?>">
+                                <i class="fa-brands fa-instagram p-2"></i>
+                            </a>
+                        </li>
+                        <li style="width: 34px; height: 34px;" class="list-group-item p-0 bg-transparent mx-1 border rounded-circle">
+                            <a target="_blank" class="text-decoration-none header-media-social d-flex text-dark" href="<?= get_theme_mod('youtube_url', 'javascript:void(0);') ?>">
+                                <i class="fa-brands fa-youtube p-2"></i>
+                            </a>
+                        </li>
+                        <li class="list-group-item p-0 border-0 bg-transparent mx-1">
+                            <a target="_blank" class="text-decoration-none" href="<?= get_theme_mod('wedding_dreams_url', 'javascript:void(0);') ?>">
+                                <img src="<?= esc_url( get_theme_mod( 'wedding_dreams_image' ) ); ?>" alt="" width="200">
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="g-col-4 text-center">
+                    <a href="<?= site_url() ?>" class="text-decoration-none">
+                        <img src="<?= esc_url( get_theme_mod( 'rrvn_logo' ) ); ?>" alt="" width="360">
+                    </a>
+                </div>
+                <div class="g-col-4 text-end">
+                    <ul class="list-group d-flex flex-row lh-1 mx-0 my-5 justify-content-end align-items-center">
+                        <li class="list-group-item p-0 border-0 bg-transparent me-2 ms-5">
+                            <a class="text-decoration-none" href="<?= get_theme_mod('gourmet_collection_url', 'javascript:void(0);') ?>">
+                                <img src="<?= esc_url( get_theme_mod( 'gourmet_collection_image' ) ); ?>" alt="" width="100">
+                            </a>
+                        </li>
+                        <li class="list-group-item p-0 ms-2 border-0 bg-transparent">
+                            <a target="_blank" class="text-decoration-none text-dark" href="<?= get_theme_mod('subscribe_url', 'javascript:void(0);') ?>">
+                                <span class="text-uppercase fw-bold">Subscribe</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
             </div>
         </div>
     </header>

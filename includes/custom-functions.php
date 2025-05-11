@@ -269,3 +269,5 @@ function rrvn_customize_register( $wp_customize ) {
 }
 
 add_action( 'customize_register', 'rrvn_customize_register' );
+
+include "wpadcenter.php";
