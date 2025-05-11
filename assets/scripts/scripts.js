@@ -30,6 +30,7 @@ function getAbsolutePosition(element) {
 const desktopMenuContainer = document.getElementById('desktop-menu-container');
 const desktopMenuNav = document.getElementById('desktop-menu-nav');
 const rrLogo = document.getElementById('desktop-menu-rr-logo');
+const subscribeMenu = document.getElementById('subscribe-menu');
 
 window.addEventListener('scroll', () => {
     const desktopNavMenuPosition = getAbsolutePosition(desktopMenuContainer);
@@ -42,6 +43,10 @@ window.addEventListener('scroll', () => {
         if (!rrLogo.classList.contains('d-lg-none')) {
             rrLogo.classList.add('d-lg-none');
         }
+
+        if (!subscribeMenu.classList.contains('d-none')) {
+            subscribeMenu.classList.add('d-none');
+        }
     } else {
         if (!desktopMenuNav.classList.contains('border-bottom')) {
             desktopMenuNav.classList.add('border-bottom', 'border-2', 'border-dark')
@@ -49,6 +54,10 @@ window.addEventListener('scroll', () => {
 
         if (rrLogo.classList.contains('d-lg-none')) {
             rrLogo.classList.remove('d-lg-none');
+        }
+
+        if (subscribeMenu.classList.contains('d-none')) {
+            subscribeMenu.classList.remove('d-none');
         }
     }
 });

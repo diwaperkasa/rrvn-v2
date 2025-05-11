@@ -169,6 +169,9 @@ use PHP_CodeSniffer\Reports\Json;
                                     </li>
                                 <?php endif; ?>
                             <?php endforeach; ?>
+                            <li id="subscribe-menu" class="nav-item border-start border-1 border-dark d-none">
+                                <a target="_blank" class="nav-link text-uppercase text-black text-decoration-none" aria-current="page" href="<?= get_theme_mod('subscribe_url', 'javascript:void(0);') ?>">Subscribe</a>
+                            </li>
                         </ul>
                     <?php endif; ?>
                 </div>
