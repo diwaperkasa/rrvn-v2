@@ -376,6 +376,14 @@ img.size-full {
     }
 }
 
+#desktop-menu-rr-logo img {
+    width: 200px;
+
+    @media screen and ( min-width: 992px ) {
+        width: 120px;
+    }
+}
+
 /* HTML: <div class="loader"></div> */
 .loader {
     width: 30px;
