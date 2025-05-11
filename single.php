@@ -81,7 +81,7 @@
                             </ul>
                         </div>
                     </section>
-                    <section id="subscribe-footer" class="mb-5">
+                    <section id="subscribe-footer" class="mb-5 px-0 px-md-5">
                         <?php $tags = wp_get_post_terms($post->ID, 'post_tag', ['field' => 'all']); ?>
                         <?php if ($tags): ?>
                             <div class="mb-3 d-block d-md-flex text-center justify-content-center">
