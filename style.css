@@ -11469,6 +11469,11 @@ img.size-full {
   -o-object-fit: contain;
      object-fit: contain;
   aspect-ratio: unset;
+  height: inherit;
+}
+
+.wpadcenter-ad-inner, .wpadcenter-ad-inner a {
+  height: inherit;
 }
 
 /* HTML: <div class="loader"></div> */
