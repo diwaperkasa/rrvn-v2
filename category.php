@@ -43,7 +43,7 @@
                                 </div>
                             </article>
                             <div class="my-5 border"></div>
-                            <div class="leaderboard middle-leaderboard">
+                            <div class="leaderboard middle-leaderboard mb-5">
                                 <?php get_ads('middle-leaderboard') ?>
                             </div>
                         <?php else: ?>
