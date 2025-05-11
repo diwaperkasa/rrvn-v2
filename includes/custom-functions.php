@@ -86,7 +86,7 @@ add_filter( 'rest_prepare_post', 'json_to_html', 10, 3 );
 function get_dfp_targets()
 {
     global $post;
-    $targets = [];
+    $targets = ["all"];
 
     if (is_home() || is_front_page() || is_page(['newsletter', 'print-and-digital-subscription'])) {
         $targets[] = 'home';
@@ -101,6 +101,7 @@ function get_dfp_targets()
     } elseif (is_author()) {
         $targets[] = 'home';
     } elseif (is_category()) {
+        $targets[] = 'category';
         $term = get_queried_object();
         if ($term->parent > 0) {
             $term      = get_term_by('id', $term->parent, 'category');

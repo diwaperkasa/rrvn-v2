@@ -54,6 +54,11 @@ function get_ads(string $adUnit)
                 'taxonomy' => 'ad-unit',
                 'field' => 'slug',
                 'terms' => $adUnit,
+            ],
+            [
+                'taxonomy' => 'page-targeting',
+                'field' => 'slug',
+                'terms' => $tags,
             ]
         ]
     ];
