@@ -11468,6 +11468,7 @@ img.size-full {
 .wpadcenter-ad-container .ad-placement img {
   -o-object-fit: contain;
      object-fit: contain;
+  aspect-ratio: unset;
 }
 
 /* HTML: <div class="loader"></div> */
