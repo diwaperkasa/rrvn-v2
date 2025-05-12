@@ -150,23 +150,20 @@ use PHP_CodeSniffer\Reports\Json;
         </div>
     </header>
     <div id="desktop-menu-container" class="sticky-top bg-white">
-        <div class="container">
-            <nav id="desktop-menu-nav" class="navbar navbar-expand-lg navbar-light sweet-sans-font">
-                <span type="button" class="text-danger p-2" data-bs-toggle="offcanvas" data-bs-target="#offcanvasTop" aria-controls="offcanvasTop"><i class="fa-solid fa-bars fs-5"></i></span>
-                <button class="navbar-toggler d-none" type="button" data-bs-toggle="collapse"
-                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-                    aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
+        <div id="desktop-menu-class-container" class="container">
+            <nav id="desktop-menu-nav" class="navbar navbar-expand-lg navbar-light sweet-sans-font py-0">
+                <span type="button" class="text-danger p-2" data-bs-toggle="offcanvas" data-bs-target="#offcanvasTop" aria-controls="offcanvasTop">
+                    <i class="fa-solid fa-bars fs-5"></i>
+                </span>
                 <div id="desktop-menu-rr-logo" class="d-block d-lg-none">
                     <a href="<?= site_url() ?>" class="text-decoration-none">
-                        <img width="120" class="img-fluid" src="<?= esc_url( get_theme_mod( 'rrvn_logo' ) ); ?>" alt="">
+                        <img width="120" src="<?= esc_url( get_theme_mod( 'rrvn_logo' ) ); ?>" alt="">
                     </a>
                 </div>
                 <div class="collapse navbar-collapse primary-menu" id="navbarSupportedContent">
                     <?php $primaryMenus = wp_get_nav_menu_items('primary-menu'); ?>
                     <?php if ($primaryMenus): ?>
-                        <ul class="navbar-nav flex-wrap me-auto mb-2 mb-lg-0 fw-bold">
+                        <ul class="navbar-nav text-nowrap flex-wrap me-auto mb-2 mb-lg-0 fw-bold">
                             <?php foreach ($primaryMenus as $menu): ?>
                                 <?php if ($menu->menu_item_parent == 0): ?>
                                     <li class="nav-item">
@@ -180,13 +177,9 @@ use PHP_CodeSniffer\Reports\Json;
                         </ul>
                     <?php endif; ?>
                 </div>
-                <ul class="navbar-nav fw-bold m-0">
-                    <li class="nav-item">
-                        <div class="position-relative ms-2 text-danger">
-                            <span type="button" class="fa fa-search p-2 fs-5" data-bs-toggle="offcanvas" data-bs-target="#offcanvasSearch" aria-controls="offcanvasSearch"></span>
-                        </div>
-                    </li>
-                </ul>
+                <span type="button" class="text-danger p-2" data-bs-toggle="offcanvas" data-bs-target="#offcanvasSearch" aria-controls="offcanvasSearch">
+                    <i class="fa fa-search p-2 fs-5"></i>
+                </span>
             </nav>
         </div>
     </div>

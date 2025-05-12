@@ -11465,6 +11465,12 @@ img.size-full {
   }
 }
 
+@media screen and (min-width: 992px) {
+  .container-menu {
+    max-width: none;
+  }
+}
+
 .wpadcenter-ad-container .ad-placement img {
   -o-object-fit: contain !important;
      object-fit: contain !important;
