@@ -27,4 +27,4 @@
         </div>
     </div>
 </article>
-<div class="my-5 border"></div>
+<div class="my-4 my-md-5 border"></div>

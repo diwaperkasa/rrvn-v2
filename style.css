@@ -11466,8 +11466,8 @@ img.size-full {
 }
 
 .wpadcenter-ad-container .ad-placement img {
-  -o-object-fit: contain;
-     object-fit: contain;
+  -o-object-fit: contain !important;
+     object-fit: contain !important;
   aspect-ratio: unset;
   height: inherit;
 }

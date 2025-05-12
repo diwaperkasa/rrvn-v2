@@ -7,7 +7,7 @@
         </div>
         <div class="row">
             <div class="col-md-9">
-                <div class="text-center sweet-sans-font position-relative my-5">
+                <div class="text-center sweet-sans-font position-relative my-4 my-md-5">
                     <h1 class="text-uppercase border-line mb-0 h2">
                         <span class="position-relative bg-white px-2"><?= get_queried_object()->name ?></span>
                     </h1>
@@ -42,8 +42,8 @@
                                     </div>
                                 </div>
                             </article>
-                            <div class="my-5 border"></div>
-                            <div class="leaderboard middle-leaderboard mb-5">
+                            <div class="my-4 my-md-5 border"></div>
+                            <div class="leaderboard middle-leaderboard my-4 my-md-5">
                                 <?php get_ads('middle-leaderboard') ?>
                             </div>
                         <?php else: ?>
@@ -87,39 +87,7 @@
                 </div>
             </div>
             <div class="col-md-3">
-                <div class="leaderboard vertical-leaderboard">
-                    <?php get_ads('vertical-leaderboard') ?>
-                </div>
-                <section id="most-popular-article">
-                    <?php $mostPopular = wpp_get_ids([
-                        'limit' => 5,
-                        'taxonomy' => 'category',
-                        // 'term_id' => get_queried_object()->term_id,
-                        'range' => 'all'
-                    ]);?>
-                    <h4 class="sweet-sans-font mb-3 border-bottom">Most Popular</h4>
-                    <div class="row">
-                        <?php foreach ($mostPopular as $postId): $mostPopularPost = get_post($postId); ?>
-                            <div class="col-md-12">
-                                <div class="mb-3">
-                                    <a href="<?= get_permalink($mostPopularPost->ID) ?>" class="text-decoration-none">
-                                        <article <?php post_class(); ?>>
-                                            <div class="py-3 text-center">
-                                                <?= get_the_post_thumbnail($mostPopularPost->ID, 'full', ['class' => 'rounded-circle']) ?>
-                                            </div>
-                                        </article>
-                                        <div class="text-center">
-                                            <a href="<?= get_permalink($mostPopularPost->ID) ?>" class="text-decoration-none">
-                                                <h3 class="categoty-article-title text-dark eb-garamond-semibold-font h5"><?= $mostPopularPost->post_title; ?></h3>
-                                            </a>
-                                        </div>
-                                    </a>
-                                </div>
-                            </div>
-                        <?php endforeach; ?>
-                        <?php wp_reset_postdata(); ?>
-                    </div>
-                </section>
+                <?php get_template_part( 'parts/most-popular'); ?>
             </div>
         </div>
     </div>
