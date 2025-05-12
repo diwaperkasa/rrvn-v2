@@ -66,7 +66,7 @@
                         ]);?>
                         <div class="most-read-carousel py-3">
                             <?php foreach ($mostRead as $postId): $mostReadPost = get_post($postId); ?>
-                                <div class="most-read-cell px-0 px-md-3">
+                                <div class="most-read-cell px-0 px-sm-1 px-md-3">
                                     <a href="<?= get_permalink($mostReadPost->ID) ?>" class="text-decoration-none">
                                         <article <?php post_class(); ?>>
                                             <figure class="gallery-item wp-caption ">
