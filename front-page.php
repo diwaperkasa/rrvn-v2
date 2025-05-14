@@ -80,7 +80,7 @@
                             </div>
                         </div>
                         <div class="d-flex justify-content-center">
-                            <div class="leaderboard vertical-leaderboard">
+                            <div class="leaderboard vertical-leaderboard mb-5">
                                 <?php get_ads('vertical-leaderboard', 'none') ?>
                             </div>
                         </div>
