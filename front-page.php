@@ -2,72 +2,92 @@
 
 <main class="main" role="main">
     <div class="container">
-        <section id="banner">
-            <?php $articles = get_field('carousel_articles'); ?>
-            <div class="banner-carousel mb-5">
-                <?php foreach ($articles as $article): ?>
-                    <?php $post = get_post($article) ?>
-                    <article <?php post_class(); ?>>
-                        <div class="img-hover-zoom">
-                            <a class="text-decoration-none" href="<?= get_permalink(get_the_ID()) ?>">
-                                <?= get_the_post_thumbnail($post, 'full') ?>
-                            </a>
+        <section id="pinned-article" class="mb-3">
+            <div class="row">
+                <?php $articles = get_field('carousel_articles'); ?>
+                <?php foreach ($articles as $index => $article): $post = get_post($article) ?>
+                    <?php if ($index == 0): ?>
+                        <div class="col-md-12">
+                            <article <?php post_class("mb-3 mb-md-5"); ?>>
+                                <div class="img-hover-zoom">
+                                    <a class="text-decoration-none" href="<?= get_permalink(get_the_ID()) ?>">
+                                        <?= get_the_post_thumbnail($post, 'full') ?>
+                                    </a>
+                                </div>
+                                <div class="mx-3 mx-md-5 p-3 position-relative text-center article-banner-title bg-white mb-3 shadow">
+                                    <?php $categories = get_the_category($post->ID) ?>
+                                    <?php if ($categories): ?>
+                                        <a class="text-decoration-none" href="<?= get_term_link($categories[0]->term_id) ?>"><h3 class="fs-6 text-center text-danger text-uppercase sweet-sans-font"><?= $categories[0]->name ?></h3></a>
+                                    <?php endif; ?>
+                                    <a class="text-decoration-none" href="<?= get_permalink(get_the_ID()) ?>">
+                                        <h2 class="text-dark fw-bold eb-garamond-semibold-font"><?php the_title() ?></h2>
+                                    </a>
+                                    <!-- <p>Trong bối cảnh ẩm thực ngày nay, những quầy bar bình dân đang giúp mang lại nguồn tài chính ổn định cho mảng fine dining.</p> -->
+                                </div>
+                            </article>
                         </div>
-                        <div class="mx-3 mx-md-5 p-3 position-relative text-center article-banner-title bg-white mb-3 shadow">
-                            <?php $categories = get_the_category($post->ID) ?>
-                            <?php if ($categories): ?>
-                                <a class="text-decoration-none" href="<?= get_term_link($categories[0]->term_id) ?>"><h3 class="fs-6 text-center text-danger text-uppercase sweet-sans-font"><?= $categories[0]->name ?></h3></a>
-                            <?php endif; ?>
-                            <a class="text-decoration-none" href="<?= get_permalink(get_the_ID()) ?>">
-                                <h2 class="text-dark fw-bold eb-garamond-semibold-font"><?php the_title() ?></h2>
-                            </a>
-                            <p>Trong bối cảnh ẩm thực ngày nay, những quầy bar bình dân đang giúp mang lại nguồn tài chính ổn định cho mảng fine dining.</p>
+                    <?php else: ?>
+                        <div class="col-md-6 col-lg-4">
+                            <article <?php post_class(); ?>>
+                                <div class="img-hover-zoom">
+                                    <a class="text-decoration-none" href="<?= get_permalink(get_the_ID()) ?>">
+                                        <?= get_the_post_thumbnail($post, 'full') ?>
+                                    </a>
+                                </div>
+                                <div class="text-center py-3 py-md-4">
+                                    <?php $categories = get_the_category($post->ID) ?>
+                                    <?php if ($categories): ?>
+                                        <a class="text-decoration-none" href="<?= get_term_link($categories[0]->term_id) ?>"><h3 class="fs-6 text-center text-danger text-uppercase sweet-sans-font"><?= $categories[0]->name ?></h3></a>
+                                    <?php endif; ?>
+                                    <a class="text-decoration-none" href="<?= get_permalink(get_the_ID()) ?>">
+                                        <h2 class="text-dark fw-bold eb-garamond-semibold-font"><?php the_title() ?></h2>
+                                    </a>
+                                    <!-- <p>Trong bối cảnh ẩm thực ngày nay, những quầy bar bình dân đang giúp mang lại nguồn tài chính ổn định cho mảng fine dining.</p> -->
+                                </div>
+                            </article>
                         </div>
-                    </article>
+                    <?php endif; ?>
                 <?php endforeach; ?>
                 <?php wp_reset_postdata(); ?>
             </div>
         </section>
-        <!-- <section id="pinned-article" class="mb-3">
-            <div class="row">
-                <div class="col-md-4">
-                    <article>
-                        <div class="img-hover-zoom">
-                            <img class="img-fluid img-wrapper" src="https://robbreport.com.vn/_next/image?url=https%3A%2F%2Fstorage.googleapis.com%2Ftd-robb-media%2F2025%2F3%2Fc8cddc0c-5f77-44e0-9e68-6fde48a6a2d7.JPG&w=1080&q=100" alt="">
-                        </div>
-                        <div class="text-center">
-                            <h3 class="mt-3 fs-6 text-center text-danger text-uppercase sweet-sans-font">Gourmet Collection</h3>
-                            <h2 class="fs-3 fw-bold eb-garamond-semibold-font">[Cà phê sáng] Nhà sáng lập T.U.N.G dining và Å by TUNG bật mí sự thật trong kinh doanh ẩm thực cao cấp</h2>
-                        </div>
-                    </article>
-                </div>
-                <div class="col-md-4">
-                    <article>
-                        <div class="img-hover-zoom">
-                            <img class="img-fluid img-wrapper" src="https://robbreport.com.vn/_next/image?url=https%3A%2F%2Fstorage.googleapis.com%2Ftd-robb-media%2F2025%2F3%2Fa887b5b8-65be-4d10-8fe6-db2b8ed9532b.webp&w=1080&q=100" alt="">
-                        </div>
-                        <div class="text-center">
-                            <h3 class="mt-3 fs-6 text-center text-danger text-uppercase sweet-sans-font">Money</h3>
-                            <h2 class="fs-3 fw-bold eb-garamond-semibold-font">Báo cáo Thịnh vượng Knight Frank 2025: cơ hội trong biến động</h2>
-                        </div>
-                    </article>
-                </div>
-                <div class="col-md-4">
-                    <article>
-                        <div class="img-hover-zoom">
-                            <img class="img-fluid img-wrapper" src="https://robbreport.com.vn/_next/image?url=https%3A%2F%2Fstorage.googleapis.com%2Ftd-robb-media%2F2025%2F3%2Fc5309faf-f34a-4767-b130-bd7cf9f16b63.jpg&w=1080&q=100" alt="">
-                        </div>
-                        <div class="text-center">
-                            <h3 class="mt-3 fs-6 text-center text-danger text-uppercase sweet-sans-font">News</h3>
-                            <h2 class="fs-3 fw-bold eb-garamond-semibold-font">Boongke “Tận thế” xa xỉ trị giá 300 triệu USD dành cho giới siêu giàu</h2>
-                        </div>
-                    </article>
-                </div>
-            </div>
-        </section> -->
         <div class="leaderboard top-leaderboard">
             <?php get_ads('top-leaderboard') ?>
         </div>
+        <section id="digital-subscription">
+            <div class="container">
+                <div class="d-block d-md-flex">
+                    <?php if (have_rows('magazine_subscription')): ?>
+                        <div class="border w-md-75 mb-5 px-2 px-md-4">
+                            <div class="row">
+                                <?php while(the_repeater_field('magazine_subscription')): ?>
+                                    <div class="col-6">
+                                        <div class="border rounded p-2 p-md-4 my-2 my-md-4 text-center">
+                                            <div class="mb-3">
+                                                <span class="h4 fw-bold">GET THE MAGAZINE!</span>
+                                            </div>
+                                            <div class="mb-3">
+                                                <?php $subscriptionImg = get_sub_field('magazine_subscription_image') ?>
+                                                <img class="img-fluid" src="<?= $subscriptionImg['url'] ?>" alt="<?= get_sub_field('magazine_subscription_title') ?>">
+                                            </div>
+                                            <a target="_blank" class="btn btn-danger text-white" href="<?= get_sub_field('magazine_subscription_url') ?>">
+                                                <?= get_sub_field('magazine_subscription_title') ?>
+                                                <svg style="height: 14px; width: 14px;" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
+                                            </a>
+                                        </div>
+                                    </div>
+                                <?php endwhile; ?>
+                            </div>
+                        </div>
+                        <div class="d-flex justify-content-center">
+                            <div class="leaderboard vertical-leaderboard">
+                                <?php get_ads('vertical-leaderboard', 'none') ?>
+                            </div>
+                        </div>
+                    <?php endif; ?>
+                </div>
+            </div>
+        </section>
         <section id="latest-article">
             <div class="text-center mb-3 mb-md-5">
                 <div class="sweet-sans-font position-relative">

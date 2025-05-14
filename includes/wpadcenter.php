@@ -31,7 +31,7 @@ function wp_adcenter_manage_ads_column_values_custom($return_value, $column, $ad
 
 add_action( 'wp_adcenter_manage_ads_column_values', 'wp_adcenter_manage_ads_column_values_custom', 10, 3);
 
-function get_ads(string $adUnit)
+function get_ads(string $adUnit, string $align = 'center')
 {
     $tags = get_dfp_targets();
 
@@ -69,7 +69,7 @@ function get_ads(string $adUnit)
         if (function_exists('wpadcenter_display_ad')) {
             wpadcenter_display_ad( [
                 'id' => $ad->ID,
-                'align' => 'center'
+                'align' => $align
             ]);
         }
     }

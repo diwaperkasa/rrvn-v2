@@ -281,7 +281,7 @@ img.size-full {
     }
 
     img:hover {
-        transform: scale(1.2);
+        transform: scale(1.1);
     }
 }
 
@@ -402,6 +402,12 @@ img.size-full {
 
 .wpadcenter-ad-inner, .wpadcenter-ad-inner a {
     height: inherit;
+}
+
+.w-md-75 {
+    @media screen and ( min-width: 768px ) {
+        width: 75%;
+    }
 }
 
 /* HTML: <div class="loader"></div> */
