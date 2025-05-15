@@ -1,9 +1,11 @@
 <article <?php post_class(); ?>>
     <div class="row">
         <div class="col-md-5">
-            <a href="<?= get_permalink(get_the_ID()) ?>" class="text-decoration-none">
-                <?= get_the_post_thumbnail(get_the_ID(), 'full') ?>
-            </a>
+            <div class="img-hover-zoom">
+                <a href="<?= get_permalink(get_the_ID()) ?>" class="text-decoration-none">
+                    <?= get_the_post_thumbnail(get_the_ID(), 'full') ?>
+                </a>
+            </div>
         </div>
         <div class="col-md-7">
             <div class="text-center text-md-start py-3 py-md-0">
@@ -14,7 +16,7 @@
                     </div>
                 <?php endif; ?>
                 <a href="<?= get_permalink(get_the_ID()) ?>" class="text-decoration-none">
-                    <h3 class="categoty-article-title text-dark h2 eb-garamond-semibold-font"><?php the_title(); ?></h3>
+                    <h3 class="article-title text-dark h2 eb-garamond-semibold-font"><?php the_title(); ?></h3>
                 </a>
                 <div class="categoty-article-shortdesc">
 

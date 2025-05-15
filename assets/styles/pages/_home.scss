@@ -344,12 +344,12 @@ img.size-full {
     height: 25px;
 }
 
-#most-popular-article {
-    position: sticky;
-    top: 5rem;
+.vertical-leaderboard:has(.wpadcenter-ad-container) {
+    position: unset;
+    top: 4rem;
 
     @media screen and ( min-width: 992px ) {
-        top: 4rem;
+        position: sticky;
     }
 }
 
@@ -408,6 +408,10 @@ img.size-full {
     @media screen and ( min-width: 768px ) {
         width: 75%;
     }
+}
+
+.post:hover .article-title {
+    color: #ed1d25 !important;
 }
 
 /* HTML: <div class="loader"></div> */
