@@ -11492,6 +11492,30 @@ img.size-full {
   color: #ed1d25 !important;
 }
 
+.floating-video-ad {
+  position: fixed;
+  bottom: 10px;
+  right: 20px;
+  width: 300px;
+  height: auto;
+  z-index: 1000;
+}
+
+.floating-video-ad iframe {
+  aspect-ratio: 16/9;
+  width: 100%;
+  height: auto;
+}
+
+.floating-video-ad:has(.wpadcenter-ad-container) {
+  display: block !important;
+}
+
+.video-leaderboard .ad-placement {
+  background-color: transparent !important;
+  border: transparent !important;
+}
+
 /* HTML: <div class="loader"></div> */
 .loader {
   width: 30px;

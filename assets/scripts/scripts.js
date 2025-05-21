@@ -185,3 +185,7 @@ if (typeof(search_post) !== 'undefined') {
         });
     });
 }
+
+document.querySelector(".video-leaderboard-btn-close").addEventListener('click', function (event) {
+    document.querySelector('.floating-video-ad').remove();
+});
