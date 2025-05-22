@@ -11236,7 +11236,7 @@ img.size-full {
   font-weight: 500;
 }
 
-.post-content > .gallery, .post-content > div > .gallery, .post-content > .wp-caption, .post-content > p:has(img), .post-content > figure:has(img) {
+.post-content > .gallery, .post-content > div > .gallery, .post-content > .wp-caption, .post-content > p:has(img), .post-content > figure:has(img), p:has(iframe) {
   padding-right: 0rem !important;
   padding-left: 0rem !important;
 }
