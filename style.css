@@ -11398,13 +11398,13 @@ img.size-full {
   height: auto;
 }
 
-.gallery-item {
+.post-content .gallery-item {
   display: flex;
   justify-content: center;
   text-align: center;
 }
 
-.gallery-item img {
+.post-content .gallery-item img {
   -o-object-fit: contain;
      object-fit: contain;
   width: auto !important;
