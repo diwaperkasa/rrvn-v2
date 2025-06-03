@@ -21,6 +21,11 @@
                                     <?php endif; ?>
                                     <a class="text-decoration-none" href="<?= get_permalink(get_the_ID()) ?>">
                                         <h2 class="article-title text-dark fw-bold eb-garamond-semibold-font"><?php the_title() ?></h2>
+                                        <?php if ($shortDesc = get_post_meta($post->ID, '_yoast_wpseo_metadesc', true)): ?>
+                                            <div class="categoty-article-shortdesc">
+                                                <p class="fw-light fs-5"><?= $shortDesc; ?></p>
+                                            </div>
+                                        <?php endif; ?>
                                     </a>
                                     <!-- <p>Trong bối cảnh ẩm thực ngày nay, những quầy bar bình dân đang giúp mang lại nguồn tài chính ổn định cho mảng fine dining.</p> -->
                                 </div>
@@ -176,6 +181,11 @@
                                     <a class="text-decoration-none" href="<?= get_permalink($cover['ID']) ?>">
                                         <h3 class="article-title text-dark fw-bold eb-garamond-semibold-font"><?= $cover['post_title'] ?></h3>
                                     </a>
+                                    <?php if ($shortDesc = get_post_meta($cover['ID'], '_yoast_wpseo_metadesc', true)): ?>
+                                        <div class="categoty-article-shortdesc">
+                                            <p class="fw-light fs-5"><?= $shortDesc; ?></p>
+                                        </div>
+                                    <?php endif; ?>
                                     <?php $writer = wp_get_post_terms($cover['ID'], 'writer', ['field' => 'all']); ?>
                                     <?php if ($writer): ?>
                                         <span><span class="fst-italic georgia-font">By </span><a style="letter-spacing: 1.35px;" class="sweet-sans-font text-uppercase text-decoration-none text-dark" href="<?= get_term_link($writer[0]->term_id) ?>"><?= $writer[0]->name ?></a></span>
@@ -256,6 +266,11 @@
                                         <a class="text-decoration-none" href="<?= get_permalink($cover['ID']) ?>">
                                             <h3 class="article-title article-title text-dark fw-bold eb-garamond-semibold-font"><?= $cover['post_title'] ?></h3>
                                         </a>
+                                        <?php if ($shortDesc = get_post_meta($cover['ID'], '_yoast_wpseo_metadesc', true)): ?>
+                                            <div class="categoty-article-shortdesc">
+                                                <p class="fw-light fs-5"><?= $shortDesc; ?></p>
+                                            </div>
+                                        <?php endif; ?>
                                         <?php $writer = wp_get_post_terms($cover['ID'], 'writer', ['field' => 'all']); ?>
                                         <?php if ($writer): ?>
                                             <span><span class="fst-italic georgia-font">By </span><a style="letter-spacing: 1.35px;" class="sweet-sans-font text-uppercase text-decoration-none text-dark" href="<?= get_term_link($writer[0]->term_id) ?>"><?= $writer[0]->name ?></a></span>

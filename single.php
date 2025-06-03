@@ -25,7 +25,9 @@
 
                         <header class="post__header" role="heading">
                             <h1 class="post__title"><?php the_title(); ?></h1>
-                            <h2 class="fw-light fs-5"><?= get_post_meta($post->ID, '_yoast_wpseo_metadesc', true); ?></h2>
+                            <?php if ($shortDesc = get_post_meta($post->ID, '_yoast_wpseo_metadesc', true)): ?>
+                                <h2 class="fw-light fs-5"><?= $shortDesc; ?></h2>
+                            <?php endif; ?>
                         </header>
 
                         <div class="post-meta d-flex justify-content-between align-items-center">
