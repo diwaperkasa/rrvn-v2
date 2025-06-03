@@ -331,12 +331,13 @@ img.size-full {
     justify-content: center;
     text-align: center;
     align-items: center;
+    height: 85vh;
 }
 
 .post-content .gallery .gallery-item img {
     object-fit: contain;
     width: auto !important;
-    max-height: 85vh !important;
+    max-height: inherit !important;
 }
 
 .post-content p {
