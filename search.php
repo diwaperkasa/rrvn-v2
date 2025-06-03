@@ -29,6 +29,11 @@
                                     <a class="text-decoration-none" href="<?= get_permalink(get_the_ID()) ?>">
                                         <h3 class="text-dark fw-bold eb-garamond-semibold-font"><?= get_the_title() ?></h3>
                                     </a>
+                                    <?php if ($shortDesc = get_post_meta(get_the_ID(), '_yoast_wpseo_metadesc', true)): ?>
+                                        <div class="article-shortdesc">
+                                            <p class="fw-light fs-5"><?= $shortDesc; ?></p>
+                                        </div>
+                                    <?php endif; ?>
                                     <?php $writer = wp_get_post_terms(get_the_ID(), 'writer', ['field' => 'all']); ?>
                                     <?php if ($writer): ?>
                                         <span><span class="fst-italic georgia-font">By </span><a style="letter-spacing: 1.35px;" class="sweet-sans-font text-uppercase text-decoration-none text-dark" href="<?= get_term_link($writer[0]->term_id) ?>"><?= $writer[0]->name ?></a></span>
