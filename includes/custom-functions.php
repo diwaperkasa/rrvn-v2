@@ -9,6 +9,146 @@
  */
 // add_filter('pre_option_link_manager_enabled', '__return_true');
 
+/*
+    db.post
+    .aggregate([{
+            "$addFields": {
+                "post_id": {
+                    "$toString": "$_id"
+                }
+            }
+        },
+        {
+            "$addFields": {
+                "seo_id": {
+                    "$toObjectId": "$seoId"
+                }
+            }
+        },
+        {
+            "$addFields": {
+                "seo_url_id": {
+                    "$toObjectId": "$seoUrlId"
+                }
+            }
+        },
+        {
+            "$addFields": {
+                "user_id": {
+                    "$toObjectId": "$authorId"
+                }
+            }
+        },
+        {
+            "$addFields": {
+                "category_id": {
+                    "$toObjectId": "$primaryCategoryId"
+                }
+            }
+        },
+        {
+            $sort: {
+                publishedAt: -1
+            }
+        },
+        {
+            $lookup: {
+                from: 'postcontent',
+                localField: 'post_id',
+                foreignField: 'postId',
+                pipeline: [
+                    // {$project: {slider: 1, content: 1} },
+                    {
+                        $sort: {
+                            idx: 1
+                        }
+                    }
+                ],
+                as: 'postcontent'
+            },
+        },
+        {
+            $lookup: {
+                from: 'seo_aio',
+                localField: 'seo_id',
+                foreignField: '_id',
+                as: 'seo_aio'
+            },
+        },
+        {
+            $unwind: {
+                path: "$seo_aio",
+            }
+        },
+        {
+            $lookup: {
+                from: 'keywords',
+                let: {
+                    item_ids: "$seo_aio.keyword_id"
+                },
+                pipeline: [{
+                    $match: {
+                        $expr: {
+                            $in: ["$_id", {
+                                $map: {
+                                    input: "$$item_ids",
+                                    as: "id",
+                                    in: {
+                                        $toObjectId: "$$id"
+                                    }
+                                }
+                            }]
+                        }
+                    }
+                }],
+                as: 'keywords'
+            },
+        },
+        {
+            $lookup: {
+                from: 'seo_url',
+                localField: 'seo_url_id',
+                foreignField: '_id',
+                as: 'seo_url'
+            },
+        },
+        {
+            $unwind: {
+                path: "$seo_url",
+            }
+        },
+        {
+            $lookup: {
+                from: 'users',
+                localField: 'user_id',
+                foreignField: '_id',
+                as: 'user'
+            },
+        },
+        {
+            $unwind: {
+                path: "$user",
+            }
+        },
+        {
+            $lookup: {
+                from: 'categories',
+                localField: 'category_id',
+                foreignField: '_id',
+                as: 'category'
+            },
+        },
+        {
+            $unwind: {
+                path: "$category",
+            }
+        },
+        {
+            $limit: 10
+        },
+    ]);
+ */
+
 function my_acf_json_save_point($path)
 {
     $path = get_stylesheet_directory() . '/acf-json';
