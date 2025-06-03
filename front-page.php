@@ -22,8 +22,8 @@
                                     <a class="text-decoration-none" href="<?= get_permalink(get_the_ID()) ?>">
                                         <h2 class="article-title text-dark fw-bold eb-garamond-semibold-font"><?php the_title() ?></h2>
                                         <?php if ($shortDesc = get_post_meta($post->ID, '_yoast_wpseo_metadesc', true)): ?>
-                                            <div class="categoty-article-shortdesc">
-                                                <p class="fw-light fs-5"><?= $shortDesc; ?></p>
+                                            <div class="article-shortdesc">
+                                                <p class="fw-light fs-5 text-dark"><?= $shortDesc; ?></p>
                                             </div>
                                         <?php endif; ?>
                                     </a>
@@ -182,7 +182,7 @@
                                         <h3 class="article-title text-dark fw-bold eb-garamond-semibold-font"><?= $cover['post_title'] ?></h3>
                                     </a>
                                     <?php if ($shortDesc = get_post_meta($cover['ID'], '_yoast_wpseo_metadesc', true)): ?>
-                                        <div class="categoty-article-shortdesc">
+                                        <div class="article-shortdesc">
                                             <p class="fw-light fs-5"><?= $shortDesc; ?></p>
                                         </div>
                                     <?php endif; ?>
@@ -267,7 +267,7 @@
                                             <h3 class="article-title article-title text-dark fw-bold eb-garamond-semibold-font"><?= $cover['post_title'] ?></h3>
                                         </a>
                                         <?php if ($shortDesc = get_post_meta($cover['ID'], '_yoast_wpseo_metadesc', true)): ?>
-                                            <div class="categoty-article-shortdesc">
+                                            <div class="article-shortdesc">
                                                 <p class="fw-light fs-5"><?= $shortDesc; ?></p>
                                             </div>
                                         <?php endif; ?>

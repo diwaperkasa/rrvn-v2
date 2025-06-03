@@ -36,7 +36,7 @@
                                         <h2 class="article-title text-dark eb-garamond-semibold-font"><?php the_title(); ?></h2>
                                     </a>
                                     <?php if ($shortDesc = get_post_meta(get_the_ID(), '_yoast_wpseo_metadesc', true)): ?>
-                                        <div class="categoty-article-shortdesc">
+                                        <div class="article-shortdesc">
                                             <p class="fw-light fs-5"><?= $shortDesc; ?></p>
                                         </div>
                                     <?php endif; ?>
