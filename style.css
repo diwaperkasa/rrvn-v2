@@ -11398,6 +11398,11 @@ img.size-full {
   height: auto;
 }
 
+.gallery-item img {
+  width: auto !important;
+  height: 90vh !important;
+}
+
 .post-content p {
   text-align: justify;
 }

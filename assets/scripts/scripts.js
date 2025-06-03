@@ -91,6 +91,7 @@ if (postCarousel.length) {
             wrapAround: true,
             pageDots: false,
             autoPlay: true,
+            cellAlign: 'center'
         });
     });
 }
