@@ -11254,7 +11254,7 @@ img.size-full {
   width: 100% !important;
 }
 
-.post-content blockquote * {
+.post-content blockquote > * {
   border-left: 3px solid #c00;
   padding-left: 2rem;
 }
