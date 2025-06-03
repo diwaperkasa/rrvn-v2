@@ -326,16 +326,16 @@ img.size-full {
     height: auto;
 }
 
-.post-content .gallery-item {
+.post-content .gallery .gallery-item {
     display: flex;
     justify-content: center;
     text-align: center;
 }
 
-.post-content .gallery-item img {
+.post-content .gallery .gallery-item img {
     object-fit: contain;
     width: auto !important;
-    height: 85vh !important;
+    max-height: 85vh !important;
 }
 
 .post-content p {
