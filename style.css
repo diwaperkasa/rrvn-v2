@@ -11413,6 +11413,14 @@ img.size-full {
   max-height: inherit !important;
 }
 
+.article-shortdesc p {
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  display: -webkit-box;
+  text-overflow: ellipsis;
+}
+
 .post-content p {
   text-align: justify;
 }
