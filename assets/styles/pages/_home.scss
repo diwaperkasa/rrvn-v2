@@ -199,6 +199,14 @@ img.size-full {
     font-weight: 400;
 }
 
+.post-content h2, .post-content h3, .post-content h4, .post-content h5 {
+    margin-bottom: 1rem;
+}
+
+.post-content h2 {
+    font-size: 1.5rem;
+}
+
 .post-meta-button-share .btn {
     width: 45px;
     height: 45px;
