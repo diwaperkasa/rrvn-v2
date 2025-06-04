@@ -7,7 +7,7 @@
     <div class="align-self-end">
         <?php
             $args = [
-                'limit' => 10,
+                'limit' => 5,
                 'taxonomy' => 'category',
                 // 'term_id' => get_queried_object()->term_id,
                 'range' => 'all'
