@@ -296,7 +296,7 @@
                                                 </div>
                                             </div>
                                             <div class="col-xl-7">
-                                                <div class="text-center text-lg-start pt-3 pt-md-0">
+                                                <div class="text-center text-xl-start pt-3 pt-md-0">
                                                     <a class="text-decoration-none" href="<?= get_permalink($post['ID']) ?>">
                                                         <h3 class="article-title article-title text-dark fw-bold eb-garamond-semibold-font"><?= $post['post_title'] ?></h3>
                                                     </a>
