@@ -105,13 +105,21 @@
                 <span><?= date('l F d, Y') ?></span>
             </div>
             <?php
-                $recentPosts = wp_get_recent_posts([
+                $args = [
                     'numberposts' => get_field('how_many_latest_article_to_show'), // Number of recent posts thumbnails to display
                     'post_status' => 'publish', // Show only the published posts
                     'post_type' => 'post',
                     'orderby' => 'post_date',
                     'order' => 'DESC',
-                ]);
+                ];
+
+                if ($videoCategory = get_category_by_slug('video')) {
+                    $args['category__not_in'] = [
+                        $videoCategory->term_id
+                    ];
+                }
+
+                $recentPosts = wp_get_recent_posts($args);
             ?>
             <div class="row">
                 <?php foreach ($recentPosts as $post):?>

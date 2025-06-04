@@ -1,11 +1,19 @@
 <section id="most-read-article">
     <h4 class="most-read-article border-bottom d-inline-block">MOST-READ STORIES</h4>
-    <?php $mostRead = wpp_get_ids([
-        'limit' => 10,
-        'taxonomy' => 'category',
-        // 'term_id' => get_queried_object()->term_id,
-        'range' => 'all'
-    ]); ?>
+    <?php
+        $args = [
+            'limit' => 10,
+            'taxonomy' => 'category',
+            // 'term_id' => get_queried_object()->term_id,
+            'range' => 'all'
+        ];
+
+        if ($videoCategory = get_category_by_slug('video')) {
+            $args['term_id'] = "-{$videoCategory->term_id}";
+        }
+    
+        $mostRead = wpp_get_ids($args);
+    ?>
     <div class="most-read-carousel py-3">
         <?php foreach ($mostRead as $postId): $mostReadPost = get_post($postId); ?>
             <div class="most-read-cell px-0 px-sm-1 px-md-3">

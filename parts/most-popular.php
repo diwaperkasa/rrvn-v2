@@ -5,12 +5,20 @@
         </div>
     </div>
     <div class="align-self-end">
-        <?php $mostPopular = wpp_get_ids([
-            'limit' => 5,
-            'taxonomy' => 'category',
-            // 'term_id' => get_queried_object()->term_id,
-            'range' => 'all'
-        ]); ?>
+        <?php
+            $args = [
+                'limit' => 10,
+                'taxonomy' => 'category',
+                // 'term_id' => get_queried_object()->term_id,
+                'range' => 'all'
+            ];
+
+            if ($videoCategory = get_category_by_slug('video')) {
+                $args['term_id'] = "-{$videoCategory->term_id}";
+            }
+
+            $mostPopular = wpp_get_ids($args);
+        ?>
         <h4 class="h3 sweet-sans-font mb-3 border-bottom text-center text-md-start fw-bold">Most Popular</h4>
         <div class="row">
             <?php foreach ($mostPopular as $postId): $mostPopularPost = get_post($postId); ?>
