@@ -1,14 +1,14 @@
 <article <?php post_class(); ?>>
     <div class="row">
-        <div class="col-md-5">
+        <div class="col-lg-5">
             <div class="img-hover-zoom">
                 <a href="<?= get_permalink(get_the_ID()) ?>" class="text-decoration-none">
                     <?= get_the_post_thumbnail(get_the_ID(), 'full') ?>
                 </a>
             </div>
         </div>
-        <div class="col-md-7">
-            <div class="text-center text-md-start py-3 py-md-0">
+        <div class="col-lg-7">
+            <div class="text-center text-lg-start py-3 py-md-0">
                 <?php $categories = get_the_category(get_the_ID()) ?>
                 <?php if ($categories): ?>
                     <div>
@@ -31,4 +31,4 @@
         </div>
     </div>
 </article>
-<div class="my-4 my-md-5 border"></div>
+<div class="my-4 my-lg-5 border"></div>
