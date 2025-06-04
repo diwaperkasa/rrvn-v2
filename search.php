@@ -5,7 +5,7 @@
         <section id="search-page">
             <form action="<?= site_url() ?>">
                 <div class="mb-3">
-                    <input class="form-control border border-4 shadow-none rounded-0" type="search" value="<?= get_search_query() ?>" name="s" placeholder="Search"/>
+                    <input class="form-control border border-4 shadow-none rounded-0" type="search" name="s" placeholder="Search"/>
                 </div>
             </form>
             <?php if (have_posts()): ?>
