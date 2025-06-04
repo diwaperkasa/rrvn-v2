@@ -11413,6 +11413,7 @@ img.size-full {
      object-fit: contain;
   width: auto !important;
   max-height: inherit !important;
+  height: inherit !important;
 }
 
 .article-shortdesc p {

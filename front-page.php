@@ -366,7 +366,7 @@
                 <div class="my-3 text-center">
                     <a style="width: fit-content" href="<?= get_term_link($videoCategory->term_id) ?>" class="mx-auto d-block sweet-sans-font text-uppercase text-decoration-none h5">
                         <div class="bg-dark px-5 py-3 text-white">
-                            Read Video Stories
+                            Watch More Video
                         </div>
                     </a>
                 </div>
