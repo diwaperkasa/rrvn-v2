@@ -327,7 +327,7 @@
                 </div>
                 <?php
                     $videoPosts = wp_get_recent_posts([
-                        'numberposts' => $articleCategoryLength, // Number of recent posts thumbnails to display
+                        'numberposts' => 4, // Number of recent posts thumbnails to display
                         'post_status' => 'publish',
                         'orderby' => 'post_date',
                         'order' => 'DESC',
