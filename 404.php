@@ -10,7 +10,7 @@
             <div class="mb-5">
                 <div class="d-flex justify-content-center">
                     <form action="<?= site_url() ?>">
-                        <input style="max-width: 800px;" class="form-control border border-4 shadow-none rounded-0" type="search" value="<?= get_search_query() ?>" name="s" placeholder="Search"/>
+                        <input style="min-width: 400px;" class="form-control border border-4 shadow-none rounded-0" type="search" value="<?= get_search_query() ?>" name="s" placeholder="Search"/>
                     </form>
                 </div>
             </div>
