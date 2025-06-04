@@ -149,7 +149,7 @@
             <?php while(the_repeater_field('selected_category')): ?>
                 <?php $mainCategory = get_sub_field('selected_parent_category') ?>
                 <section id="<?= $mainCategory->slug ?>-category">
-                    <div class="text-center sweet-sans-font position-relative mb-3">
+                    <div class="text-center sweet-sans-font position-relative mb-5">
                         <h2 class="text-uppercase border-line mb-0">
                             <span class="position-relative bg-white px-2"><?= $mainCategory->name ?></span>
                         </h2>
@@ -247,7 +247,7 @@
                                     ]);
                                     $cover = array_shift($childCategoriesPosts);
                                 ?>
-                                <div class="text-center position-relative">
+                                <div class="text-center position-relative mb-5">
                                     <h4 class="fs-3 text-center text-uppercase sweet-sans-font border-line">
                                         <span class="position-relative bg-white px-2"><?= $childCategory->name ?></span>
                                     </h3>
@@ -318,6 +318,60 @@
         <div class="mb-5">
             <?php get_template_part( 'parts/most-read-stories'); ?>
         </div>
+        <?php if ($videoCategory = get_category_by_slug('video')): ?>
+            <section id="video-category" class="video-category mb-5">
+                <div class="text-center position-relative mb-5">
+                    <h4 class="fs-3 text-center text-uppercase sweet-sans-font border-line">
+                        <span class="position-relative bg-white px-2">Video</span>
+                    </h3>
+                </div>
+                <?php
+                    $videoPosts = wp_get_recent_posts([
+                        'numberposts' => $articleCategoryLength, // Number of recent posts thumbnails to display
+                        'post_status' => 'publish',
+                        'orderby' => 'post_date',
+                        'order' => 'DESC',
+                        'post_type' => 'post',
+                        'category' => $videoCategory->term_id
+                    ]);
+                    $cover = array_shift($videoPosts);
+                ?>
+                <div class="row">
+                    <div class="col-md-8 col-xl-9">
+                        <article <?php post_class("mb-3", $cover['ID']) ?>>
+                            <div class="img-hover-zoom">
+                                <a class="text-decoration-none" href="<?= get_permalink($cover['ID']) ?>">
+                                    <?= get_the_post_thumbnail($cover['ID'], 'full') ?>
+                                </a>
+                            </div>
+                        </article>
+                    </div>
+                    <div class="col-md-4 col-xl-3">
+                        <div class="row">
+                            <?php foreach ($videoPosts as $post): ?>
+                                <div class="col-md-12">
+                                    <article <?php post_class("mb-3", $post['ID']) ?>>
+                                        <div class="img-hover-zoom">
+                                            <a class="text-decoration-none" href="<?= get_permalink($post['ID']) ?>">
+                                                <?= get_the_post_thumbnail($post['ID'], 'full') ?>
+                                            </a>
+                                        </div>
+                                    </article>
+                                </div>
+                            <?php endforeach; ?>
+                            <?php wp_reset_postdata(); ?>
+                        </div>
+                    </div>
+                </div>
+                <div class="my-3 text-center">
+                    <a style="width: fit-content" href="<?= get_term_link($videoCategory->term_id) ?>" class="mx-auto d-block sweet-sans-font text-uppercase text-decoration-none h5">
+                        <div class="bg-dark px-5 py-3 text-white">
+                            Read Video Stories
+                        </div>
+                    </a>
+                </div>
+            </section>
+        <?php endif;?>
     </div>
 </main>
 

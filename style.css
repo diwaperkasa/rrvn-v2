@@ -11255,6 +11255,8 @@ img.size-full {
 }
 
 .post-content blockquote > * {
+  font-weight: 400 !important;
+  font-style: italic !important;
   border-left: 3px solid #c00;
   padding-left: 2rem;
 }
@@ -11448,7 +11450,7 @@ img.size-full {
   position: unset;
   top: 4rem;
 }
-@media screen and (min-width: 992px) {
+@media screen and (min-width: 768px) {
   .vertical-leaderboard:has(.wpadcenter-ad-container) {
     position: sticky;
   }

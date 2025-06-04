@@ -97,9 +97,9 @@
                     <section id="subscribe-footer" class="mb-5 px-0 px-md-5">
                         <?php $tags = wp_get_post_terms($post->ID, 'post_tag', ['field' => 'all']); ?>
                         <?php if ($tags): ?>
-                            <div class="mb-3 d-block d-md-flex text-center justify-content-center">
+                            <div class="mb-3 d-block d-lg-flex text-center justify-content-center">
                                 <span class="fs-5 fw-normal mb-0 text-nowrap">READ MORE ON:</span>
-                                <ul class="list-unstyled justify-content-center justify-content-md-start d-flex flex-wrap fs-5 mb-0">
+                                <ul class="list-unstyled justify-content-center justify-content-lg-start d-flex flex-wrap fs-5 mb-0">
                                     <?php foreach ($tags as $tag): ?>
                                         <li class="mx-2"><a style="--bs-border-color: #e02020" class="text-decoration-none text-dark text-uppercase border-bottom fw-bold" href="<?= get_term_link($tag->term_id) ?>"><?= $tag->name ?></a></li>
                                     <?php endforeach; ?>
