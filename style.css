@@ -11066,13 +11066,13 @@ textarea.form-control-lg {
   font-family: "Vollkorn Regular";
   font-style: normal;
   font-weight: normal;
-  src: local("Vollkorn Regular"), url("assets/font/vollkorn-webfont/Vollkorn-Regular.woff") format("woff");
+  src: url("assets/font/vollkorn-webfont/Vollkorn-Regular.ttf") format("truetype"), url("assets/font/vollkorn-webfont/Vollkorn-Regular.woff") format("woff");
 }
 @font-face {
   font-family: "Vollkorn Bold";
   font-style: normal;
   font-weight: normal;
-  src: local("Vollkorn Bold"), url("assets/font/vollkorn-webfont/Vollkorn-Bold.woff") format("woff");
+  src: url("assets/font/vollkorn-webfont/Vollkorn-Bold.ttf") format("truetype"), url("assets/font/vollkorn-webfont/Vollkorn-Bold.woff") format("woff");
 }
 html {
   line-height: 1.5;
@@ -11262,7 +11262,7 @@ img.size-full {
 }
 
 .post-content, .post-content p, .post-content h1, .post-content .h1, .post-content h2, .post-content .h2, .post-content h3, .post-content .h3, .post-content h4, .post-content .h4, .post-content h5, .post-content .h5 {
-  font-family: "Volkorn Regular";
+  font-family: "Vollkorn Regular";
   font-size: 1.2rem;
   line-height: 2rem;
   letter-spacing: 0.02rem;
