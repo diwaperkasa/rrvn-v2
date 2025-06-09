@@ -11128,8 +11128,8 @@ html {
   font-family: "Georgia Regular" !important;
 }
 
-.volkorn-font {
-  font-family: "Volkorn Regular" !important;
+.vollkorn-font {
+  font-family: "Vollkorn Regular" !important;
 }
 
 .article-banner-title {
@@ -11408,20 +11408,10 @@ img.size-full {
   height: auto;
 }
 
-.post-content .gallery .gallery-item {
-  display: flex;
-  justify-content: center;
-  text-align: center;
-  align-items: center;
-  height: 85vh;
-}
-
 .post-content .gallery .gallery-item img {
   -o-object-fit: contain;
      object-fit: contain;
-  width: auto !important;
-  max-height: inherit !important;
-  height: inherit !important;
+  aspect-ratio: 16/9;
 }
 
 .article-shortdesc p {
