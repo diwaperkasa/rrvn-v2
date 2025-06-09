@@ -11411,9 +11411,13 @@ img.size-full {
 .post-content .gallery .gallery-item img {
   -o-object-fit: contain;
      object-fit: contain;
-  aspect-ratio: 1/1;
 }
 @media screen and (min-width: 576px) {
+  .post-content .gallery .gallery-item img {
+    aspect-ratio: 1/1;
+  }
+}
+@media screen and (min-width: 768px) {
   .post-content .gallery .gallery-item img {
     aspect-ratio: 16/9;
   }
