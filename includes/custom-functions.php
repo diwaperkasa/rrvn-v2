@@ -11,7 +11,9 @@
 
 /*
     db.post
-    .aggregate([{
+    .aggregate([
+        // { $match: {	"_id": ObjectId("6752c1df517f65e75aebfad1") }},
+        {
             "$addFields": {
                 "post_id": {
                     "$toString": "$_id"
