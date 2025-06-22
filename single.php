@@ -80,11 +80,11 @@
                                 'orderby' => 'rand',
                             );
 
-                            $realatedPost = new WP_Query($relatedArgs);
+                            $relatedPost = new WP_Query($relatedArgs);
                         ?>
                         <div class="related-post">
                             <ul class="list-unstyled">
-                                <?php while( $realatedPost->have_posts() ): $realatedPost->the_post(); ?>
+                                <?php while( $relatedPost->have_posts() ): $relatedPost->the_post(); ?>
                                     <li class="mb-2 d-flex align-items-center" style="letter-spacing: .03125rem;">
                                         <svg class="me-1" width="18" height="18" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 6 12" fill="none" class=""><path fill="#e12027" d="M5.88,5.58.3,0C.22,0,.11,0,.05.17A.93.93,0,0,0,0,.74L1.88,6,0,11.26a.93.93,0,0,0,0,.57c0,.11.1.17.16.17A.11.11,0,0,0,.3,12L5.88,6.42A.68.68,0,0,0,6,6,.68.68,0,0,0,5.88,5.58Z"></path></svg>
                                         <a style="--bs-link-color: 255, 255, 255; --bs-link-hover-color: #e12027" href="<?= get_permalink(get_the_ID()) ?>" class="text-decoration-none"><?php the_title(); ?></a>
