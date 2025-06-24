@@ -174,6 +174,9 @@ function theme_enqueue_script()
     // wp_enqueue_script('ant-design', 'https://cdnjs.cloudflare.com/ajax/libs/antd/5.23.3/antd.min.js', [], false, true);
     if (is_category()) {
         // load more button on category page
+        $termIds = get_term_children(get_queried_object()->term_id, 'category');
+        $termIds[] = get_queried_object()->term_id;
+
         $args = array(
             'nonce' => wp_create_nonce('load-more-category-post-nonce'),
             'url'   => site_url('wp-json/wp/v2/posts'),
@@ -182,7 +185,7 @@ function theme_enqueue_script()
                 'order' => 'desc',
                 'orderby' => 'date',
                 'status' => 'publish',
-                'categories' => get_queried_object()->term_id,
+                'categories' => $termIds,
                 'page' => 1,
                 'per_page' => 10,
             ],
