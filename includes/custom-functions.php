@@ -427,4 +427,11 @@ function post_link_custom($permalink, $post)
 
 add_filter( 'post_link', 'post_link_custom', 10, 2);
 
+function rest_send_nocache_headers_custom($isUserLoggedIn)
+{
+    return true;
+}
+
+add_filter('rest_send_nocache_headers', 'rest_send_nocache_headers_custom');
+
 include "wpadcenter.php";
