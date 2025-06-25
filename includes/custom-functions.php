@@ -416,4 +416,15 @@ function rrvn_customize_register( $wp_customize ) {
 
 add_action( 'customize_register', 'rrvn_customize_register' );
 
+function post_link_custom($permalink, $post)
+{
+    if ($customLink = get_field('external_article_link', $post->ID)) {
+        return $customLink;
+    }
+
+    return $permalink;
+}
+
+add_filter( 'post_link', 'post_link_custom', 10, 2);
+
 include "wpadcenter.php";
