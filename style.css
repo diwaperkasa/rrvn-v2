@@ -11558,6 +11558,15 @@ img.size-full {
   border: transparent !important;
 }
 
+.post-meta-button-share {
+  max-width: 150px;
+}
+@media screen and (min-width: 576px) {
+  .post-meta-button-share {
+    max-width: none;
+  }
+}
+
 /* HTML: <div class="loader"></div> */
 .loader {
   width: 30px;
