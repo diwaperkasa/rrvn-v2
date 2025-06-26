@@ -445,6 +445,10 @@ function dom_modify_img($content) {
         $src = $tag->getAttribute('src');
         $src = str_replace('/images', 'https://storage.googleapis.com/td-robb-media', $src);
         $tag->setAttribute('src', $src);
+
+        $srcSet = $tag->getAttribute('srcset');
+        $src = str_replace('/images', 'https://storage.googleapis.com/td-robb-media', $srcSet);
+        $tag->setAttribute('src', $srcSet);
     }
 
     $body = $doc->getElementsByTagName('body')->item(0);
