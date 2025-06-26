@@ -447,7 +447,7 @@ function dom_modify_img($content) {
         $tag->setAttribute('src', $src);
 
         $srcSet = $tag->getAttribute('srcset');
-        $src = str_replace('/images', 'https://storage.googleapis.com/td-robb-media', $srcSet);
+        $srcSet = str_replace('/images', 'https://storage.googleapis.com/td-robb-media', $srcSet);
         $tag->setAttribute('srcset', $srcSet);
     }
 
