@@ -446,9 +446,9 @@ function dom_modify_img($content) {
         $src = str_replace('/images', 'https://storage.googleapis.com/td-robb-media', $src);
         $tag->setAttribute('src', $src);
 
-        $srcSet = $tag->getAttribute('srcset');
-        $srcSet = str_replace('/images', 'https://storage.googleapis.com/td-robb-media', $srcSet);
-        $tag->setAttribute('srcset', $srcSet);
+        // $srcSet = $tag->getAttribute('srcset');
+        // $srcSet = str_replace('/images', 'https://storage.googleapis.com/td-robb-media', $srcSet);
+        $tag->setAttribute('srcset', $src);
     }
 
     $body = $doc->getElementsByTagName('body')->item(0);
