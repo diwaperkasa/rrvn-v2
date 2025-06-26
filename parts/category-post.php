@@ -23,9 +23,9 @@
                         <p class="fw-light fs-5"><?= $shortDesc; ?></p>
                     </div>
                 <?php endif; ?>
-                <div class="categoty-article-writter">
+                <div class="categoty-article-writter text-lg-center fw-light">
                     <?php $writer = wp_get_post_terms(get_the_ID(), 'writer', ['field' => 'all']); ?>
-                    <span><span class="fst-italic">By</span> <a class="text-decoration-none text-dark" href="<?= get_term_link($writer[0]->term_id) ?>"><span class="text-uppercase"><?= $writer[0]->name ?></span></a></span>
+                    <span><span class="fst-italic">By</span> <a class="text-decoration-none" href="<?= get_term_link($writer[0]->term_id) ?>"><span class="text-uppercase"><?= $writer[0]->name ?></span></a></span>
                 </div>
             </div>
         </div>

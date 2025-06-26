@@ -31,7 +31,10 @@
                                     <?php endif; ?>
                                     <?php $writer = wp_get_post_terms(get_the_ID(), 'writer', ['field' => 'all']); ?>
                                     <?php if ($writer): ?>
-                                        <span><span class="fst-italic georgia-font">By </span><a style="letter-spacing: 1.35px;" class="sweet-sans-font text-uppercase text-decoration-none text-dark" href="<?= get_term_link($writer[0]->term_id) ?>"><?= $writer[0]->name ?></a></span>
+                                        <div class="categoty-article-writter fw-light">
+                                            <?php $writer = wp_get_post_terms(get_the_ID(), 'writer', ['field' => 'all']); ?>
+                                            <span><span class="fst-italic">By</span> <a class="text-decoration-none" href="<?= get_term_link($writer[0]->term_id) ?>"><span class="text-uppercase"><?= $writer[0]->name ?></span></a></span>
+                                        </div>
                                     <?php endif; ?>
                                 </div>
                             </article>
