@@ -115,7 +115,7 @@
                         <span class="position-relative bg-white px-2">The Latest</span>
                     </h2>
                 </div>
-                <span><?= date('l F d, Y') ?></span>
+                <span class="latest-date sweet-sans-font"><?= date('l F d, Y') ?></span>
             </div>
             <div class="row">
                 <?php foreach ($recentPosts as $post):?>

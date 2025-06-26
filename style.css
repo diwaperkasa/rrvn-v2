@@ -11578,6 +11578,13 @@ img.size-full {
   color: #575757 !important;
 }
 
+.latest-date {
+  letter-spacing: 1.35px;
+  color: #575757;
+  text-transform: uppercase;
+  font-size: 14px;
+}
+
 /* HTML: <div class="loader"></div> */
 .loader {
   width: 30px;
