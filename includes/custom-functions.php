@@ -434,4 +434,29 @@ function rest_send_nocache_headers_custom($isUserLoggedIn)
 
 add_filter('rest_send_nocache_headers', 'rest_send_nocache_headers_custom');
 
+function dom_modify_img($content) {
+    libxml_use_internal_errors(true);
+    $doc = new DOMDocument();
+    $doc->loadHTML('<?xml encoding="utf-8" ?>' . $content);
+    $tags = $doc->getElementsByTagName('img');
+
+    foreach ($tags as $tag) {
+        // ex: /images/2022/09/HERECOMESTHESUN-27-MainDeck-cinema.jpg
+        $src = $tag->getAttribute('src');
+        $src = str_replace('/images', 'https://storage.googleapis.com/td-robb-media', $src);
+        $tag->setAttribute('src', $src);
+    }
+
+    $body = $doc->getElementsByTagName('body')->item(0);
+    $content = '';
+
+    foreach ($body->childNodes as $child) {
+        $content .= $doc->saveHTML($child);
+    }
+
+    return $content;
+}
+
+add_filter('the_content', 'dom_modify_img');
+
 include "wpadcenter.php";
