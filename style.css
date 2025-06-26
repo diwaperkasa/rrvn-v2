@@ -11570,6 +11570,8 @@ img.size-full {
 .categoty-article-writter {
   font-family: "Georgia";
   color: #575757 !important;
+  font-size: 14px;
+  letter-spacing: 1.35px;
 }
 .categoty-article-writter a {
   font-family: "Sweet Sans Pro Regular";

@@ -31,7 +31,7 @@
                         </header>
 
                         <div class="post-meta d-flex justify-content-between align-items-center">
-                            <div class="post-meta-author">
+                            <div class="post-meta-author categoty-article-writter fw-light">
                                 <?php $writer = wp_get_post_terms($post->ID, 'writer', ['field' => 'all']); ?>
                                 <span><span class="fst-italic">By</span> <a class="text-decoration-none text-dark" href="<?= get_term_link($writer[0]->term_id) ?>"><span class="text-uppercase"><?= $writer[0]->name ?></span></a></span>
                             </div>
