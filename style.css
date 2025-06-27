@@ -11170,12 +11170,12 @@ html {
 
 @media (min-width: 576px) {
   .offcanvas-menu {
-    width: 20%;
+    width: 50%;
   }
 }
 @media (min-width: 768px) {
   .offcanvas-menu {
-    width: 50%;
+    width: 20%;
   }
   .offcanvas-menu .list-group-item.border-bottom {
     border-bottom: var(--bs-border-width) var(--bs-border-style) var(--bs-border-color) !important;
