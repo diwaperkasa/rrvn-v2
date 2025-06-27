@@ -1,5 +1,5 @@
 <section id="most-read-article">
-    <h4 class="most-read-article border-bottom d-inline-block">MOST-READ STORIES</h4>
+    <h4 class="most-read-article border-bottom d-inline-block sweet-sans-font">MOST-READ STORIES</h4>
     <?php
         $args = [
             'limit' => 10,
