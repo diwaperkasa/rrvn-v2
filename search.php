@@ -24,7 +24,7 @@
                                 <div class="text-center pt-3">
                                     <?php $categories = get_the_category(get_the_ID()) ?>
                                     <?php if ($categories): ?>
-                                        <a class="text-decoration-none" href="<?= get_term_link($categories[0]->term_id) ?>"><h4 class="fs-6 text-center text-danger text-uppercase sweet-sans-font"><?= $categories[0]->name ?></h4></a>
+                                        <a class="text-decoration-none category-article" href="<?= get_term_link($categories[0]->term_id) ?>"><h4 class="fs-6 text-center text-danger text-uppercase sweet-sans-font"><?= $categories[0]->name ?></h4></a>
                                     <?php endif; ?>
                                     <a class="text-decoration-none" href="<?= get_permalink(get_the_ID()) ?>">
                                         <h3 class="text-dark fw-bold eb-garamond-semibold-font"><?= get_the_title() ?></h3>
