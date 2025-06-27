@@ -49,7 +49,7 @@ use PHP_CodeSniffer\Reports\Json;
                             <?php if ($menu->menu_item_parent == 0): ?>
                                 <div class="offcanvas-menu">
                                     <ul class="list-group px-md-3">
-                                        <li class="py-0 py-md-2 list-group-item ps-0 border-0 border-bottom border-white bg-transparent">
+                                        <li class="py-0 py-sm-2 list-group-item ps-0 border-0 border-bottom border-white bg-transparent">
                                             <a style="--bs-link-color: white ; --bs-link-hover-color: #e02020" class="text-decoration-none fs-4" aria-current="page" href="<?= $menu->url ?>"><?= $menu->title ?></a>
                                         </li>
                                         <ul class="list-group m-0 py-2 d-none d-md-block">
