@@ -98,6 +98,12 @@ html {
     .offcanvas-menu {
         width: 20%;
     }
+}
+
+@media (min-width: 768px) {
+    .offcanvas-menu {
+        width: 50%;
+    }
 
     .offcanvas-menu .list-group-item.border-bottom {
         border-bottom: var(--bs-border-width) var(--bs-border-style) var(--bs-border-color) !important;
