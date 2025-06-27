@@ -24,9 +24,7 @@
                             <figcaption class="wp-caption-text text-center">
                                 <?php $categories = get_the_category($mostReadPost->ID) ?>
                                 <?php if ($categories): ?>
-                                    <div>
-                                        <a href="<?= get_term_link($categories[0]->term_id) ?>" class="text-decoration-none text-danger text-uppercase sweet-sans-font fs-6"><?= $categories[0]->name ?></a>
-                                    </div>
+                                    <a href="<?= get_term_link($categories[0]->term_id) ?>" class="category-article text-decoration-none text-danger text-uppercase sweet-sans-font fs-6"><?= $categories[0]->name ?></a>
                                 <?php endif; ?>
                                 <a href="<?= get_permalink($mostReadPost->ID) ?>" class="text-decoration-none">
                                     <h3 class="categoty-article-title text-dark eb-garamond-semibold-font h5"><?= $mostReadPost->post_title; ?></h3>

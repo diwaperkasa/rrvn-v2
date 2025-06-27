@@ -32,7 +32,7 @@
                                 <div class="mx-3 mx-md-5 p-3 position-relative text-center article-banner-title bg-white mb-3 shadow">
                                     <?php $categories = get_the_category($post['ID']) ?>
                                     <?php if ($categories): ?>
-                                        <a class="text-decoration-none" href="<?= get_term_link($categories[0]->term_id) ?>"><h3 class="fs-6 text-center text-danger text-uppercase sweet-sans-font"><?= $categories[0]->name ?></h3></a>
+                                        <a class="text-decoration-none category-article" href="<?= get_term_link($categories[0]->term_id) ?>"><h3 class="fs-6 text-center text-danger text-uppercase sweet-sans-font"><?= $categories[0]->name ?></h3></a>
                                     <?php endif; ?>
                                     <a class="text-decoration-none" href="<?= get_permalink($post['ID']) ?>">
                                         <h1 class="article-title text-dark fw-bold eb-garamond-semibold-font h2"><?= $post['post_title'] ?></h1>
@@ -56,7 +56,7 @@
                                 <div class="text-center py-3 py-md-4">
                                     <?php $categories = get_the_category($post['ID']) ?>
                                     <?php if ($categories): ?>
-                                        <a class="text-decoration-none" href="<?= get_term_link($categories[0]->term_id) ?>">
+                                        <a class="text-decoration-none category-article" href="<?= get_term_link($categories[0]->term_id) ?>">
                                             <h3 class="fs-6 text-center text-danger text-uppercase sweet-sans-font"><?= $categories[0]->name ?></h3>
                                         </a>
                                     <?php endif; ?>
@@ -129,7 +129,7 @@
                             <div class="text-center py-3 py-md-4">
                                 <?php $categories = get_the_category($post['ID']) ?>
                                 <?php if ($categories): ?>
-                                    <a class="text-decoration-none" href="<?= get_term_link($categories[0]->term_id) ?>"><h4 class="fs-6 text-center text-danger text-uppercase sweet-sans-font"><?= $categories[0]->name ?></h4></a>
+                                    <a class="text-decoration-none category-article" href="<?= get_term_link($categories[0]->term_id) ?>"><h4 class="fs-6 text-center text-danger text-uppercase sweet-sans-font"><?= $categories[0]->name ?></h4></a>
                                 <?php endif; ?>
                                 <a class="text-decoration-none" href="<?= get_permalink($post['ID']) ?>">
                                     <h3 class="article-title text-dark fw-bold eb-garamond-semibold-font"><?= $post['post_title'] ?></h3>
@@ -183,7 +183,7 @@
                                 <div class="text-center py-3 py-md-4">
                                     <?php $categories = get_the_category($cover['ID']) ?>
                                     <?php if ($categories): ?>
-                                        <a class="text-decoration-none" href="<?= get_term_link($categories[0]->term_id) ?>"><h4 class="fs-6 text-center text-danger text-uppercase sweet-sans-font"><?= $categories[0]->name ?></h4></a>
+                                        <a class="text-decoration-none category-article" href="<?= get_term_link($categories[0]->term_id) ?>"><h4 class="fs-6 text-center text-danger text-uppercase sweet-sans-font"><?= $categories[0]->name ?></h4></a>
                                     <?php endif; ?>
                                     <a class="text-decoration-none" href="<?= get_permalink($cover['ID']) ?>">
                                         <h3 class="article-title text-dark fw-bold eb-garamond-semibold-font"><?= $cover['post_title'] ?></h3>
@@ -216,7 +216,7 @@
                                             <div class="text-center py-3">
                                                 <?php $categories = get_the_category($post['ID']) ?>
                                                 <?php if ($categories): ?>
-                                                <a class="text-decoration-none" href="<?= get_term_link($categories[0]->term_id) ?>"><h4 class="fs-6 text-center text-danger text-uppercase sweet-sans-font"><?= $categories[0]->name ?></h4></a>
+                                                <a class="text-decoration-none category-article" href="<?= get_term_link($categories[0]->term_id) ?>"><h4 class="fs-6 text-center text-danger text-uppercase sweet-sans-font"><?= $categories[0]->name ?></h4></a>
                                                 <?php endif; ?>
                                                 <a class="text-decoration-none" href="<?= get_permalink($post['ID']) ?>">
                                                     <h3 class="article-title text-dark fw-bold eb-garamond-semibold-font"><?= $post['post_title'] ?></h3>
@@ -274,7 +274,7 @@
                                     <div class="text-center py-3">
                                         <?php $categories = get_the_category($cover['ID']) ?>
                                         <?php if ($categories): ?>
-                                            <a class="text-decoration-none" href="<?= get_term_link($categories[0]->term_id) ?>"><h4 class="fs-6 text-center text-danger text-uppercase sweet-sans-font"><?= $categories[0]->name ?></h4></a>
+                                            <a class="text-decoration-none category-article" href="<?= get_term_link($categories[0]->term_id) ?>"><h4 class="fs-6 text-center text-danger text-uppercase sweet-sans-font"><?= $categories[0]->name ?></h4></a>
                                         <?php endif; ?>
                                         <a class="text-decoration-none" href="<?= get_permalink($cover['ID']) ?>">
                                             <h3 class="article-title article-title text-dark fw-bold eb-garamond-semibold-font"><?= $cover['post_title'] ?></h3>

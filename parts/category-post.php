@@ -11,9 +11,7 @@
             <div class="text-center text-lg-start py-3 py-md-0">
                 <?php $categories = get_the_category(get_the_ID()) ?>
                 <?php if ($categories): ?>
-                    <div>
-                        <a href="<?= get_term_link($categories[0]->term_id) ?>" class="text-decoration-none text-danger text-uppercase sweet-sans-font fs-6"><?= $categories[0]->name ?></a>
-                    </div>
+                    <a href="<?= get_term_link($categories[0]->term_id) ?>" class="category-article text-decoration-none text-danger text-uppercase sweet-sans-font fs-6"><?= $categories[0]->name ?></a>
                 <?php endif; ?>
                 <a href="<?= get_permalink(get_the_ID()) ?>" class="text-decoration-none">
                     <h3 class="article-title text-dark h2 eb-garamond-semibold-font"><?php the_title(); ?></h3>

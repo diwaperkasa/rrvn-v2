@@ -509,6 +509,18 @@ img.size-full {
     letter-spacing: 3px;
 }
 
+.category-article {
+    letter-spacing: 1.5px;
+}
+
+.article-title {
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    display: -webkit-box;
+    text-overflow: ellipsis;
+}
+
 /* HTML: <div class="loader"></div> */
 .loader {
     width: 30px;

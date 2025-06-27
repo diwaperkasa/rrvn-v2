@@ -28,9 +28,7 @@
                                 <div class="text-center py-3">
                                     <?php $categories = get_the_category($post->ID) ?>
                                     <?php if ($categories): ?>
-                                        <div>
-                                            <a href="<?= get_term_link($categories[0]->term_id) ?>" class="text-decoration-none text-danger text-uppercase sweet-sans-font fs-6"><?= $categories[0]->name ?></a>
-                                        </div>
+                                        <a href="<?= get_term_link($categories[0]->term_id) ?>" class="category-article text-decoration-none text-danger text-uppercase sweet-sans-font fs-6"><?= $categories[0]->name ?></a>
                                     <?php endif; ?>
                                     <a href="<?= get_permalink(get_the_ID()) ?>" class="text-decoration-none">
                                         <h2 class="article-title text-dark eb-garamond-semibold-font"><?php the_title(); ?></h2>
