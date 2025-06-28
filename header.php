@@ -56,7 +56,7 @@ use PHP_CodeSniffer\Reports\Json;
                                             <?php foreach ($mobileMenus as $subMenu): ?>
                                                 <?php if ($subMenu->menu_item_parent == $menu->ID): ?>
                                                     <li class="list-group-item p-0 border-0 bg-transparent">
-                                                        <a style="--bs-link-color: white ; --bs-link-hover-color: #e02020" class="text-decoration-none fs-5 text-uppercase" aria-current="page" href="<?= $subMenu->url ?>"><?= $subMenu->title ?></a>
+                                                        <a style="--bs-link-color: white ; --bs-link-hover-color: #e02020" class="text-decoration-none fs-6 text-uppercase" aria-current="page" href="<?= $subMenu->url ?>"><?= $subMenu->title ?></a>
                                                     </li>
                                                 <?php endif; ?>
                                             <?php endforeach; ?>
