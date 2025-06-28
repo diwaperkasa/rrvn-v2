@@ -340,7 +340,7 @@
         <?php if ($videoCategory = get_category_by_slug('video')): ?>
             <section id="video-category" class="video-category mb-5">
                 <div class="text-center position-relative mb-5">
-                    <h4 class="fs-3 text-center text-uppercase sweet-sans-font border-line">
+                    <h4 class="fs-3 text-center text-uppercase roboto-light-font border-line">
                         <span class="position-relative bg-white px-2">Video</span>
                     </h3>
                 </div>
