@@ -156,7 +156,7 @@
             <?php while(the_repeater_field('selected_category')): ?>
                 <?php $mainCategory = get_sub_field('selected_parent_category') ?>
                 <section id="<?= $mainCategory->slug ?>-category">
-                    <div class="text-center sweet-sans-font position-relative mb-5">
+                    <div class="text-center roboto-light-font position-relative mb-5">
                         <h2 class="text-uppercase border-line mb-0">
                             <span class="position-relative bg-white px-2"><?= $mainCategory->name ?></span>
                         </h2>
@@ -261,7 +261,7 @@
                                     $cover = array_shift($childCategoriesPosts);
                                 ?>
                                 <div class="text-center position-relative mb-5">
-                                    <h4 class="fs-3 text-center text-uppercase sweet-sans-font border-line">
+                                    <h4 class="fs-3 text-center text-uppercase roboto-light-font border-line">
                                         <span class="position-relative bg-white px-2"><?= $childCategory->name ?></span>
                                     </h3>
                                 </div>
