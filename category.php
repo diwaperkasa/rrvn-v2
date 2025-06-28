@@ -7,7 +7,7 @@
         </div>
         <div class="row">
             <div class="col-md-9">
-                <div class="text-center sweet-sans-font position-relative my-4 my-md-5">
+                <div class="text-center roboto-light-font position-relative my-4 my-md-5">
                     <h1 class="text-uppercase border-line mb-0 h2">
                         <span class="position-relative bg-white px-2"><?= get_queried_object()->name ?></span>
                     </h1>
