@@ -131,13 +131,6 @@ function add_gtag_to_head() {
     ?>
         <!-- Global site tag (gtag.js) - Google Analytics -->
         <script type="text/plain" data-category="analytics" async src="https://www.googletagmanager.com/gtag/js?id=<?php echo $tag_manager_id; ?>"></script>
-        <script type="text/plain" data-category="analytics">
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-
-            gtag('config', '<?php echo $tag_manager_id; ?>');
-        </script>
     <?php
 }
 
