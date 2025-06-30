@@ -111,7 +111,7 @@ function add_gtag_to_head() {
     if ( strpos( get_bloginfo( 'url' ), '.test' ) !== false ) return;
 
     // Google Analytics
-    $tracking_code = 'UA-*********-1';
+    $tracking_code = 'G-JBBEM4W2QS';
     
     ?>
         <!-- Global site tag (gtag.js) - Google Analytics -->
