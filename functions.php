@@ -124,6 +124,21 @@ function add_gtag_to_head() {
             gtag('config', '<?php echo $tracking_code; ?>');
         </script>
     <?php
+
+    // Google tag manager
+    $tag_manager_id = 'GTM-NB62QMWL';
+
+    ?>
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script type="text/plain" data-category="analytics" async src="https://www.googletagmanager.com/gtag/js?id=<?php echo $tag_manager_id; ?>"></script>
+        <script type="text/plain" data-category="analytics">
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', '<?php echo $tag_manager_id; ?>');
+        </script>
+    <?php
 }
 
 add_action( 'wp_head', 'add_gtag_to_head' );
