@@ -32,8 +32,12 @@
 
                         <div class="post-meta d-flex justify-content-between align-items-center">
                             <div class="post-meta-author categoty-article-writter fw-light">
-                                <?php $writer = wp_get_post_terms($post->ID, 'writer', ['field' => 'all']); ?>
-                                <span><span class="fst-italic">By</span> <a class="text-decoration-none text-dark" href="<?= get_term_link($writer[0]->term_id) ?>"><span class="text-uppercase"><?= $writer[0]->name ?></span></a></span>
+                                <?php $writers = wp_get_post_terms($post->ID, 'writer', ['field' => 'all']); ?>
+                                <span class="writers-name"><span class="fst-italic">By</span>
+                                    <?php foreach ($writers as $writer): ?>
+                                        <a class="text-decoration-none text-dark me-2 writer-name" href="<?= get_term_link($writer->term_id) ?>"><span class="text-uppercase"><?= $writer->name ?></span></a>
+                                    <?php endforeach; ?>
+                                </span>
                             </div>
                             <div class="post-meta-button-share py-3">
                                 <button class="btn border rounded-0 mb-1 mb-md-0" data-sharer="whatsapp" data-title="Share from RobbRepport Vietnam! <?php the_title(); ?>" data-url="<?= get_permalink(get_queried_object_id()) ?>">
