@@ -11207,7 +11207,7 @@ html {
   border-radius: 0.5rem;
 }
 
-.wp-caption {
+.wp-caption, .gallery-item {
   width: 100% !important;
 }
 

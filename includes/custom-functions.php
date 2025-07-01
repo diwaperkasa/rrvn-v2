@@ -145,6 +145,26 @@
                 path: "$category",
             }
         },
+		{
+            "$addFields": {
+                "category_seo_url_id": {
+                    "$toObjectId": "$category.seoUrlId"
+                }
+            }
+        },
+		{
+            $lookup: {
+                from: 'seo_url',
+                localField: 'category_seo_url_id',
+                foreignField: '_id',
+                as: 'category_seo_url'
+            },
+        },
+		{
+            $unwind: {
+                path: "$category_seo_url",
+            }
+        },
         {
             $limit: 10
         },
