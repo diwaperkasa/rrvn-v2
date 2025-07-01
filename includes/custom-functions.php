@@ -12,6 +12,13 @@
 /*
     db.post
     .aggregate([
+        {
+            $match: {
+                "publishedAt": {
+                    "$gte": new ISODate("2025-06-21")
+                }
+            }
+        },
         // { $match: {	"_id": ObjectId("6752c1df517f65e75aebfad1") }},
         {
             "$addFields": {
@@ -465,10 +472,12 @@ function dom_modify_img($content) {
         $src = $tag->getAttribute('src');
         $src = str_replace('/images', 'https://storage.googleapis.com/td-robb-media', $src);
         $tag->setAttribute('src', $src);
+        $srcSet = $tag->getAttribute('srcset');
 
-        // $srcSet = $tag->getAttribute('srcset');
-        // $srcSet = str_replace('/images', 'https://storage.googleapis.com/td-robb-media', $srcSet);
-        $tag->setAttribute('srcset', $src);
+        if ($srcSet) {
+            // $srcSet = str_replace('/images', 'https://storage.googleapis.com/td-robb-media', $srcSet);
+            $tag->setAttribute('srcset', $src);
+        }
     }
 
     $body = $doc->getElementsByTagName('body')->item(0);
