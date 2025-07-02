@@ -178,7 +178,7 @@ use PHP_CodeSniffer\Reports\Json;
                     <?php endif; ?>
                 </div>
                 <span type="button" class="text-danger p-2" data-bs-toggle="offcanvas" data-bs-target="#offcanvasSearch" aria-controls="offcanvasSearch">
-                    <i class="fa fa-search p-2 fs-5"></i>
+                    <i class="fa fa-search fs-5"></i>
                 </span>
             </nav>
         </div>
