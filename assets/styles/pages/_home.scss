@@ -407,6 +407,14 @@ img.size-full {
     }
 }
 
+.category .most-popular-post {
+    display: none;
+
+    @media (min-width: 768px) {
+        display: block !important;
+    }
+}
+
 .categoty-article-title {
     text-wrap: pretty;
 }
