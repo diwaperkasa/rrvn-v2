@@ -11458,6 +11458,26 @@ img.size-full {
   max-width: 200px;
 }
 
+#most-popular-article:has(.wpadcenter-ad-container) {
+  justify-content: space-between !important;
+}
+#most-popular-article:has(.wpadcenter-ad-container) .vertical-leaderboard-container {
+  flex: 1 1 auto !important;
+}
+#most-popular-article:has(.wpadcenter-ad-container) .most-popular-post {
+  align-self: flex-end !important;
+}
+
+#most-popular-article:not(.wpadcenter-ad-container) .most-popular-post {
+  position: unset;
+  top: 4rem;
+}
+@media screen and (min-width: 768px) {
+  #most-popular-article:not(.wpadcenter-ad-container) .most-popular-post {
+    position: sticky;
+  }
+}
+
 .categoty-article-title {
   text-wrap: pretty;
 }

@@ -1,10 +1,10 @@
-<section id="most-popular-article" class="d-flex flex-column justify-content-between h-100">
-    <div class="flex-fill">
+<section id="most-popular-article" class="d-flex flex-column h-100">
+    <div class="vertical-leaderboard-container">
         <div class="leaderboard vertical-leaderboard mb-md-auto">
             <?php get_ads('vertical-leaderboard') ?>
         </div>
     </div>
-    <div class="align-self-end">
+    <div class="align-self-end most-popular-post">
         <?php
             $args = [
                 'limit' => 5,
