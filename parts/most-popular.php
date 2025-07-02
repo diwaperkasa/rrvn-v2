@@ -4,7 +4,7 @@
             <?php get_ads('vertical-leaderboard') ?>
         </div>
     </div>
-    <div class="align-self-end most-popular-post">
+    <div class="most-popular-post d-none d-md-block">
         <?php
             $args = [
                 'limit' => 5,

@@ -62,9 +62,7 @@
                 </div>
             </div>
             <div class="col-md-3">
-                <div class="d-none d-md-block">
-                    <?php get_template_part( 'parts/most-popular'); ?>
-                </div>
+                <?php get_template_part( 'parts/most-popular'); ?>
             </div>
         </div>
     </div>
