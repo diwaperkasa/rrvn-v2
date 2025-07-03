@@ -14,7 +14,11 @@ mix.webpackConfig({
 // CSS
 
 mix.
-    sass('assets/styles/style.scss', 'style.css')
+    sass('assets/styles/style.scss', 'style.css', {
+        sassOptions: {
+            outputStyle: 'compressed'
+        }
+    })
     .options({
         processCssUrls: false
     })
