@@ -186,7 +186,7 @@
                                         <a class="text-decoration-none category-article" href="<?= get_term_link($categories[0]->term_id) ?>"><h4 class="fs-6 text-center text-danger text-uppercase sweet-sans-font"><?= $categories[0]->name ?></h4></a>
                                     <?php endif; ?>
                                     <a class="text-decoration-none" href="<?= get_permalink($cover['ID']) ?>">
-                                        <h3 class="article-title text-dark fw-bold eb-garamond-semibold-font"><?= $cover['post_title'] ?></h3>
+                                        <h3 class="article-title text-dark fw-bold eb-garamond-semibold-font h1"><?= $cover['post_title'] ?></h3>
                                     </a>
                                     <?php if ($shortDesc = get_post_meta($cover['ID'], '_yoast_wpseo_metadesc', true)): ?>
                                         <div class="article-shortdesc">
