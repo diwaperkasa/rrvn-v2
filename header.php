@@ -153,7 +153,7 @@ use PHP_CodeSniffer\Reports\Json;
         <div id="desktop-menu-class-container" class="container">
             <nav id="desktop-menu-nav" class="navbar navbar-expand-lg navbar-light sweet-sans-font py-0">
                 <span type="button" class="text-danger p-2" data-bs-toggle="offcanvas" data-bs-target="#offcanvasTop" aria-controls="offcanvasTop">
-                    <i class="fa-solid fa-bars fs-5"></i>
+                    <i class="fa-solid fa-bars fs-5 mt-1"></i>
                 </span>
                 <div id="desktop-menu-rr-logo" class="d-block d-lg-none">
                     <a href="<?= site_url() ?>" class="text-decoration-none">
@@ -178,7 +178,7 @@ use PHP_CodeSniffer\Reports\Json;
                     <?php endif; ?>
                 </div>
                 <span type="button" class="text-danger p-2" data-bs-toggle="offcanvas" data-bs-target="#offcanvasSearch" aria-controls="offcanvasSearch">
-                    <i class="fa fa-search fs-5"></i>
+                    <i class="fa fa-search fs-5 mt-1"></i>
                 </span>
             </nav>
         </div>
