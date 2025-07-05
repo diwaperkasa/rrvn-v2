@@ -166,12 +166,12 @@ use PHP_CodeSniffer\Reports\Json;
                         <ul class="navbar-nav text-nowrap flex-wrap me-auto mb-2 mb-lg-0 fw-bold">
                             <?php foreach ($primaryMenus as $menu): ?>
                                 <?php if ($menu->menu_item_parent == 0): ?>
-                                    <li class="nav-item">
+                                    <li class="nav-item my-1">
                                         <a class="nav-link text-uppercase text-black text-decoration-none" aria-current="page" href="<?= $menu->url ?>"><?= $menu->title ?></a>
                                     </li>
                                 <?php endif; ?>
                             <?php endforeach; ?>
-                            <li id="subscribe-menu" class="nav-item border-start border-1 border-dark d-none">
+                            <li id="subscribe-menu" class="nav-item my-1 border-start border-1 border-dark d-none">
                                 <a target="_blank" class="nav-link text-uppercase text-black text-decoration-none" aria-current="page" href="<?= get_theme_mod('subscribe_url', 'javascript:void(0);') ?>">Subscribe</a>
                             </li>
                         </ul>
