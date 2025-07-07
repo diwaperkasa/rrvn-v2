@@ -562,6 +562,11 @@ img.size-full {
     text-overflow: ellipsis;
 }
 
+.flickity-slider {
+    align-items: center;
+    display: flex;
+}
+
 /* HTML: <div class="loader"></div> */
 .loader {
     width: 30px;
