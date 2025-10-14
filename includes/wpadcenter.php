@@ -54,24 +54,33 @@ function query_ads(string $adUnit)
                 'field' => 'slug',
                 'terms' => $adUnit,
             ],
-            [
-                'taxonomy' => 'page-targeting',
-                'field' => 'slug',
-                'terms' => $tags,
-            ]
         ]
     ];
 
     $query = new WP_Query($args);
+    $result = [];
 
-    return $query;
+    foreach ($query->posts as $ad) {
+        $pageTargeting = get_the_terms($ad->ID, 'page-targeting', ['fields' => 'slugs']);
+
+        if (!$pageTargeting) {
+            $result[] = $ad;
+            continue;
+        }
+
+        if (array_intersect($pageTargeting, $tags)) {
+            $result[] = $ad;
+        }
+    }
+
+    return $result;
 }
 
 function get_ads(string $adUnit, string $align = 'center')
 {
     $query = query_ads($adUnit);
 
-    foreach ($query->posts as $ad) {
+    foreach ($query as $ad) {
         if (function_exists('wpadcenter_display_ad')) {
             wpadcenter_display_ad( [
                 'id' => $ad->ID,
@@ -88,8 +97,8 @@ function insert_ad_mid_post($content) {
         $insert_after = floor(count($paragraphs) / 2); // middle of post
         $ads = query_ads('middle-leaderboard');
 
-        foreach ($ads->posts as $index => $ad) {
-            $ad_shortcode = '[wp_adcenter_ad id="' . $ad->ID . '" align="center"]';
+        foreach ($ads as $index => $ad) {
+            $ad_shortcode = '[wpadcenter_ad id="' . $ad->ID . '" align="center"]';
             $ad_html = do_shortcode($ad_shortcode);
             array_splice($paragraphs, $insert_after + $index, 0, $ad_html);
         }
@@ -101,3 +110,11 @@ function insert_ad_mid_post($content) {
 }
 
 add_filter('the_content', 'insert_ad_mid_post');
+
+//Add Style
+function moment_timezone()
+{
+    wp_enqueue_script('moment-timezone-library', 'https://momentjs.com/downloads/moment-timezone-with-data.min.js', array('wpadcenter-moment'), null, true);
+}
+
+add_action('admin_enqueue_scripts', 'moment_timezone', 20);
