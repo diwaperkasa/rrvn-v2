@@ -31,14 +31,18 @@
                         </header>
 
                         <div class="post-meta d-flex justify-content-between align-items-center">
-                            <div class="post-meta-author categoty-article-writter fw-light">
-                                <?php $writers = wp_get_post_terms($post->ID, 'writer', ['field' => 'all']); ?>
-                                <span class="writers-name"><span class="fst-italic">By</span>
-                                    <?php foreach ($writers as $writer): ?>
-                                        <a class="text-decoration-none text-dark me-2 writer-name" href="<?= get_term_link($writer->term_id) ?>"><span class="text-uppercase"><?= $writer->name ?></span></a>
-                                    <?php endforeach; ?>
-                                </span>
-                            </div>
+                            <?php $writers = wp_get_post_terms($post->ID, 'writer', ['field' => 'all']); ?>
+                            <?php if ($writers && !is_wp_error($writers)): ?>
+                                <div class="post-meta-author categoty-article-writter fw-light">
+                                    <span class="writers-name">
+                                        <span class="fst-italic">By</span>
+                                        <?php foreach ($writers as $term): ?>
+                                            <a class="text-decoration-none text-dark me-2 writer-name" href="<?= get_term_link($term->term_id) ?>"><span class="text-uppercase"><?= $term->name ?></span></a>
+                                        <?php endforeach; ?>
+                                    </span>
+                                </div>
+                            <?php endif; ?>
+
                             <div class="post-meta-button-share py-3">
                                 <button class="btn border rounded-0 mb-1 mb-md-0" data-sharer="whatsapp" data-title="Share from RobbRepport Vietnam! <?php the_title(); ?>" data-url="<?= get_permalink(get_queried_object_id()) ?>">
                                     <i class="fa-brands fa-whatsapp opacity-50"></i>
