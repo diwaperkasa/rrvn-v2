@@ -1,10 +1,4 @@
 <!doctype html>
-<!--[if IE 8]><html <?php
-
-use PHP_CodeSniffer\Reports\Json;
-
- language_attributes(); ?> class="ie8"><![endif]-->
-<!--[if lte IE 9]><html <?php language_attributes(); ?> class="ie9"><![endif]-->
 <html <?php language_attributes(); ?>>
 
 <head>
