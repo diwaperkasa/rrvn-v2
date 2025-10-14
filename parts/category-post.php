@@ -21,10 +21,17 @@
                         <p class="fw-light fs-5"><?= $shortDesc; ?></p>
                     </div>
                 <?php endif; ?>
-                <div class="categoty-article-writter text-lg-center fw-light">
-                    <?php $writer = wp_get_post_terms(get_the_ID(), 'writer', ['field' => 'all']); ?>
-                    <span><span class="fst-italic">By</span> <a class="text-decoration-none" href="<?= get_term_link($writer[0]->term_id) ?>"><span class="text-uppercase"><?= $writer[0]->name ?></span></a></span>
-                </div>
+                <?php $writers = wp_get_post_terms(get_the_ID(), 'writer', ['field' => 'all']); ?>
+                <?php if ($writers && !is_wp_error($writers)): ?>
+                    <div class="categoty-article-writter text-lg-center fw-light">
+                        <span>
+                            <span class="fst-italic">By</span>
+                            <?php foreach ($writers as $term): ?>
+                                <a class="text-decoration-none me-1" href="<?= get_term_link($term->term_id) ?>"><span class="text-uppercase"><?= $term->name ?></span></a>
+                            <?php endforeach; ?>
+                        </span>
+                    </div>
+                <?php endif; ?>
             </div>
         </div>
     </div>
