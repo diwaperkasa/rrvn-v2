@@ -14,7 +14,7 @@
                     <a href="<?= get_term_link($categories[0]->term_id) ?>" class="category-article text-decoration-none text-danger text-uppercase sweet-sans-font fs-6"><?= $categories[0]->name ?></a>
                 <?php endif; ?>
                 <a href="<?= get_permalink(get_the_ID()) ?>" class="text-decoration-none">
-                    <h3 class="article-title text-dark h2 eb-garamond-semibold-font"><?php the_title(); ?></h3>
+                    <h3 class="article-title text-dark eb-garamond-semibold-font"><?php the_title(); ?></h3>
                 </a>
                 <?php if ($shortDesc = get_post_meta(get_the_ID(), '_yoast_wpseo_metadesc', true)): ?>
                     <div class="article-shortdesc">
