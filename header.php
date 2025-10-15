@@ -146,7 +146,7 @@
         <div id="desktop-menu-class-container" class="container">
             <nav id="desktop-menu-nav" class="navbar navbar-expand-lg navbar-light sweet-sans-font py-0">
                 <span type="button" class="text-danger py-2 pe-2" data-bs-toggle="offcanvas" data-bs-target="#offcanvasTop" aria-controls="offcanvasTop">
-                    <i class="fa-solid fa-bars fs-5 mt-1"></i>
+                    <svg fill="#fff" stroke="#d02027" width="24" height="24" viewBox="0 0 22 15" xmlns="http://www.w3.org/2000/svg"><title>Menu</title><path d="M2 7.5h18m-18 6h18M2 1.5h18" stroke-width="2.09" fill="none" stroke-linecap="square"></path></svg>
                 </span>
                 <div id="desktop-menu-rr-logo" class="d-block d-lg-none">
                     <a href="<?= site_url() ?>" class="text-decoration-none">
@@ -159,7 +159,7 @@
                         <ul class="navbar-nav text-nowrap flex-wrap me-auto mb-2 mb-lg-0 fw-bold">
                             <?php foreach ($primaryMenus as $menu): ?>
                                 <?php if ($menu->menu_item_parent == 0): ?>
-                                    <li class="nav-item my-1">
+                                    <li class="nav-item mt-1">
                                         <a class="nav-link text-uppercase text-black text-decoration-none" aria-current="page" href="<?= $menu->url ?>"><?= $menu->title ?></a>
                                     </li>
                                 <?php endif; ?>
@@ -171,7 +171,7 @@
                     <?php endif; ?>
                 </div>
                 <span type="button" class="text-danger py-2 ps-2" data-bs-toggle="offcanvas" data-bs-target="#offcanvasSearch" aria-controls="offcanvasSearch">
-                    <i class="fa fa-search fs-5 mt-1"></i>
+                    <svg fill="#fff" stroke="#d02027" width="24" height="24" viewBox="0 0 20 19" xmlns="http://www.w3.org/2000/svg"><title>Search</title><g transform="translate(.7)" stroke-width="1.58" fill="none" fill-rule="evenodd"><circle cx="7" cy="7" r="5.71"></circle><path d="M14 14l3 3" stroke-linecap="square"></path></g></svg>
                 </span>
             </nav>
         </div>
