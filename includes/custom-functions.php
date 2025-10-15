@@ -262,23 +262,25 @@ function get_dfp_targets()
 
     if (is_home() || is_front_page() || is_page(['newsletter', 'print-and-digital-subscription'])) {
         $targets[] = 'home';
-    } elseif (is_singular(array('post', 'features'))) {
+    } elseif (is_singular(['post'])) {
         $categories = wp_get_object_terms($post->ID, 'category');
+        
         if (!empty($categories)) {
             foreach ($categories as $category) {
                 $targets[] = $category->slug;
             }
         }
-        $targets[] = array_push($targets, "$post->ID");
+
+        $targets[] = $post->ID;
     } elseif (is_author()) {
         $targets[] = 'home';
     } elseif (is_category()) {
         $targets[] = 'category';
         $term = get_queried_object();
-        if ($term->parent > 0) {
-            $term      = get_term_by('id', $term->parent, 'category');
-            $targets[] = $term->slug;
-        } else {
+        $targets[] = $term->slug;
+
+        while ($term->parent) {
+            $term = get_term_by('id', $term->parent, 'category');
             $targets[] = $term->slug;
         }
     }
