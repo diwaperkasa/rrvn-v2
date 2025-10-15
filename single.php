@@ -44,21 +44,55 @@
                             <?php endif; ?>
 
                             <div class="post-meta-button-share py-3">
-                                <button class="btn border rounded-0 mb-1 mb-md-0" data-sharer="whatsapp" data-title="Share from RobbRepport Vietnam! <?php the_title(); ?>" data-url="<?= get_permalink(get_queried_object_id()) ?>">
-                                    <i class="fa-brands fa-whatsapp opacity-50"></i>
-                                </button>
-                                <button class="btn border rounded-0 mb-1 mb-md-0" data-sharer="facebook" data-title="Share from RobbRepport Vietnam! <?php the_title(); ?>" data-url="<?= get_permalink(get_queried_object_id()) ?>">
-                                    <i class="fa-brands fa-facebook-f opacity-50"></i>
-                                </button>
-                                <button class="btn border rounded-0 mb-1 mb-md-0" data-sharer="x" data-title="Share from RobbRepport Vietnam! <?php the_title(); ?>" data-url="<?= get_permalink(get_queried_object_id()) ?>">
-                                    <i class="fa-brands fa-twitter opacity-50"></i>
-                                </button>
-                                <button class="btn border rounded-0 mb-1 mb-md-0" data-sharer="linkedin" data-title="Share from RobbRepport Vietnam! <?php the_title(); ?>" data-url="<?= get_permalink(get_queried_object_id()) ?>">
-                                    <i class="fa-brands fa-linkedin-in opacity-50"></i>
-                                </button>
-                                <button class="btn border rounded-0 mb-1 mb-md-0" data-sharer="email" data-title="Share from RobbRepport Vietnam! <?php the_title(); ?>" data-url="<?= get_permalink(get_queried_object_id()) ?>">
-                                    <i class="fa-regular fa-envelope opacity-50"></i>
-                                </button>
+                                <div class="d-none d-md-block">
+                                    <button class="btn border rounded-0 mb-md-0" data-sharer="whatsapp" data-title="Share from RobbRepport Vietnam! <?php the_title(); ?>" data-url="<?= get_permalink(get_queried_object_id()) ?>">
+                                        <i class="fa-brands fa-whatsapp opacity-50"></i>
+                                    </button>
+                                    <button class="btn border rounded-0 mb-md-0" data-sharer="facebook" data-title="Share from RobbRepport Vietnam! <?php the_title(); ?>" data-url="<?= get_permalink(get_queried_object_id()) ?>">
+                                        <i class="fa-brands fa-facebook-f opacity-50"></i>
+                                    </button>
+                                    <button class="btn border rounded-0 mb-md-0" data-sharer="x" data-title="Share from RobbRepport Vietnam! <?php the_title(); ?>" data-url="<?= get_permalink(get_queried_object_id()) ?>">
+                                        <i class="fa-brands fa-twitter opacity-50"></i>
+                                    </button>
+                                    <button class="btn border rounded-0 mb-md-0" data-sharer="linkedin" data-title="Share from RobbRepport Vietnam! <?php the_title(); ?>" data-url="<?= get_permalink(get_queried_object_id()) ?>">
+                                        <i class="fa-brands fa-linkedin-in opacity-50"></i>
+                                    </button>
+                                    <button class="btn border rounded-0 mb-md-0" data-sharer="email" data-title="Share from RobbRepport Vietnam! <?php the_title(); ?>" data-url="<?= get_permalink(get_queried_object_id()) ?>">
+                                        <i class="fa-regular fa-envelope opacity-50"></i>
+                                    </button>
+                                </div>
+                                <div class="d-md-none dropstart">
+                                    <button class="btn border rounded-0 mb-md-0 dropdown-toggle" type="button" id="share-media-social-btn" data-bs-toggle="dropdown" aria-expanded="false">
+                                        <i class="fa-solid fa-share-nodes opacity-50"></i>
+                                    </button>
+                                    <ul class="min-w-0 dropdown-menu p-0 border-0 bg-transparent" aria-labelledby="share-media-social-btn">
+                                        <li>
+                                            <button class="btn border rounded-0 mb-1 bg-white shadow" data-sharer="whatsapp" data-title="Share from RobbRepport Vietnam! <?php the_title(); ?>" data-url="<?= get_permalink(get_queried_object_id()) ?>">
+                                                <i class="fa-brands fa-whatsapp opacity-50"></i>
+                                            </button>
+                                        </li>
+                                        <li>
+                                            <button class="btn border rounded-0 mb-1 bg-white shadow" data-sharer="facebook" data-title="Share from RobbRepport Vietnam! <?php the_title(); ?>" data-url="<?= get_permalink(get_queried_object_id()) ?>">
+                                                <i class="fa-brands fa-facebook-f opacity-50"></i>
+                                            </button>
+                                        </li>
+                                        <li>
+                                            <button class="btn border rounded-0 mb-1 bg-white shadow" data-sharer="x" data-title="Share from RobbRepport Vietnam! <?php the_title(); ?>" data-url="<?= get_permalink(get_queried_object_id()) ?>">
+                                                <i class="fa-brands fa-twitter opacity-50"></i>
+                                            </button>
+                                        </li>
+                                        <li>
+                                            <button class="btn border rounded-0 mb-1 bg-white shadow" data-sharer="linkedin" data-title="Share from RobbRepport Vietnam! <?php the_title(); ?>" data-url="<?= get_permalink(get_queried_object_id()) ?>">
+                                                <i class="fa-brands fa-linkedin-in opacity-50"></i>
+                                            </button>
+                                        </li>
+                                        <li>
+                                            <button class="btn border rounded-0 bg-white shadow" data-sharer="email" data-title="Share from RobbRepport Vietnam! <?php the_title(); ?>" data-url="<?= get_permalink(get_queried_object_id()) ?>">
+                                                <i class="fa-regular fa-envelope opacity-50"></i>
+                                            </button>
+                                        </li>
+                                    </ul>
+                                </div>
                             </div>
                         </div>
                         

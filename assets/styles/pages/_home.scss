@@ -248,6 +248,14 @@ img.size-full {
     }
 }
 
+#share-media-social-btn::after, #share-media-social-btn::before {
+    display: none;
+}
+
+.min-w-0 {
+    min-width: 0 !important;
+}
+
 .flickity-button {
     background: rgba(0, 0, 0, .5);
 }
