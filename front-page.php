@@ -72,7 +72,7 @@
             </div>
         </section>
         <div class="leaderboard top-leaderboard">
-            <?php get_ads('top-leaderboard') ?>
+            <?php('top-leaderboard') ?>
         </div>
         <section id="digital-subscription">
             <div class="container">
@@ -101,7 +101,7 @@
                         </div>
                         <div class="d-flex justify-content-center">
                             <div class="leaderboard vertical-leaderboard mb-5">
-                                <?php get_ads('vertical-leaderboard', 'none') ?>
+                                <?php('vertical-leaderboard', 'none') ?>
                             </div>
                         </div>
                     <?php endif; ?>
@@ -148,9 +148,9 @@
                 <?php wp_reset_postdata(); ?>
             </div>
         </section>
-        <div class="leaderboard middle-leaderboard">
+        <section class="leaderboard middle-leaderboard">
             <?php get_ads('middle-leaderboard') ?>
-        </div>
+        </section>
         <?php if (have_rows('selected_category')): ?>
             <?php $articleCategoryLength = get_field('how_many_article_category_to_show') ?>
             <?php while(the_repeater_field('selected_category')): ?>

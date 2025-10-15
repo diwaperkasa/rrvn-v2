@@ -120,7 +120,3 @@ function moment_timezone()
 }
 
 add_action('admin_enqueue_scripts', 'moment_timezone', 20);
-
-add_filter( 'before_returning_single_ad', function( $single_ad_html ) {
-    return $single_ad_html . '</div>';
-});
