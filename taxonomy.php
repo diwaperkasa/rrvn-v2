@@ -5,7 +5,7 @@
         <section id="taxonomy-page">
             <?php if (have_posts()): ?>
                 <header class="page-header text-center">
-                    <h1 class="page-title eb-garamond-semibold-font"><span class="text-capitalize"><?= get_queried_object()->taxonomy ?></span> Posts by <span class="text-capitalize"><?= get_queried_object()->name ?></span></h1>
+                    <h1 class="page-title eb-garamond-semibold-font"><span class="text-capitalize"><span class="text-capitalize"><?= get_queried_object()->name ?></span></h1>
                 </header>
                 <div class="row">
                     <?php while (have_posts()) : the_post(); ?>
