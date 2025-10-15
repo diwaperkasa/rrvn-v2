@@ -488,9 +488,10 @@ img.size-full {
     display: none !important;
 }
 
-.wpadcenter-ad-container:before {
+.wpadcenter-ad-inner:before {
     content: 'ADVERTISEMENT';
     font-size: 10px;
+    font-family: "Sweet Sans Pro Regular" !important;
 }
 .wpadcenter-ad-container {
     text-align: center;

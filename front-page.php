@@ -72,7 +72,7 @@
             </div>
         </section>
         <div class="leaderboard top-leaderboard">
-            <?php('top-leaderboard') ?>
+            <?= get_ads('top-leaderboard') ?>
         </div>
         <section id="digital-subscription">
             <div class="container">
@@ -99,9 +99,9 @@
                                 <?php endwhile; ?>
                             </div>
                         </div>
-                        <div class="d-flex justify-content-center">
+                        <div class="d-flex justify-content-center mx-5">
                             <div class="leaderboard vertical-leaderboard mb-5">
-                                <?php('vertical-leaderboard', 'none') ?>
+                                <?= get_ads('vertical-leaderboard', 'center') ?>
                             </div>
                         </div>
                     <?php endif; ?>
