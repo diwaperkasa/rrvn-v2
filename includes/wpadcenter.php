@@ -61,12 +61,14 @@ function query_ads(string $adUnit)
     $result = [];
 
     foreach ($query->posts as $ad) {
-        $pageTargeting = get_the_terms($ad->ID, 'page-targeting', ['fields' => 'slugs']);
+        $terms = get_the_terms($ad->ID, 'page-targeting', ['fields' => 'slugs']);
 
-        if (!$pageTargeting) {
+        if (!$terms || is_wp_error($terms)) {
             $result[] = $ad;
             continue;
         }
+
+        $pageTargeting = wp_list_pluck($terms, 'slug');
 
         if (array_intersect($pageTargeting, $tags)) {
             $result[] = $ad;
@@ -99,7 +101,7 @@ function insert_ad_mid_post($content) {
 
         foreach ($ads as $index => $ad) {
             $ad_shortcode = '[wpadcenter_ad id="' . $ad->ID . '" align="center"]';
-            $ad_html = do_shortcode($ad_shortcode);
+            $ad_html = '<div class="leaderboard middle-leaderboard">' .  do_shortcode($ad_shortcode) . '</div>';
             array_splice($paragraphs, $insert_after + $index, 0, $ad_html);
         }
         // Rejoin the content

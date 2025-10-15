@@ -171,7 +171,7 @@ img.size-full {
 }
 
 .post-content {
-    a {
+    a:not(.wpadcenter-ad-inner__item) {
         border-bottom: 1px solid #ed1d25;
         color: inherit;
         text-decoration: inherit;
@@ -482,6 +482,18 @@ img.size-full {
 
 .wpadcenter-ad-inner, .wpadcenter-ad-inner a {
     height: inherit;
+}
+
+.wpadcenter-caption {
+    display: none !important;
+}
+
+.wpadcenter-ad-container:before {
+    content: 'ADVERTISEMENT';
+    font-size: 10px;
+}
+.wpadcenter-ad-container {
+    text-align: center;
 }
 
 .w-md-75 {

@@ -66,10 +66,6 @@
                             <?= get_the_post_thumbnail($post, 'full') ?>
                         </div>
 
-                        <div class="leaderboard middle-leaderboard">
-                            <?php get_ads('middle-leaderboard') ?>
-                        </div>
-
                         <div class="post-content">
                             <?php the_content(); ?>
                         </div>
