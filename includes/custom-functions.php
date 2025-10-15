@@ -264,7 +264,7 @@ function get_dfp_targets()
         $targets[] = 'home';
     } elseif (is_singular(['post'])) {
         $categories = wp_get_object_terms($post->ID, 'category');
-        
+
         if (!empty($categories)) {
             foreach ($categories as $category) {
                 $targets[] = $category->slug;
@@ -272,6 +272,7 @@ function get_dfp_targets()
         }
 
         $targets[] = $post->ID;
+        $targets[] = "single";
     } elseif (is_author()) {
         $targets[] = 'home';
     } elseif (is_category()) {
