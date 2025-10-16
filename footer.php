@@ -86,7 +86,7 @@
         <div class="modal-dialog modal-dialog-centered modal-fullscreen">
             <div class="modal-content bg-black border-0">
                 <div class="modal-body d-flex justify-content-center align-items-center p-0">
-                    <img id="fullscreenImage" src="" class="img-fluid vh-100" alt="">
+                    <img id="fullscreenImage" src="" class="img-fluid mh-100vh" alt="">
                 </div>
                 <button type="button" class="btn-close btn-close-white position-absolute top-0 end-0 m-4" data-bs-dismiss="modal"></button>
             </div>
