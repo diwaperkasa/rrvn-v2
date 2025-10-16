@@ -81,6 +81,17 @@
             <?php get_ads('video-leaderboard') ?>
         </div>
     </div>
+    <!-- Bootstrap Fullscreen Modal -->
+    <div class="modal fade" id="fullscreenImageModal" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered modal-fullscreen">
+            <div class="modal-content bg-black border-0">
+                <div class="modal-body d-flex justify-content-center align-items-center p-0">
+                    <img id="fullscreenImage" src="" class="img-fluid vh-100" alt="">
+                </div>
+                <button type="button" class="btn-close btn-close-white position-absolute top-0 end-0 m-4" data-bs-dismiss="modal"></button>
+            </div>
+        </div>
+    </div>
     <!-- Optional JavaScript; choose one of the two! -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/js/all.min.js" integrity="sha512-b+nQTCdtTBIRIbraqNEwsjB6UvL3UEMkXnhzd8awtCYh0Kcsjl9uEgwVFVbhoj3uu1DO1ZMacNvLoyJJiNfcvg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <?php wp_footer(); ?>

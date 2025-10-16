@@ -1,6 +1,7 @@
 import $ from 'jquery';
 import Flickity from 'flickity';
 import './cookieconsent-config.js';
+import { Modal } from 'bootstrap';
 
 /**
  * Mobile navigation toggle
@@ -189,4 +190,17 @@ if (typeof(search_post) !== 'undefined') {
 
 document.querySelector(".video-leaderboard-btn-close").addEventListener('click', function (event) {
     document.querySelector('.floating-video-ad').remove();
+});
+
+document.querySelectorAll('.post-content img').forEach(img => {
+    img.addEventListener('click', () => {
+        const parent = img.closest('.wpadcenter-ad-container');
+        
+        if (parent) return;
+
+        const modalImg = document.getElementById('fullscreenImage');
+        modalImg.src = img.src;
+        const modal = new Modal(document.getElementById('fullscreenImageModal'));
+        modal.show();
+    });
 });

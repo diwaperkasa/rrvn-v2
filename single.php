@@ -65,7 +65,7 @@
                                     <button class="btn border rounded-0 mb-md-0 dropdown-toggle" type="button" id="share-media-social-btn" data-bs-toggle="dropdown" aria-expanded="false">
                                         <i class="fa-solid fa-share-nodes opacity-50"></i>
                                     </button>
-                                    <ul class="min-w-0 dropdown-menu p-0 border-0 bg-transparent me-1" aria-labelledby="share-media-social-btn">
+                                    <ul class="share-media-social-menu min-w-0 dropdown-menu p-0 border-0 bg-transparent me-1" aria-labelledby="share-media-social-btn">
                                         <li>
                                             <button class="btn border rounded-0 mb-1 bg-white shadow" data-sharer="whatsapp" data-title="Share from RobbRepport Vietnam! <?php the_title(); ?>" data-url="<?= get_permalink(get_queried_object_id()) ?>">
                                                 <i class="fa-brands fa-whatsapp opacity-50"></i>
