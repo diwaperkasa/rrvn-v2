@@ -2,9 +2,6 @@
 
 <main class="main" role="main">
     <div class="container">
-        <div class="leaderboard top-leaderboard">
-            <?php get_ads('top-leaderboard') ?>
-        </div>
         <div class="row">
             <div class="col-md-9">
                 <?php while ( have_posts() ) : the_post(); ?>
@@ -98,6 +95,17 @@
                         
                         <div class="post-cover mb-4">
                             <?= get_the_post_thumbnail($post, 'full') ?>
+                        </div>
+
+                        <div class="leaderboard top-leaderboard">
+                            <div id='ad-leaderboard-top' class="ad-leaderboard d-flex justify-content-center">
+                                <script>
+                                    googletag.cmd.push(function() {
+                                        googletag.display('ad-leaderboard-top');
+                                    });
+                                </script>
+                            </div>
+                            <?php get_ads('top-leaderboard') ?>
                         </div>
 
                         <div class="post-content">

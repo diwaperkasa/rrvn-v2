@@ -1,5 +1,12 @@
     <div class="container">
         <div class="leaderboard bottom-leaderboard">
+            <div id='ad-leaderboard-bottom' class="ad-leaderboard d-flex justify-content-center">
+                <script>
+                    googletag.cmd.push(function() {
+                        googletag.display('ad-leaderboard-bottom');
+                    });
+                </script>
+            </div>
             <?php get_ads('bottom-leaderboard') ?>
         </div>
     </div>

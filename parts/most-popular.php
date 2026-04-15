@@ -1,5 +1,12 @@
 <section id="most-popular-article" class="d-flex flex-column h-100">
     <div class="vertical-leaderboard-container">
+        <div id='ad-leaderboard-hp' class="ad-leaderboard d-flex justify-content-center">
+            <script>
+                googletag.cmd.push(function() {
+                    googletag.display('ad-leaderboard-hp');
+                });
+            </script>
+        </div>
         <div class="leaderboard vertical-leaderboard mb-md-auto">
             <?php get_ads('vertical-leaderboard') ?>
         </div>

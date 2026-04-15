@@ -12,14 +12,121 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <?php wp_head(); ?>
+    
+    <script async='async' src='https://www.googletagservices.com/tag/js/gpt.js'></script>
+    <script>
+        const gptadslots = [];
+        var googletag = googletag || {
+            cmd: []
+        };
+    </script>
+    <script>
+        googletag.cmd.push(function() {
+            const dfpTarget = <?= json_encode(get_dfp_targets()) ?>;
 
-    <?php if (get_field('enable_ads', 'option')): ?>
-        <script async='async' src='https://www.googletagservices.com/tag/js/gpt.js'></script>
-        <script>
-            var gptadslots = [];
-            var googletag = googletag || {cmd:[]};
-        </script>
-    <?php endif; ?>
+            const mapping = googletag.sizeMapping()
+                .addSize([1024, 768], [
+                    [960, 300]
+                ])
+                .addSize([768, 0], [
+                    [960, 300]
+                ])
+                .addSize([320, 0], [
+                    [400, 500],
+                    [375, 500]
+                ])
+                .build();
+
+            const mapping_header = googletag.sizeMapping()
+                .addSize([1024, 768], [
+                    [1280, 300]
+                ])
+                .addSize([768, 0], [
+                    [1280, 300]
+                ])
+                .addSize([320, 0], [
+                    [375, 225],
+                    [400, 225]
+                ])
+                .build();
+
+            const mapping_vertical = googletag.sizeMapping()
+                .addSize([1024, 768], [
+                    [300, 600]
+                ])
+                .build();
+            // Adslot 1 declaration
+            gptadslots.push(googletag.defineSlot('/23347116973/header', [
+                    [1280, 300],
+                    [375, 225],
+                    [400, 225]
+                ], 'ad-leaderboard-header')
+                .defineSizeMapping(mapping_header)
+                .setTargeting('tag', dfpTarget)
+                .addService(googletag.pubads()));
+            // Adslot 2 declaration
+            gptadslots.push(googletag.defineSlot('/23347116973/top-lb', [
+                    [375, 500],
+                    [960, 300],
+                    [400, 500]
+                ], 'ad-leaderboard-top')
+                .defineSizeMapping(mapping)
+                .setTargeting('tag', dfpTarget)
+                .addService(googletag.pubads()));
+            // Adslot 3 declaration
+            gptadslots.push(googletag.defineSlot('/23347116973/mid-lb', [
+                    [375, 500],
+                    [960, 300],
+                    [400, 500]
+                ], 'ad-leaderboard-middle')
+                .defineSizeMapping(mapping)
+                .setTargeting('tag', dfpTarget)
+                .addService(googletag.pubads()));
+            // Adslot 4 declaration
+            gptadslots.push(googletag.defineSlot('/23347116973/bottom-lb', [
+                    [400, 500],
+                    [375, 500],
+                    [960, 300]
+                ], 'ad-leaderboard-bottom')
+                .defineSizeMapping(mapping)
+                .setTargeting('tag', dfpTarget)
+                .addService(googletag.pubads()));
+            // Adslot 5 declaration (Vertical Banner)
+            gptadslots.push(googletag.defineSlot('/23347116973/hp-home', [
+                    [300, 600],
+                    [300, 600]
+                ], 'ad-leaderboard-hp')
+                .defineSizeMapping(mapping_vertical)
+                .setTargeting('tag', dfpTarget)
+                .addService(googletag.pubads()));
+
+            googletag.pubads().enableSingleRequest();
+            googletag.pubads().collapseEmptyDivs();
+            googletag.pubads().setCentering(true);
+            googletag.enableServices();
+            // This listener will be called when a slot has finished rendering.
+            googletag.pubads().addEventListener("slotRenderEnded", (event) => {
+                const slotId = event.slot.getSlotElementId();
+
+                if (event.advertiserId) {
+                    const width = document.querySelector(`#${slotId}`).offsetWidth;
+                    const iframe = document.querySelector(`#${slotId} iframe`);
+                    const head = iframe.contentWindow.document.head;
+                    const style = iframe.contentWindow.document.createElement('style');
+                    const css = `.GoogleActiveViewElement img { max-width: ${width}px; width: 100%; height: auto; }`;
+
+                    head.appendChild(style);
+
+                    if (style.styleSheet) {
+                        // This is required for IE8 and below.
+                        style.styleSheet.cssText = css;
+                    } else {
+                        style.appendChild(document.createTextNode(css));
+                    }
+                }
+            });
+        });
+    </script>
 </head>
 <body <?php body_class(); ?>>
     <div style="--bs-bg-opacity: .5;" class="offcanvas sweet-sans-font offcanvas-start w-100 min-vh-100 bg-black overflow-hidden" tabindex="-1" id="offcanvasTop" aria-labelledby="offcanvasTopLabel">
@@ -92,6 +199,13 @@
     </div>
     <header class="container">
         <div class="leaderboard header-leaderboard">
+            <div id='ad-leaderboard-header' class="ad-leaderboard d-flex justify-content-center">
+                <script>
+                    googletag.cmd.push(function() {
+                        googletag.display('ad-leaderboard-header');
+                    });
+                </script>
+            </div>
             <?php get_ads('header-leaderboard') ?>
         </div>
         <div class="d-none d-lg-block">

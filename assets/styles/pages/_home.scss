@@ -665,3 +665,97 @@ img.size-full {
         background-position: 0 50%, 0 calc(0% - 2px), 0 calc(100% + 2px), 50% 50%, 50% calc(0% - 2px), 50% calc(100% + 2px), 100% 50%, 100% calc(0% - 2px), 100% calc(100% + 2px);
     }
 }
+
+.yotu-videos li:last-child {
+    margin-bottom: 0px;
+}
+
+.yotu-playlist {
+    padding: 0 !important;
+}
+
+.yotu-playlist > div {
+    --bs-gutter-x: 1.5rem;
+    --bs-gutter-y: 0;
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: calc(-1 * var(--bs-gutter-y));
+    margin-right: calc(-0.5 * var(--bs-gutter-x));
+    margin-left: calc(-0.5 * var(--bs-gutter-x));
+}
+
+.yotu-playlist .yotu-wrapper-player, .yotu-playlist .yotu-videos, .yotu-playlist .yotu-pagination {
+    padding-left: calc(var(--bs-gutter-x) * .5);
+    padding-right: calc(var(--bs-gutter-x) * .5);
+}
+
+.yotu-pagination {    
+    padding: 2rem 0 0 !important;
+    
+    .yotu-pagination-more {
+        text-align: center;
+        padding-right: 4rem !important;
+        padding-left: 4rem !important;
+        padding-top: 1rem !important;
+        padding-bottom: 1rem !important;
+        --bs-bg-opacity: 1;
+        background-color: rgba(var(--bs-dark-rgb), var(--bs-bg-opacity)) !important;
+        width: fit-content !important;
+        text-transform: uppercase !important;
+        --bs-text-opacity: 1;
+        color: rgba(var(--bs-white-rgb), var(--bs-text-opacity)) !important;
+        font-size: 1.25rem !important;
+    }
+
+    .yotu-active::after {
+        right: 20px !important;
+        --bs-text-opacity: 1;
+        color: rgba(var(--bs-white-rgb), var(--bs-text-opacity)) !important;
+    }
+}
+
+.yotu-playlist .yotu-videos {
+    li {
+        font-family: mulish;
+
+        .yotu-video-title {
+            font-family: eb-garamond-semibold-font;
+            color: #fff;
+            padding-left: 2rem;
+            padding-right: 2rem;
+            bottom: 1rem;
+            position: absolute;
+            font-size: 1.25rem;
+            line-height: 1.5 !important;
+            overflow: hidden;
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            text-overflow: ellipsis;
+        }
+
+        a {
+            display: flex;
+
+            .yotu-video-thumb-wrp {
+                width: 100%;
+                margin-right: 0px;
+            }
+        }
+    }
+}
+
+@media (min-width: 768px) {
+    .yotu-playlist .yotu-wrapper-player {
+        flex: 0 0 auto;
+        width: 66.66666667% !important;
+    }
+
+    .yotu-playlist .yotu-videos {
+        flex: 0 0 auto;
+        width: 33.33333333% !important;
+        padding-top: 0 !important;
+        height: 480px;
+        overflow: auto;
+    }
+}
