@@ -707,6 +707,11 @@ img.size-full {
         font-size: 1.25rem !important;
     }
 
+    .yotu-active {
+        --bs-bg-opacity: .75;
+        --bs-text-opacity: .5;
+    }
+
     .yotu-active::after {
         right: 20px !important;
         --bs-text-opacity: 1;
