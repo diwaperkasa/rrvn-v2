@@ -770,6 +770,7 @@ img.size-full {
 
 .ad-leaderboard-middle iframe {
     aspect-ratio: unset;
+    height: revert-layer;
 }
 
 .vertical-leaderboard-container:has(iframe) {
