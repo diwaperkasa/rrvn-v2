@@ -1,6 +1,6 @@
 <section id="most-popular-article" class="d-flex flex-column h-100">
     <div class="vertical-leaderboard-container">
-        <div id='ad-leaderboard-hp' class="ad-leaderboard d-flex justify-content-center">
+        <div id='ad-leaderboard-hp' class="ad-leaderboard ad-leaderboard-hp text-center">
             <script>
                 googletag.cmd.push(function() {
                     googletag.display('ad-leaderboard-hp');

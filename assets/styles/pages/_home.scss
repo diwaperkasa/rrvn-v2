@@ -767,3 +767,12 @@ img.size-full {
     padding-top: 1rem;
     padding-bottom: 1rem;
 }
+
+.ad-leaderboard-middle iframe {
+    aspect-ratio: unset;
+}
+
+.vertical-leaderboard-container:has(iframe) {
+    top: 3rem;
+    position: sticky;
+}

@@ -99,7 +99,7 @@ function insert_ad_mid_post($content) {
         $insert_after = floor(count($paragraphs) / 2); // middle of post
 
         $ad_html = "
-            <div id='ad-leaderboard-middle' class='ad-leaderboard text-center'>
+            <div id='ad-leaderboard-middle' class='ad-leaderboard ad-leaderboard-middle text-center'>
                 <script>
                     googletag.cmd.push(function() {
                         googletag.display('ad-leaderboard-middle');
