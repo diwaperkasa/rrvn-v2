@@ -762,3 +762,8 @@ img.size-full {
         overflow: auto;
     }
 }
+
+.ad-leaderboard:has(iframe) {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
