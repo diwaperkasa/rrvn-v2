@@ -1,6 +1,6 @@
     <div class="container">
         <div class="leaderboard bottom-leaderboard">
-            <div id='ad-leaderboard-bottom' class="ad-leaderboard d-flex justify-content-center">
+            <div id='ad-leaderboard-bottom' class="ad-leaderboard text-center">
                 <script>
                     googletag.cmd.push(function() {
                         googletag.display('ad-leaderboard-bottom');

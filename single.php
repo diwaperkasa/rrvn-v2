@@ -98,7 +98,7 @@
                         </div>
 
                         <div class="leaderboard top-leaderboard">
-                            <div id='ad-leaderboard-top' class="ad-leaderboard d-flex justify-content-center">
+                            <div id='ad-leaderboard-top' class="ad-leaderboard text-center">
                                 <script>
                                     googletag.cmd.push(function() {
                                         googletag.display('ad-leaderboard-top');

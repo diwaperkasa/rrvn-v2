@@ -72,7 +72,7 @@
             </div>
         </section>
         <div class="leaderboard top-leaderboard">
-            <div id='ad-leaderboard-top' class="ad-leaderboard d-flex justify-content-center">
+            <div id='ad-leaderboard-top' class="ad-leaderboard text-center">
                 <script>
                     googletag.cmd.push(function() {
                         googletag.display('ad-leaderboard-top');
@@ -108,7 +108,7 @@
                         </div>
                         <div class="d-flex justify-content-center mx-5">
                             <div class="leaderboard vertical-leaderboard mb-5">
-                                <div id='ad-leaderboard-hp' class="ad-leaderboard d-flex justify-content-center">
+                                <div id='ad-leaderboard-hp' class="ad-leaderboard text-center">
                                     <script>
                                         googletag.cmd.push(function() {
                                             googletag.display('ad-leaderboard-hp');
@@ -163,7 +163,7 @@
             </div>
         </section>
         <section class="leaderboard middle-leaderboard">
-            <div id='ad-leaderboard-middle' class="ad-leaderboard d-flex justify-content-center">
+            <div id='ad-leaderboard-middle' class="ad-leaderboard text-center">
                 <script>
                     googletag.cmd.push(function() {
                         googletag.display('ad-leaderboard-middle');

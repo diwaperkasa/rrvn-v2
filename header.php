@@ -199,7 +199,7 @@
     </div>
     <header class="container">
         <div class="leaderboard header-leaderboard">
-            <div id='ad-leaderboard-header' class="ad-leaderboard d-flex justify-content-center">
+            <div id='ad-leaderboard-header' class="ad-leaderboard text-center">
                 <script>
                     googletag.cmd.push(function() {
                         googletag.display('ad-leaderboard-header');
