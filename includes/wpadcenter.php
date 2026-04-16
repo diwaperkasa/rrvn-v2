@@ -97,21 +97,16 @@ function insert_ad_mid_post($content) {
         // Split the post into paragraphs
         $paragraphs = explode('</p>', $content);
         $insert_after = floor(count($paragraphs) / 2); // middle of post
-        $ads = query_ads('middle-leaderboard');
 
-        foreach ($ads as $index => $ad) {
-            $ad_shortcode = '[wpadcenter_ad id="' . $ad->ID . '" align="center"]';
-            $ad_html = '<div class="leaderboard middle-leaderboard">' .  do_shortcode($ad_shortcode) . '</div>';
-            $ad_html .= "
-                <div id='ad-leaderboard-middle' class='ad-leaderboard text-center'>
-                    <script>
-                        googletag.cmd.push(function() {
-                            googletag.display('ad-leaderboard-middle');
-                        });
-                    </script>
-                </div>";
-            array_splice($paragraphs, $insert_after + $index, 0, $ad_html);
-        }
+        $ad_html = "
+            <div id='ad-leaderboard-middle' class='ad-leaderboard text-center'>
+                <script>
+                    googletag.cmd.push(function() {
+                        googletag.display('ad-leaderboard-middle');
+                    });
+                </script>
+            </div>";
+        array_splice($paragraphs, $insert_after, 0, $ad_html);
         // Rejoin the content
         $content = implode('</p>', $paragraphs);
     }
