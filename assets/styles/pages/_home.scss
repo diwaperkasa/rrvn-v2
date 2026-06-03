@@ -773,7 +773,7 @@ img.size-full {
     height: revert-layer;
 }
 
-.vertical-leaderboard-container:has(iframe) {
+.vertical-leaderboard-container {
     top: 3rem;
     position: sticky;
 }
