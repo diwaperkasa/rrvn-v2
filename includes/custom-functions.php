@@ -484,6 +484,11 @@ function dom_modify_img($content) {
     }
 
     $body = $doc->getElementsByTagName('body')->item(0);
+
+    if (!$body) {
+        return $content;
+    }
+
     $content = '';
 
     foreach ($body->childNodes as $child) {
