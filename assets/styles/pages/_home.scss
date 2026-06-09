@@ -278,10 +278,22 @@ img.size-full {
 
 .flickity-prev-next-button.previous {
     margin-left: 2rem;
+    opacity: 0;
+    visibility: hidden;
+    transform: translate(-100%, -50%);
 }
 
 .flickity-prev-next-button.next {
     margin-right: 2rem;
+    opacity: 0;
+    visibility: hidden;
+    transform: translate(100%, -50%);
+}
+
+.most-read-carousel:hover .flickity-prev-next-button {
+    opacity: 1;
+    visibility: visible;
+    transform: translate(0, -50%);
 }
 
 #categoty-article .wp-post-image {
@@ -605,7 +617,7 @@ img.size-full {
     transition: all .3s linear;
     border: 2px solid;
     border-color: rgba(0, 0, 0, 0.5);
-    background: transparent;
+    background: rgba(255, 255, 255, .5);
 }
 
 .flickity-button-icon {
